@@ -3,10 +3,142 @@
 \usepackage[polish]{babel}
 \usepackage{amsmath}
 \usepackage{amsfonts}
+\usepackage{underscore}
 \author{MJaniec BPolnik}
 \title{Touch Library}
 \begin{document}
+
+
 \maketitle
 
+\section{Nazwa}
+Touch Library
+
+\section{Ciekawostka}
 http://www.imore.com/apple-multitouch-google
+
+
+\section{Nazewnictwo}
+Nie ma namespace. Proponuje zasymulowac poprzez uzycie prefiksu tl.
+Proponuje tez pisac pseudo-obiektowo. 
+\begin{itemize}
+	\item Pliki: \textbf{tl_file_name.ext}
+	\item Funkcje: \textbf{tlFunctionName}
+	\item Zmienne: \textbf{tl_var_name}
+	\item Struktury: \textbf{tlStructName}
+	\item "Metody": \textbf{tlStructName_MethodName(tlStructName* this...)}
+	\item Stale: \textbf{tl_CONSTANT_NAME} 
+\end{itemize}
+
+\section{Makefile}
+Uzywamy makefile? mnie sie podoba.
+Wtedy moznaby podawac flage komplilacji DEBUG lub UNCHECKED.
+DEBUG wlaczalby biblioteke stdio.h oraz funkcje obslugi bledow. 
+
+\section{Wersja C}
+Proponuje C99. Fajne petle, slowko const, bool
+
+\section{Typy danych}
+Trzeba ostroznie z pamiecia. W szczegulnosci proponuje nie floating pointow. W ogole wzorem OpenGL proponuje zdefiniowac wlasne typy. Moje propozycje:\\
+\begin{itemize}
+	\item tlBool - bool
+	\item tlUByte - unsigned char
+	\item tlByte - signed char
+	\item tlWord - sigend short
+	\item tlUWord - unsigned short
+	\item tlInt - tlWord
+	\item tlUInt - tlUWord
+	\item tlFloat - tlWord -> fixed point
+	\item tlChar - char
+	\item tlVoid - void
+	\item tlString char*
+\end{itemize}
+
+Do debugowania wlasny printf jakis tlPrintf
+trzaby obslugiwac\\
+\begin{itemize}
+	\item \%s - tlString
+	\item \%c - tlChar
+	\item \%f - tlFloat
+	\item \%d \%i - tlInt, tlWord
+	\item \%ud \%ui - tlUInt, tlUWord
+	\item \%b - tlBool
+\end{itemize}
+
+\section{Obsluga bledow}
+\begin{itemize}
+	\item tl_errno -numer bledu. 0=brak bledu
+	\item tl_ERRSTR - stringi z opisami bledow
+	\item tl_ERRSTR[tl_errno] - Opis ostatniego bledu
+	\item tl_ERRSTR[0]= 'OK'
+\end{itemize}
+
+	
+	Wszystkie funkcje obsluguja bledy w TEN SAM sposob.\\
+	Informacja a blendzie tylko w tl_errno\\
+	Kazda funkcja na poczatku zeruje tl_errno\\
+	jesli po wykonaniu funkcji tl_errno!=0 to blad i wartosc  zwrocona z funkcji moze byc invalid\\
+	\\
+	Proponuje makra\\
+\begin{itemize}
+	\item \$fun
+	\item \$if
+	\item \$c
+	\item \$e
+\end{itemize}
+
+Definicja funkcji\\
+\begin{verbatim}
+	
+tlType tlFunctionName(tlType1 var1,...){
+  $fun;
+  code...
+  $if (condition) error_code;	//if condition rise error error_code;
+  code...
+  return retval;
+}
+\end{verbatim}
+	
+Wywolanie funkcji\\
+\begin{verbatim}
+tlFunctionName(var1,...)$c;		//continues 
+tlFunctionName2(var2,...)$e;	//exit
+\end{verbatim}
+
+ Dzialanie makr\\
+
+\begin{verbatim}
+$fun <=> tl_errno=0
+$if condition error_code <=> if(condition){tl_errno=error_code; return;} //zwraca smiecia
+//wypisuje informacje o bledzie i kontynuje wykonanie
+$c <=> ; {if (tl_errno) print(Filename, linenumber tl_ERRSTR[tl_errno], line of code);}
+//wypisuje informacje o bledzie i zamyka program
+$e <=> ; {if (jw) print(jw); exit(tl_errno); }
+\end{verbatim}
+	
+Takie podejscie ma 2 zalety.\\
+1. Zaimplementowalem juz cos z grubsza podobnego na potrzeby sysopow, wiec jest praktycznie gotowe.\\
+2. Makra mozna uzaleznic od  innego makra. Dzieki temu mozna zamienic wszystkie instrukcje obslugi bledow na blanki przy pomocy parametru kompilacji. W spomniane wyzej DEBUG, UNCHECKED
+
+
+\section{edytor}
+Nie wiem jescze czego uzywac bedziemy do edytowania, ale wiele edytorow posiada mozliwosc modyfikowania syntax highlightingu. Mozna by "odkeywordowac" standardowe typy. Dodac typy uzywane w bibliotece. Dodac wyzej wymienione makra.
+I ponaddto zmienna tl_errno. oraz warto by bylo zrobic jakas stala tl_null=(tlVoid*)(0)
+
+
+\section{input}
+
+Na wejscie tablica dwu wymiarowa + jej wymiary
+jaks funkcja\\
+tlVoid tlInit(tlInt width, tlHeight, tlByte** (getData*)());\\
+Kod klienta by sobie refreshowal\\
+tlVoid tlRefresh();
+
+\section{output}
+
+Na wyjsciu informacja o wykonywanym gescie , lub jego braku + dodatkowe parametry. Opisane w pliku external. \\\\
+
+Kolejka zdazen. Klient moze zarejstrowac pewne zdazenia takie jak scrolldown. wtedy do kolejki beda wrzucane takie gesty. Bedzie to jedynie informacja ze uzytkownik cos zrobil. Rozni sie to tym ze to pojawia sie tylko po wykonaniu gestu i pociaga za soba konkretna akcje.
+
+
 \end{document}
