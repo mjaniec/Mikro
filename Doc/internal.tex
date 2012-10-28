@@ -1,18 +1,20 @@
 \documentclass[10pt,a4paper]{article}
-\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
+\usepackage{polski}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{underscore}
+\usepackage{hyperref}
 \author{MJaniec BPolnik}
-\title{Touch Library}
+\title{Gesture Processing Library}
 \begin{document}
 
 
 \maketitle
 
 \section{Nazwa}
-Touch Library
+Gesture Processing Library
 
 \section{Ciekawostka}
 http://www.imore.com/apple-multitouch-google
@@ -140,5 +142,29 @@ Na wyjsciu informacja o wykonywanym gescie , lub jego braku + dodatkowe parametr
 
 Kolejka zdazen. Klient moze zarejstrowac pewne zdazenia takie jak scrolldown. wtedy do kolejki beda wrzucane takie gesty. Bedzie to jedynie informacja ze uzytkownik cos zrobil. Rozni sie to tym ze to pojawia sie tylko po wykonaniu gestu i pociaga za soba konkretna akcje.
 
+\section{propozycja}
 
+Proponuje znacznie obciąć funkcjonalność gry, bo ma ona służyć tylko do prezentacji - wydaje mi się, że wystarczyłoby przesuwanie kocków, czas, punkty i inne nie są potrzebne.
+Pokazanie zoom'u na grze dodaje wg mnie niesamowicie duzo pracy.
+Warto by jednak przemyśleć, czy nie lepiej stworzyć "coś", po czym można wykonywać gesty i informacja jaki to gest pojawiała sie na dole ekranu - wydaje mi sie, że
+wtedy jest łatwiej coś pokazać, łatwiej do tego dodać gesty i można sie mniej napracować, a prowadzącemu to chyba obojętne z tego, co mówił.
+
+
+\section{lista gestow}
+Wydaje mi sie, ze jedynym sposobem dodawania gestow w momencie pracy biblioteki jest utrzymywanie jakos zaalokowanej pamieci, gdzie mozna je przechowac.
+Dlatego albo dajemy np. wymog alokowania pamieci uzytkownikowi - dodajGest(pamiec, tablica_z_wygladem_gestu), ale wtedy nigdy jej nie zwolnimy, albo jest jeszcze jeden sposob - 
+wystawiamy w interfejsie wskaznik na funkcje ktorej uzywamy do alokowania, a user nam odpowiednia funkcje przypisze pod ten wskaznik - znowu kwestia zwalniania pamieci, ale jezeli juz wystawilismy jeden wskaznik, to czemu nie wystawic drugiego do zwalniania??. Wydaje mi sie jednak, ze oba rozwiazanie dodaja niesamowicie duzo pracy i chyba lepiej byloby albo porzucic dodawanie nowych gestow, albo dodac je na etapie kompilacji, jednak sam nie wiem jak mialoby to wygladac (moze klient wystawia globalny wskaznik, a my w headerze mamy extern??). Jednak summa summarum, jak dla mnie to bez dodawania gestów biblioteka jest wystarczajaca trudna do napisania. Zawsze mozna po prostu zdefiniowac na starcie wiecej gestow. 
+
+Btw. Jak wczytamy gesty? Z pliku nie bardzo, bo nie mamy biblioteki.... Napiszemy jakiś program, konfigurator biblioteki generujący gesty i tworzacy kod, ktory potem bedziemy linkowac??
+
+\section{additional info}
+Patrzyłem jak to działa dla javy i ogólnie wygląda to tak, że tworzysz sobie GestureOverlayView, do niego dodajesz jako listener cos, co implementuje interfejs OnGesturePreformed. Implementator interfejsu ma wywoływaną metodą, która dostaje gest i GestureOverlayView jako parametry. Przykład jest: \href{http://www.vogella.com/articles/AndroidGestures/article.html}{tutaj} Wnioski z tego są takie - przetwarzanie gestów może być jednowątkowe, wczytanie gestów załatwia api z androida.
+
+Poczytałem też troszke jak to działa, ze kod w c, czy tam bardziej c++ jest wykorzystywany w androidzie. Działa to przez jni. Czyli my sobie generujemy nagłówki z kodu javy do C++, w nim korzystamy z środowiska do mapowania typów, i teraz korzystamy z naszej biblioteki w C wywołując jej odpowiednie funkcje. Z czym się to wiąże?? Appke robimy w javie.
+Robimy całe to GestureOverlayView, dodajemy javowego listenera, który jako biblioteke ma coś napisane w javie z użyciem metod natywnych. Jeżeli chodzi o mapowanie gestu do czegoś bardziej w c, to gest zawiera liste przycisniec (GestureStroke), a ono ma tablice punktów i długość.
+
+To o co bardzo trzeba sie pilnować, to to, aby to była biblioteka do przetwarzania gestów - czyli rozpoznawania, a nie do obsługi gestów.
+Odczytanie samemu gestu w c jest chyba niemożliwe.
+
+Pytałeś, czy przetwarzamy gesty na żywo, czy jednak nie. Myśle, że to co napisałem powyżej odpowiada na to pytanie \- binarnie. in gest -> out list of Prediction(nazwa + score);
 \end{document}
