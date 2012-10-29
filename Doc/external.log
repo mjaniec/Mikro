@@ -1,24 +1,21 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.5.1)  28 OCT 2012 09:33
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.10.20)  29 OCT 2012 07:34
 entering extended mode
- restricted \write18 enabled.
- %&-line parsing enabled.
 **external.tex
-(./external.tex
+(C:\Users\Janiec\Documents\GitHub\Mikro\Doc\external.tex
 LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, ge
-rman-x-2011-07-01, ngerman-x-2011-07-01, afrikaans, ancientgreek, ibycus, arabi
-c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
-h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
-h, french, friulan, galician, german, ngerman, swissgerman, monogreek, greek, h
-ungarian, icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, ma
-rathi, oriya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, 
-kurmanji, lao, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nyn
-orsk, polish, portuguese, romanian, romansh, russian, sanskrit, serbian, serbia
-nc, slovak, slovenian, spanish, swedish, turkish, turkmen, ukrainian, uppersorb
-ian, welsh, loaded.
-(/usr/local/texlive/2011/texmf-dist/tex/latex/base/article.cls
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2009-06-19, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, lao, latin, lat
+vian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerm
+an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese, 
+romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
+sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
+senglishmax, welsh, loaded.
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2011/texmf-dist/tex/latex/base/size12.clo
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size12.clo"
 File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -33,13 +30,19 @@ File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/local/texlive/2011/texmf-dist/tex/generic/babel/babel.sty
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
 Package: babel 2008/07/08 v3.8m The Babel package
 
-(/usr/local/texlive/2011/texmf-dist/tex/generic/babel/english.ldf
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
+File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\english.ldf"
 Language: english 2005/03/30 v3.3o English support from the babel system
 
-(/usr/local/texlive/2011/texmf-dist/tex/generic/babel/babel.def
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def"
 File: babel.def 2008/07/08 v3.8m Babel common definitions
 \babel@savecnt=\count87
 \U@D=\dimen103
@@ -48,7 +51,7 @@ File: babel.def 2008/07/08 v3.8m Babel common definitions
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
 )
-(/usr/local/texlive/2011/texmf-dist/tex/generic/babel/polish.ldf
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\polish.ldf"
 Language: polish 2005/03/31 v1.2l Polish support from the babel system
 Package babel Info: Making " an active character on input line 83.
 \pl@left=\dimen104
@@ -56,18 +59,19 @@ Package babel Info: Making " an active character on input line 83.
 \pl@right=\dimen106
 \pl@temp=\dimen107
 ))
-(/usr/local/texlive/2011/texmf-dist/tex/latex/polski/polski.sty
+(C:\Users\Janiec\AppData\Roaming\MiKTeX\2.9\tex\latex\polski\polski.sty
 Package: polski 2008/02/24 v1.3.3 Polish language package
 
 Document language package `polski' v1.3.3 <2008/02/24>
+\l@nohyphenation=\language70
    Switching to Polish text encoding and Polish maths fonts.
-(/usr/local/texlive/2011/texmf-dist/tex/latex/base/ot4enc.def
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ot4enc.def"
 File: ot4enc.def 2005/09/27 v1.99g Standard LaTeX file
 )
 LaTeX Font Info:    Try loading font information for OT4+cmr on input line 346.
 
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/polski/ot4cmr.fd
+(C:\Users\Janiec\AppData\Roaming\MiKTeX\2.9\tex\latex\polski\ot4cmr.fd
 File: ot4cmr.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
@@ -102,19 +106,19 @@ LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/cmsy/b/n --> OMS/plsy/b/n on input line 346.
 )
-(/usr/local/texlive/2011/texmf-dist/tex/latex/base/inputenc.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/base/t1enc.dfu
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
 File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -264,7 +268,7 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/base/ot1enc.dfu
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
 File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -295,7 +299,7 @@ File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/base/omsenc.dfu
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
 File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -321,48 +325,47 @@ Now handling font encoding OT4 ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/graphicx.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/keyval.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks16
 )
-(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/graphics.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/trig.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/graphics.cfg
-File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/pdftex-def/pdftex.def
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count88
 ))
 \Gin@req@height=\dimen108
 \Gin@req@width=\dimen109
 )
-(/usr/local/texlive/2011/texmf-dist/tex/latex/tools/array.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen110
 \extrarowheight=\dimen111
 \NC@list=\toks17
 \extratabsurround=\skip43
 \backup@length=\skip44
-) (./external.aux)
-\openout1 = `external.aux'.
-
+)
+(C:\Users\Janiec\Documents\GitHub\Mikro\Doc\external.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
@@ -377,7 +380,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
 LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
-(/usr/local/texlive/2011/texmf-dist/tex/context/base/supp-pdf.mkii
+
+(C:\Users\Janiec\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count89
 \scratchdimen=\dimen112
@@ -390,307 +394,177 @@ LaTeX Font Info:    ... okay on input line 13.
 \MPnumerator=\count93
 \makeMPintoPDFobject=\count94
 \everyMPtoPDFconversion=\toks19
-) (/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2011/04/22 v0.16 Utilities of pdfTeX for LuaTeX (HO)
-
-(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-)
-(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
-(/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
-
-(/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2010/08/19 v1.1 Managing graphics extensions (HO)
-
-(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2011/04/07 v1.3 Defining keys (HO)
-))
-(/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2010/12/23 v3.10 Keyval support for LaTeX options (HO)
-
-(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2011/04/07 v1.13 Key value parser (HO)
-
-(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2011/02/16 v1.5 Prefix for e-TeX command names (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
-Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 452.
-
-(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
-<data/logo.jpg, id=1, 196.50673pt x 381.41158pt>
+) <data/logo.jpg, id=1, 196.50673pt x 381.41158pt>
 File: data/logo.jpg Graphic file (type jpg)
  <use data/logo.jpg>
 Package pdftex.def Info: data/logo.jpg used on input line 16.
 (pdftex.def)             Requested size: 155.99762pt x 302.79008pt.
-LaTeX Font Info:    Try loading font information for OML+plm on input line 28.
+LaTeX Font Info:    Try loading font information for OML+plm on input line 30.
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/polski/omlplm.fd
+(C:\Users\Janiec\AppData\Roaming\MiKTeX\2.9\tex\latex\polski\omlplm.fd
 File: omlplm.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
-LaTeX Font Info:    Try loading font information for OMS+plsy on input line 28.
+LaTeX Font Info:    Try loading font information for OMS+plsy on input line 30.
 
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/polski/omsplsy.fd
+(C:\Users\Janiec\AppData\Roaming\MiKTeX\2.9\tex\latex\polski\omsplsy.fd
 File: omsplsy.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
-LaTeX Font Info:    Try loading font information for OMX+plex on input line 28.
+LaTeX Font Info:    Try loading font information for OMX+plex on input line 30.
 
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/polski/omxplex.fd
+(C:\Users\Janiec\AppData\Roaming\MiKTeX\2.9\tex\latex\polski\omxplex.fd
 File: omxplex.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <12> on input line 28.
+(Font)              <12> on input line 30.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <8> on input line 28.
+(Font)              <8> on input line 30.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <6> on input line 28.
- [1
+(Font)              <6> on input line 30.
 
-{/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./data/
-logo.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 43--45
+[1
+
+{C:/Users/Janiec/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/J
+aniec/Documents/GitHub/Mikro/Doc/data/logo.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 47--49
 
  []
 
-
-Overfull \hbox (2.74176pt too wide) in paragraph at lines 48--48
-[]|\OT4/cmr/bx/n/12 Uproszczone| 
- []
-
-<data/Tap.png, id=11, 92.59593pt x 173.14688pt>
+<data/Tap.png, id=10, 92.59593pt x 173.14688pt>
 File: data/Tap.png Graphic file (type png)
  <use data/Tap.png>
-Package pdftex.def Info: data/Tap.png used on input line 50.
+Package pdftex.def Info: data/Tap.png used on input line 53.
 (pdftex.def)             Requested size: 27.77898pt x 51.94446pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--54
+Underfull \hbox (badness 10000) in paragraph at lines 56--56
 []|\OT4/cmr/bx/n/12 Double
  []
 
-<data/Double_Tap.png, id=13, 97.11281pt x 179.16937pt>
+<data/Double_Tap.png, id=12, 97.11281pt x 179.16937pt>
 File: data/Double_Tap.png Graphic file (type png)
 
 <use data/Double_Tap.png>
-Package pdftex.def Info: data/Double_Tap.png used on input line 54.
+Package pdftex.def Info: data/Double_Tap.png used on input line 56.
 (pdftex.def)             Requested size: 29.13406pt x 53.75122pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--55
+Underfull \hbox (badness 10000) in paragraph at lines 57--57
 []|\OT4/cmr/m/n/12 Szybkie po-dwójne
  []
 
 
-Underfull \hbox (badness 6592) in paragraph at lines 55--55
+Underfull \hbox (badness 6592) in paragraph at lines 57--57
 \OT4/cmr/m/n/12 stuk-ni¦-cie w multi-
  []
 
-<data/Press.png, id=14, 89.58469pt x 182.93344pt>
+<data/Press.png, id=13, 89.58469pt x 182.93344pt>
 File: data/Press.png Graphic file (type png)
  <use data/Press.png>
-Package pdftex.def Info: data/Press.png used on input line 58.
+Package pdftex.def Info: data/Press.png used on input line 59.
 (pdftex.def)             Requested size: 26.87561pt x 54.88045pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--59
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
 \OT4/cmr/m/n/12 ma-nie palca przez
  []
 
-<data/Move.png, id=15, 85.82062pt x 168.63pt>
+<data/Move.png, id=14, 85.82062pt x 168.63pt>
 File: data/Move.png Graphic file (type png)
  <use data/Move.png>
 Package pdftex.def Info: data/Move.png used on input line 62.
 (pdftex.def)             Requested size: 25.74637pt x 50.58939pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--64
-[]|\OT4/cmr/m/n/12 Up/Down/
+Underfull \hbox (badness 2653) in paragraph at lines 63--63
+[]|\OT4/cmr/m/n/12 Up/Down/Left/Right, Po-
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 64--64
-[]|\OT4/cmr/m/n/12 Wzgl¦dne
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 64--64
-\OT4/cmr/m/n/12 Prze-su-ni¦-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 64--64
-\OT4/cmr/m/n/12 cie(x,y),
- []
-
-<data/Rotate.png, id=16, 140.77594pt x 168.63pt>
+<data/Rotate.png, id=15, 140.77594pt x 168.63pt>
 File: data/Rotate.png Graphic file (type png)
  <use data/Rotate.png>
-Package pdftex.def Info: data/Rotate.png used on input line 66.
+Package pdftex.def Info: data/Rotate.png used on input line 65.
 (pdftex.def)             Requested size: 42.2331pt x 50.58939pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--68
-[]|\OT4/cmr/m/n/12 Obrót
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 68--68
-\OT4/cmr/m/n/12 (liczba),
- []
-
-<data/Flick.png, id=17, 115.18031pt x 159.59625pt>
+<data/Flick.png, id=16, 115.18031pt x 159.59625pt>
 File: data/Flick.png Graphic file (type png)
  <use data/Flick.png>
-Package pdftex.def Info: data/Flick.png used on input line 70.
+Package pdftex.def Info: data/Flick.png used on input line 68.
 (pdftex.def)             Requested size: 34.55435pt x 47.87923pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--72
-[]|\OT4/cmr/m/n/12 Przesuni¦cie
- []
-
-
-Overfull \hbox (3.28401pt too wide) in paragraph at lines 72--72
-\OT4/cmr/m/n/12 wzgl¦dne(x,y),
- []
-
-
-Overfull \hbox (53.80925pt too wide) in paragraph at lines 46--75
+Overfull \hbox (41.40927pt too wide) in paragraph at lines 50--72
 [][] 
  []
 
-[1]
-Overfull \hbox (2.74176pt too wide) in paragraph at lines 78--78
-[]|\OT4/cmr/bx/n/12 Uproszczone| 
- []
-
-<data/Scroll.png, id=21, 97.86563pt x 169.38281pt>
+[1] <data/Scroll.png, id=20, 97.86563pt x 169.38281pt>
 File: data/Scroll.png Graphic file (type png)
  <use data/Scroll.png>
-Package pdftex.def Info: data/Scroll.png used on input line 80.
+Package pdftex.def Info: data/Scroll.png used on input line 76.
 (pdftex.def)             Requested size: 29.35991pt x 50.81523pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 82--82
-[]|\OT4/cmr/m/n/12 Przesuni¦cie
- []
-
-
-Overfull \hbox (3.28401pt too wide) in paragraph at lines 82--82
-\OT4/cmr/m/n/12 wzgl¦dne(x,y),
- []
-
-<data/Zoom.png, id=22, 130.23656pt x 160.34906pt>
+<data/Zoom.png, id=21, 130.23656pt x 160.34906pt>
 File: data/Zoom.png Graphic file (type png)
  <use data/Zoom.png>
-Package pdftex.def Info: data/Zoom.png used on input line 84.
+Package pdftex.def Info: data/Zoom.png used on input line 79.
 (pdftex.def)             Requested size: 39.07126pt x 48.10509pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 85--85
-[]|\OT4/cmr/m/n/12 Przybli»enie palca
+Underfull \hbox (badness 10000) in paragraph at lines 80--80
+[]|\OT4/cmr/m/n/12 In/Out, Przy-bli-»e-nie
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 86--86
-[]|\OT4/cmr/m/n/12 Wzgl¦dne
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 86--86
-\OT4/cmr/m/n/12 prze-miesz-cze-
- []
-
-<data/Two_Finger_Scroll.png, id=23, 92.59593pt x 167.87718pt>
+<data/Two_Finger_Scroll.png, id=22, 92.59593pt x 167.87718pt>
 File: data/Two_Finger_Scroll.png Graphic file (type png)
 
 <use data/Two_Finger_Scroll.png>
-Package pdftex.def Info: data/Two_Finger_Scroll.png used on input line 88.
+Package pdftex.def Info: data/Two_Finger_Scroll.png used on input line 82.
 (pdftex.def)             Requested size: 27.77898pt x 50.36354pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 89--89
+Underfull \hbox (badness 10000) in paragraph at lines 83--83
 []|\OT4/cmr/m/n/12 Przesuni¦cie dwóch
  []
 
 
-Underfull \hbox (badness 1097) in paragraph at lines 89--89
+Underfull \hbox (badness 1097) in paragraph at lines 83--83
 \OT4/cmr/m/n/12 pal-ców rów-no-le-gle w
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--90
-[]|\OT4/cmr/m/n/12 Wzgl¦dne
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 90--90
-\OT4/cmr/m/n/12 prze-miesz-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 90--90
-\OT4/cmr/m/n/12 cze-nie(x,y)
- []
-
-
-Underfull \hbox (badness 3138) in paragraph at lines 90--90
-\OT4/cmr/m/n/12 ‘ro-dek miej-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 90--90
-\OT4/cmr/m/n/12 sca mi¦-dzy
- []
-
-
-Overfull \hbox (53.80925pt too wide) in paragraph at lines 76--93
+Overfull \hbox (41.40927pt too wide) in paragraph at lines 73--86
 [][] 
  []
 
-[2 <./data/Tap.png> <./data/Double_Tap.png> <./data/Press.png> <./data/Move.png
-> <./data/Rotate.png> <./data/Flick.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 97.
+[2 <C:/Users/Janiec/Documents/GitHub/Mikro/Doc/data/Tap.png> <C:/Users/Janiec/D
+ocuments/GitHub/Mikro/Doc/data/Double_Tap.png> <C:/Users/Janiec/Documents/GitHu
+b/Mikro/Doc/data/Press.png> <C:/Users/Janiec/Documents/GitHub/Mikro/Doc/data/Mo
+ve.png> <C:/Users/Janiec/Documents/GitHub/Mikro/Doc/data/Rotate.png> <C:/Users/
+Janiec/Documents/GitHub/Mikro/Doc/data/Flick.png>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 90.
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/base/omscmr.fd
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 97.
- [3 <./data/Scroll.png> <./data/Zoom.png> <./data/Two_Finger_Scroll.png>] [4] [
-5] (./external.aux) ) 
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 90.
+ [3 <C:/Users/Janiec/Documents/GitHub/Mikro/Doc/data/Scroll.png> <C:/Users/Jani
+ec/Documents/GitHub/Mikro/Doc/data/Zoom.png> <C:/Users/Janiec/Documents/GitHub/
+Mikro/Doc/data/Two_Finger_Scroll.png>] [4] (C:\Users\Janiec\Documents\GitHub\Mi
+kro\Doc\external.aux) ) 
 Here is how much of TeX's memory you used:
- 2389 strings out of 493610
- 32401 string characters out of 3142405
- 94147 words of memory out of 3000000
- 5639 multiletter control sequences out of 15000+200000
+ 2063 strings out of 494045
+ 26385 string characters out of 3148383
+ 83189 words of memory out of 3000000
+ 5326 multiletter control sequences out of 15000+200000
  13458 words of font info for 37 fonts, out of 3000000 for 9000
- 831 hyphenation exceptions out of 8191
- 37i,12n,24p,783b,213s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/local/texlive/2011/texmf-dist/fonts/enc/dvips/pl/plr
-m.enc}{/usr/local/texlive/2011/texmf-dist/fonts/enc/dvips/pl/plit.enc}{/usr/loc
-al/texlive/2011/texmf-dist/fonts/enc/dvips/pl/plsc.enc}</usr/local/texlive/2011
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2011/
-texmf-dist/fonts/type1/public/pl/plbx12.pfb></usr/local/texlive/2011/texmf-dist
-/fonts/type1/public/pl/plcsc10.pfb></usr/local/texlive/2011/texmf-dist/fonts/ty
-pe1/public/pl/plr12.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/
-pl/plti12.pfb>
-Output written on external.pdf (6 pages, 225721 bytes).
+ 715 hyphenation exceptions out of 8191
+ 27i,12n,24p,664b,211s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Janiec/AppData/Roaming/MiKTeX/2.9/fonts/enc/dv
+ips/pl/plrm.enc}{C:/Users/Janiec/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/pl/
+plit.enc}{C:/Users/Janiec/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/pl/plsc.en
+c}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Us
+ers/Janiec/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/pl/plbx12.pfb><C:/User
+s/Janiec/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/pl/plcsc10.pfb><C:/Users
+/Janiec/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/pl/plr12.pfb><C:/Users/Ja
+niec/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/pl/plti12.pfb>
+Output written on external.pdf (5 pages, 257595 bytes).
 PDF statistics:
- 66 PDF objects out of 1000 (max. 8388607)
- 33 compressed objects within 1 object stream
+ 61 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
