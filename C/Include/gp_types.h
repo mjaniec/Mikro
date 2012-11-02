@@ -13,8 +13,9 @@ typedef char gpChar;
 typedef char* gpString;
 typedef short gpFloat;
 
-extern const gpBool gpTrue;
-extern const gpBool gpFalse;
+extern const gpBool true;
+extern const gpBool false;
+extern const gpVoid* null;
 
 extern const long GP_FLOAT_BASE;
 

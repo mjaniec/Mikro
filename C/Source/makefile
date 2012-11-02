@@ -1,13 +1,14 @@
 CC=gcc
-CFLAGS=-I"../include" -D${MODE} -std=c99
+CFLAGS=-I"../include" -D${MODE} -std=c99  -Wno-main -Wall
 
-all:	clean debug
+all:	debug
 clean:;	rm -f *.o *.exe
 
-debug:;	make _all MODE=DEBUG
-release:;make _all
+debug:;	 make _all MODE=DEBUG
+release:;	make _all MODE=UNCHECKED
 
-_all:	gp_example
+_all:	clean gp_example
+
 gp_example:gp_error.o gp_types.o gp_error_codes.o
 gp_error.o:gp_error_codes.o
 

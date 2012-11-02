@@ -1,9 +1,9 @@
 #include "gp_types.h"
-const gpBool gpTrue=1;
-const gpBool gpFalse=0;
 
 const long GP_FLOAT_BASE=10000;
-
+const gpBool true=1;
+const gpBool false=0;
+const gpVoid* null=((gpVoid*)0);
 
 inline gpFloat gpMul(gpFloat a, gpFloat b){
 	long A=a, B=b;

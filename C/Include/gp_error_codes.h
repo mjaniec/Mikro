@@ -3,3 +3,4 @@
 #define GP_EOK 0
 #define GP_EARG 1
 #define GP_EINDEX 2
+#define GP_MYERROR 3

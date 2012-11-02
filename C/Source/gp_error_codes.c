@@ -7,5 +7,6 @@ gpString GP_ERRSTR[]={
 "No error",
 "Bad argument excetion",
 "Index out of boud exception",
+"An example error",
 
 };
