@@ -1,0 +1,13 @@
+CC=gcc
+CFLAGS=-I"../../Include/Base" -D${MODE} -std=c99  -Wno-main -Wall
+
+all: gp_example.exe
+clean:;	rm -f *.o *.exe
+
+debug:;	 make _all MODE=DEBUG; 
+release:;	make _all MODE=UNCHECKED;
+
+gp_example.exe: gp_error.o gp_types.o gp_error_codes.o
+	gcc -o $@ $^
+	
+gp_error.o: gp_error_codes.c

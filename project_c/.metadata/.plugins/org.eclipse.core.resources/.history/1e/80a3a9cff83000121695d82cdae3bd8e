@@ -1,0 +1,6 @@
+CU_TestInfo test_array1[] = {
+  { "testname1", test_func1 },
+  { "testname2", test_func2 },
+  { "testname3", test_func3 },
+  CU_TEST_INFO_NULL,
+};

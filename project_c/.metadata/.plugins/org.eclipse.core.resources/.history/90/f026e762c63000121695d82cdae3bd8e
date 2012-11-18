@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+#include <CuTest.h>
+
+CuSuite* CuGetSuite();
+CuSuite* CuStringGetSuite();
+
+void AddToSuite(CuSuite* suite)
+{
+	//CuSuiteAddSuite(suite, CuGetSuite());
+	//CuSuiteAddSuite(suite, CuStringGetSuite());
+}
+
+void RunAllTests(void)
+{
+	CuString *output = CuStringNew();
+	CuSuite* suite = CuSuiteNew();
+
+	AddToSuite(suite);
+
+	CuSuiteRun(suite);
+	CuSuiteSummary(suite, output);
+	CuSuiteDetails(suite, output);
+	printf("%s\n", output->buffer);
+}
+
+int main(void)
+{
+	RunAllTests();
+}

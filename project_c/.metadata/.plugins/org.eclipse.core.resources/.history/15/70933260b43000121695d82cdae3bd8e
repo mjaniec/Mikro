@@ -1,0 +1,12 @@
+CC=gcc
+CFLAGS=-D${MODE} -std=c99  -Wno-main -Wall
+
+all:	debug
+clean:;	rm -f *.o *.exe
+
+debug:;	 make _all MODE=DEBUG; 
+release:;	make _all MODE=UNCHECKED;
+
+_all: clean generator
+
+generator: ../../Source/Base/generator.c

@@ -1,0 +1,1 @@
+all:;./generator.exe; cd Source && make && mv gp_example.exe ..

@@ -1,0 +1,62 @@
+#include <CUnit.h>
+#include <Basic.h>
+#include <TestDB.h>
+#include <gp.h>
+#include <gp_Alloc.h>
+
+
+void shouldntAllocateBecauseOfMaxSize()
+{
+	gpVoid* mem = gpAlloc_alloc(gp_MAX_MEM);
+	CU_ASSERT_PTR_NULL(mem);
+}
+
+void shouldntAllocateBecauseOfMaxSizeInTwoAllocations()
+{
+	gpVoid* mem = gpAlloc_alloc(gp_MAX_MEM / 2);
+	CU_ASSERT_PTR_NOT_NULL(mem);
+
+	gpVoid* mem = gpAlloc_alloc(gp_MAX_MEM / 2);
+	CU_ASSERT_PTR_NULL(mem);
+}
+
+void shouldntAllocateBecauseOfSizeBelowZero()
+{
+	gpVoid* mem = gpAlloc_alloc(-1);
+	CU_ASSERT_PTR_NULL(mem);
+}
+
+void shouldAllocate()
+{
+	gpVoid* mem = gpAlloc_alloc(gp_MAX_MEM - sizeof(gpInt));
+	CU_ASSERT_PTR_NOT_NULL(mem);
+}
+
+void shouldAllocateInTwoAllocations()
+{
+	gpVoid* mem = gpAlloc_alloc(gp_MAX_MEM / 2 - sizeof(gpInt));
+	CU_ASSERT_PTR_NOT_NULL(mem);
+
+	gpVoid* mem = gpAlloc_alloc(gp_MAX_MEM / 2 - sizeof(gpInt));
+	CU_ASSERT_PTR_NOT_NULL(mem);
+}
+
+void shouldAllocateInTwoAllocationsBecauseOfFree()
+{
+	gpVoid* mem = gpAlloc_alloc(gp_MAX_MEM - sizeof(gpInt));
+	CU_ASSERT_PTR_NOT_NULL(mem);
+	gpAlloc_free(mem);
+
+	gpVoid* mem = gpAlloc_alloc(gp_MAX_MEM - sizeof(gpInt));
+	CU_ASSERT_PTR_NOT_NULL(mem);
+}
+
+CU_TestInfo gp_allocTests[] = {
+		TEST_ENTRY(shouldntAllocateBecauseOfMaxSize),
+		TEST_ENTRY(shouldntAllocateBecauseOfMaxSizeInTwoAllocations),
+		TEST_ENTRY(shouldntAllocateBecauseOfSizeBelowZero),
+		TEST_ENTRY(shouldAllocate),
+		TEST_ENTRY(shouldAllocateInTwoAllocations),
+		TEST_ENTRY(shouldAllocateBecauseOfFree),
+  CU_TEST_INFO_NULL
+};

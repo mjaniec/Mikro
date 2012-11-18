@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+environment/project/cdt.managedbuild.config.gnu.cygwin.exe.debug.541357771/MODE/delimiter=;
+environment/project/cdt.managedbuild.config.gnu.cygwin.exe.debug.541357771/MODE/operation=append
+environment/project/cdt.managedbuild.config.gnu.cygwin.exe.debug.541357771/MODE/value=DEBUG
+environment/project/cdt.managedbuild.config.gnu.cygwin.exe.debug.541357771/append=true
+environment/project/cdt.managedbuild.config.gnu.cygwin.exe.debug.541357771/appendContributed=true
+environment/project/cdt.managedbuild.config.gnu.cygwin.exe.release.1649330319/MODE/delimiter=;
+environment/project/cdt.managedbuild.config.gnu.cygwin.exe.release.1649330319/MODE/operation=append
+environment/project/cdt.managedbuild.config.gnu.cygwin.exe.release.1649330319/MODE/value=DEBUG
+environment/project/cdt.managedbuild.config.gnu.cygwin.exe.release.1649330319/append=true
+environment/project/cdt.managedbuild.config.gnu.cygwin.exe.release.1649330319/appendContributed=true

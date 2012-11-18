@@ -1,0 +1,11 @@
+14:50:58 **** Incremental Build of configuration Debug for project Math ****
+make all 
+./generator.exe; cd Source && make && mv gp_example.exe ..
+/bin/sh: ./generator.exe: No such file or directory
+make[1]: *** No targets specified and no makefile found.  Stop.
+make[1]: Entering directory `/d/Common/projects/mikro/Math/Source'
+make[1]: Leaving directory `/d/Common/projects/mikro/Math/Source'
+make: *** [all] Error 2
+
+14:50:58 Build Finished (took 225ms)
+

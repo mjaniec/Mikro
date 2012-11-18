@@ -1,0 +1,6 @@
+#include <TestDB.h>
+
+CU_TestInfo allocTests[] = {
+  { "testname1", test_func1 },
+  CU_TEST_INFO_NULL,
+};

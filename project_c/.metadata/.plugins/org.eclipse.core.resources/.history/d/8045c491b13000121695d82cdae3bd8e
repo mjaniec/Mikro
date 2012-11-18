@@ -1,0 +1,4 @@
+Source/Base/gp_error_codes.d: ../Source/Base/gp_error_codes.c \
+ D:\Common\projects\mikro\BaseProject\Include/gp_types.h
+
+D:\Common\projects\mikro\BaseProject\Include/gp_types.h:

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;mTwoPane&apos; in &apos;com.example.test.ItemListActivity&apos; to &apos;mTwoPanem&apos;&#x0D;&#x0A;- Original project: &apos;test&apos;&#x0D;&#x0A;- Original element: &apos;com.example.test.ItemListActivity.mTwoPane&apos;&#x0D;&#x0A;- Renamed element: &apos;com.example.test.ItemListActivity.mTwoPanem&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;mTwoPane&apos;" flags="589826" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;com.example.test{ItemListActivity.java[ItemListActivity^mTwoPane" name="mTwoPanem" references="true" setter="false" stamp="1352644279469" textual="false" version="1.0"/>
+</session>

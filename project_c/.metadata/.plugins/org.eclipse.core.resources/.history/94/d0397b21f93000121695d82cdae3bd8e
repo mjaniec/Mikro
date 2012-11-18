@@ -1,0 +1,31 @@
+#include <CUnit.h>
+
+
+extern CU_SuiteInfo suites[];
+
+
+
+
+
+
+
+
+
+int main()
+{
+   if (CUE_SUCCESS != CU_initialize_registry())
+   {
+      return CU_get_error();
+   }
+
+   if(CUE_SUCCESS != CU_register_suites(suites))
+   {
+	   CU_cleanup_registry();
+	   return CU_get_error();
+   }
+
+   CU_basic_set_mode(3);
+   CU_basic_run_tests();
+   CU_cleanup_registry();
+   return CU_get_error();
+}

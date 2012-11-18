@@ -1,0 +1,18 @@
+#include <CUnit.h>
+#include <Basic.h>
+#include <TestDB.h>
+#include <gp.h>
+#include <gp_Alloc.h>
+
+
+void shouldntAllocateBecauseOfSize()
+{
+	gpVoid* mem = gp_
+
+}
+
+CU_TestInfo gp_allocTests[] = {
+		TEST_ENTRY(testFPRINTF),
+		TEST_ENTRY(testFREAD),
+  CU_TEST_INFO_NULL
+};

@@ -1,0 +1,372 @@
+00:43:22 **** Incremental Build of configuration Debug for project BaseProject ****
+make all 
+mkdir -p D:\Common\projects\mikro\BaseProject\Output
+for dir in Include Source; do \
+		make all -C $dir; \
+	done
+make[1]: Entering directory `/d/Common/projects/mikro/BaseProject/Include'
+for dir in Base; do \
+		make all -C $dir; \
+	done
+make[2]: Entering directory `/d/Common/projects/mikro/BaseProject/Include/Base'
+for dir in Generator; do \
+		make all -C $dir; \
+	done
+make[3]: Entering directory `/d/Common/projects/mikro/BaseProject/Include/Base/Generator'
+rm -f *.o *.exe
+gcc -DDEBUG -g -std=c99  -Wno-main -Wall    generator.c   -o generator
+./generator.exe
+donemake[3]: Leaving directory `/d/Common/projects/mikro/BaseProject/Include/Base/Generator'
+make[2]: Leaving directory `/d/Common/projects/mikro/BaseProject/Include/Base'
+make[1]: Leaving directory `/d/Common/projects/mikro/BaseProject/Include'
+make[1]: Entering directory `/d/Common/projects/mikro/BaseProject/Source'
+for dir in Base Math Alloc; do \
+		make all -C $dir; \
+	done
+make[2]: Entering directory `/d/Common/projects/mikro/BaseProject/Source/Base'
+gcc -g -I"../../Include/Base" -DDEBUG -std=c99  -Wno-main -Wall -o "D:\Common\projects\mikro\BaseProject\Output\gp_example" gp_error.o gp_types.o gp_error_codes.o gp_example.o
+ar -r D:\Common\projects\mikro\BaseProject\Output\libGPBase.a gp_error.o gp_types.o gp_error_codes.o
+make[2]: Leaving directory `/d/Common/projects/mikro/BaseProject/Source/Base'
+make[2]: Entering directory `/d/Common/projects/mikro/BaseProject/Source/Math'
+rm -f *.o *.exe *.a
+gcc -c -g -I"D:\Common\projects\mikro\BaseProject\Include/Base" -I"D:\Common\projects\mikro\BaseProject\Include/Math" -DDEBUG -std=c99  -Wno-main -Wall -o gp_Math.o gp_Math.c
+ar -r D:\Common\projects\mikro\BaseProject\Output\libGPMath.a gp_Math.o
+make[2]: Leaving directory `/d/Common/projects/mikro/BaseProject/Source/Math'
+make[2]: Entering directory `/d/Common/projects/mikro/BaseProject/Source/Alloc'
+rm -f *.o *.exe *.a
+gcc -c -g -I"D:\Common\projects\mikro\BaseProject\Include/Base" -I"D:\Common\projects\mikro\BaseProject\Include/Math" -I"D:\Common\projects\mikro\BaseProject\Include/Alloc" -DDEBUG -std=c99  -Wno-main -Wall -o gp_Alloc.o gp_Alloc.c
+gp_Alloc.c: In function 'gpAlloc_alloc':
+gp_Alloc.c:36:3: warning: return discards 'const' qualifier from pointer target type [enabled by default]
+gp_Alloc.c:46:3: warning: return discards 'const' qualifier from pointer target type [enabled by default]
+gp_Alloc.c: In function 'nearestFreeSpace':
+gp_Alloc.c:55:22: warning: initialization from incompatible pointer type [enabled by default]
+gp_Alloc.c:56:2: warning: passing argument 3 of 'freeSpaceInRange' from incompatible pointer type [enabled by default]
+gp_Alloc.c:8:17: note: expected 'gpUByte *' but argument is of type 'gpInt *'
+gp_Alloc.c:56:21: warning: initialization from incompatible pointer type [enabled by default]
+gp_Alloc.c:60:3: warning: return from incompatible pointer type [enabled by default]
+gp_Alloc.c: In function 'freeSpaceInRange':
+gp_Alloc.c:94:2: warning: return discards 'const' qualifier from pointer target type [enabled by default]
+ar -r D:\Common\projects\mikro\BaseProject\Output\libGPAlloc.a gp_Alloc.o
+make[2]: Leaving directory `/d/Common/projects/mikro/BaseProject/Source/Alloc'
+make[1]: Leaving directory `/d/Common/projects/mikro/BaseProject/Source'
+00:43:25 **** Incremental Build of configuration Debug for project Tests ****
+Info: Internal Builder is used for build
+gcc "-LD:\\Common\\projects\\mikro\\Tests\\lib" "-LD:\\Common\\projects\\mikro\\BaseProject\\Output" -o Tests.exe "Source\\Suites.o" "Source\\Alloc\\gpAlloc.o" "Source\\AllTests.o" -lcunit -lGPAlloc -lGPMath -lGPBase 
+00:43:32 **** Incremental Build of configuration Debug for project BaseProject ****
+make all 
+mkdir -p D:\Common\projects\mikro\BaseProject\Output
+for dir in Include Source; do \
+		make all -C $dir; \
+	done
+make[1]: Entering directory `/d/Common/projects/mikro/BaseProject/Include'
+for dir in Base; do \
+		make all -C $dir; \
+	done
+make[2]: Entering directory `/d/Common/projects/mikro/BaseProject/Include/Base'
+for dir in Generator; do \
+		make all -C $dir; \
+	done
+make[3]: Entering directory `/d/Common/projects/mikro/BaseProject/Include/Base/Generator'
+rm -f *.o *.exe
+gcc -DDEBUG -g -std=c99  -Wno-main -Wall    generator.c   -o generator
+./generator.exe
+donemake[3]: Leaving directory `/d/Common/projects/mikro/BaseProject/Include/Base/Generator'
+make[2]: Leaving directory `/d/Common/projects/mikro/BaseProject/Include/Base'
+make[1]: Leaving directory `/d/Common/projects/mikro/BaseProject/Include'
+make[1]: Entering directory `/d/Common/projects/mikro/BaseProject/Source'
+for dir in Base Math Alloc; do \
+		make all -C $dir; \
+	done
+make[2]: Entering directory `/d/Common/projects/mikro/BaseProject/Source/Base'
+gcc -g -I"../../Include/Base" -DDEBUG -std=c99  -Wno-main -Wall -o "D:\Common\projects\mikro\BaseProject\Output\gp_example" gp_error.o gp_types.o gp_error_codes.o gp_example.o
+ar -r D:\Common\projects\mikro\BaseProject\Output\libGPBase.a gp_error.o gp_types.o gp_error_codes.o
+make[2]: Leaving directory `/d/Common/projects/mikro/BaseProject/Source/Base'
+make[2]: Entering directory `/d/Common/projects/mikro/BaseProject/Source/Math'
+rm -f *.o *.exe *.a
+gcc -c -g -I"D:\Common\projects\mikro\BaseProject\Include/Base" -I"D:\Common\projects\mikro\BaseProject\Include/Math" -DDEBUG -std=c99  -Wno-main -Wall -o gp_Math.o gp_Math.c
+ar -r D:\Common\projects\mikro\BaseProject\Output\libGPMath.a gp_Math.o
+make[2]: Leaving directory `/d/Common/projects/mikro/BaseProject/Source/Math'
+make[2]: Entering directory `/d/Common/projects/mikro/BaseProject/Source/Alloc'
+rm -f *.o *.exe *.a
+gcc -c -g -I"D:\Common\projects\mikro\BaseProject\Include/Base" -I"D:\Common\projects\mikro\BaseProject\Include/Math" -I"D:\Common\projects\mikro\BaseProject\Include/Alloc" -DDEBUG -std=c99  -Wno-main -Wall -o gp_Alloc.o gp_Alloc.c
+gp_Alloc.c: In function 'gpAlloc_alloc':
+gp_Alloc.c:36:3: warning: return discards 'const' qualifier from pointer target type [enabled by default]
+gp_Alloc.c:46:3: warning: return discards 'const' qualifier from pointer target type [enabled by default]
+gp_Alloc.c: In function 'nearestFreeSpace':
+gp_Alloc.c:55:22: warning: initialization from incompatible pointer type [enabled by default]
+gp_Alloc.c:56:2: warning: passing argument 3 of 'freeSpaceInRange' from incompatible pointer type [enabled by default]
+gp_Alloc.c:8:17: note: expected 'gpUByte *' but argument is of type 'gpInt *'
+gp_Alloc.c:56:21: warning: initialization from incompatible pointer type [enabled by default]
+gp_Alloc.c:60:3: warning: return from incompatible pointer type [enabled by default]
+gp_Alloc.c: In function 'freeSpaceInRange':
+gp_Alloc.c:94:2: warning: return discards 'const' qualifier from pointer target type [enabled by default]
+ar -r D:\Common\projects\mikro\BaseProject\Output\libGPAlloc.a gp_Alloc.o
+make[2]: Leaving directory `/d/Common/projects/mikro/BaseProject/Source/Alloc'
+make[1]: Leaving directory `/d/Common/projects/mikro/BaseProject/Source'
+00:43:34 **** Incremental Build of configuration Debug for project Tests ****
+Info: Internal Builder is used for build
+gcc "-LD:\\Common\\projects\\mikro\\Tests\\lib" "-LD:\\Common\\projects\\mikro\\BaseProject\\Output" -o Tests.exe "Source\\Suites.o" "Source\\Alloc\\gpAlloc.o" "Source\\AllTests.o" -lcunit -lGPAlloc -lGPMath -lGPBase 
+00:43:42 **** Incremental Build of configuration Debug for project BaseProject ****
+make all 
+mkdir -p D:\Common\projects\mikro\BaseProject\Output
+for dir in Include Source; do \
+		make all -C $dir; \
+	done
+make[1]: Entering directory `/d/Common/projects/mikro/BaseProject/Include'
+for dir in Base; do \
+		make all -C $dir; \
+	done
+make[2]: Entering directory `/d/Common/projects/mikro/BaseProject/Include/Base'
+for dir in Generator; do \
+		make all -C $dir; \
+	done
+make[3]: Entering directory `/d/Common/projects/mikro/BaseProject/Include/Base/Generator'
+rm -f *.o *.exe
+gcc -DDEBUG -g -std=c99  -Wno-main -Wall    generator.c   -o generator
+./generator.exe
+donemake[3]: Leaving directory `/d/Common/projects/mikro/BaseProject/Include/Base/Generator'
+make[2]: Leaving directory `/d/Common/projects/mikro/BaseProject/Include/Base'
+make[1]: Leaving directory `/d/Common/projects/mikro/BaseProject/Include'
+make[1]: Entering directory `/d/Common/projects/mikro/BaseProject/Source'
+for dir in Base Math Alloc; do \
+		make all -C $dir; \
+	done
+make[2]: Entering directory `/d/Common/projects/mikro/BaseProject/Source/Base'
+gcc -g -I"../../Include/Base" -DDEBUG -std=c99  -Wno-main -Wall -o "D:\Common\projects\mikro\BaseProject\Output\gp_example" gp_error.o gp_types.o gp_error_codes.o gp_example.o
+ar -r D:\Common\projects\mikro\BaseProject\Output\libGPBase.a gp_error.o gp_types.o gp_error_codes.o
+make[2]: Leaving directory `/d/Common/projects/mikro/BaseProject/Source/Base'
+make[2]: Entering directory `/d/Common/projects/mikro/BaseProject/Source/Math'
+rm -f *.o *.exe *.a
+gcc -c -g -I"D:\Common\projects\mikro\BaseProject\Include/Base" -I"D:\Common\projects\mikro\BaseProject\Include/Math" -DDEBUG -std=c99  -Wno-main -Wall -o gp_Math.o gp_Math.c
+ar -r D:\Common\projects\mikro\BaseProject\Output\libGPMath.a gp_Math.o
+make[2]: Leaving directory `/d/Common/projects/mikro/BaseProject/Source/Math'
+make[2]: Entering directory `/d/Common/projects/mikro/BaseProject/Source/Alloc'
+rm -f *.o *.exe *.a
+gcc -c -g -I"D:\Common\projects\mikro\BaseProject\Include/Base" -I"D:\Common\projects\mikro\BaseProject\Include/Math" -I"D:\Common\projects\mikro\BaseProject\Include/Alloc" -DDEBUG -std=c99  -Wno-main -Wall -o gp_Alloc.o gp_Alloc.c
+gp_Alloc.c: In function 'gpAlloc_alloc':
+gp_Alloc.c:36:3: warning: return discards 'const' qualifier from pointer target type [enabled by default]
+gp_Alloc.c:46:3: warning: return discards 'const' qualifier from pointer target type [enabled by default]
+gp_Alloc.c: In function 'nearestFreeSpace':
+gp_Alloc.c:55:22: warning: initialization from incompatible pointer type [enabled by default]
+gp_Alloc.c:56:2: warning: passing argument 3 of 'freeSpaceInRange' from incompatible pointer type [enabled by default]
+gp_Alloc.c:8:17: note: expected 'gpUByte *' but argument is of type 'gpInt *'
+gp_Alloc.c:56:21: warning: initialization from incompatible pointer type [enabled by default]
+gp_Alloc.c:60:3: warning: return from incompatible pointer type [enabled by default]
+gp_Alloc.c: In function 'freeSpaceInRange':
+gp_Alloc.c:94:2: warning: return discards 'const' qualifier from pointer target type [enabled by default]
+ar -r D:\Common\projects\mikro\BaseProject\Output\libGPAlloc.a gp_Alloc.o
+make[2]: Leaving directory `/d/Common/projects/mikro/BaseProject/Source/Alloc'
+make[1]: Leaving directory `/d/Common/projects/mikro/BaseProject/Source'
+00:43:44 **** Incremental Build of configuration Debug for project BaseProject ****
+make all 
+mkdir -p D:\Common\projects\mikro\BaseProject\Output
+for dir in Include Source; do \
+		make all -C $dir; \
+	done
+make[1]: Entering directory `/d/Common/projects/mikro/BaseProject/Include'
+for dir in Base; do \
+		make all -C $dir; \
+	done
+make[2]: Entering directory `/d/Common/projects/mikro/BaseProject/Include/Base'
+for dir in Generator; do \
+		make all -C $dir; \
+	done
+make[3]: Entering directory `/d/Common/projects/mikro/BaseProject/Include/Base/Generator'
+rm -f *.o *.exe
+gcc -DDEBUG -g -std=c99  -Wno-main -Wall    generator.c   -o generator
+./generator.exe
+donemake[3]: Leaving directory `/d/Common/projects/mikro/BaseProject/Include/Base/Generator'
+make[2]: Leaving directory `/d/Common/projects/mikro/BaseProject/Include/Base'
+make[1]: Leaving directory `/d/Common/projects/mikro/BaseProject/Include'
+make[1]: Entering directory `/d/Common/projects/mikro/BaseProject/Source'
+for dir in Base Math Alloc; do \
+		make all -C $dir; \
+	done
+make[2]: Entering directory `/d/Common/projects/mikro/BaseProject/Source/Base'
+gcc -g -I"../../Include/Base" -DDEBUG -std=c99  -Wno-main -Wall -o "D:\Common\projects\mikro\BaseProject\Output\gp_example" gp_error.o gp_types.o gp_error_codes.o gp_example.o
+ar -r D:\Common\projects\mikro\BaseProject\Output\libGPBase.a gp_error.o gp_types.o gp_error_codes.o
+make[2]: Leaving directory `/d/Common/projects/mikro/BaseProject/Source/Base'
+make[2]: Entering directory `/d/Common/projects/mikro/BaseProject/Source/Math'
+rm -f *.o *.exe *.a
+gcc -c -g -I"D:\Common\projects\mikro\BaseProject\Include/Base" -I"D:\Common\projects\mikro\BaseProject\Include/Math" -DDEBUG -std=c99  -Wno-main -Wall -o gp_Math.o gp_Math.c
+ar -r D:\Common\projects\mikro\BaseProject\Output\libGPMath.a gp_Math.o
+make[2]: Leaving directory `/d/Common/projects/mikro/BaseProject/Source/Math'
+make[2]: Entering directory `/d/Common/projects/mikro/BaseProject/Source/Alloc'
+rm -f *.o *.exe *.a
+gcc -c -g -I"D:\Common\projects\mikro\BaseProject\Include/Base" -I"D:\Common\projects\mikro\BaseProject\Include/Math" -I"D:\Common\projects\mikro\BaseProject\Include/Alloc" -DDEBUG -std=c99  -Wno-main -Wall -o gp_Alloc.o gp_Alloc.c
+gp_Alloc.c: In function 'gpAlloc_alloc':
+gp_Alloc.c:36:3: warning: return discards 'const' qualifier from pointer target type [enabled by default]
+gp_Alloc.c:46:3: warning: return discards 'const' qualifier from pointer target type [enabled by default]
+gp_Alloc.c: In function 'nearestFreeSpace':
+gp_Alloc.c:55:22: warning: initialization from incompatible pointer type [enabled by default]
+gp_Alloc.c:56:2: warning: passing argument 3 of 'freeSpaceInRange' from incompatible pointer type [enabled by default]
+gp_Alloc.c:8:17: note: expected 'gpUByte *' but argument is of type 'gpInt *'
+gp_Alloc.c:56:21: warning: initialization from incompatible pointer type [enabled by default]
+gp_Alloc.c:60:3: warning: return from incompatible pointer type [enabled by default]
+gp_Alloc.c: In function 'freeSpaceInRange':
+gp_Alloc.c:94:2: warning: return discards 'const' qualifier from pointer target type [enabled by default]
+ar -r D:\Common\projects\mikro\BaseProject\Output\libGPAlloc.a gp_Alloc.o
+make[2]: Leaving directory `/d/Common/projects/mikro/BaseProject/Source/Alloc'
+make[1]: Leaving directory `/d/Common/projects/mikro/BaseProject/Source'
+00:43:46 **** Incremental Build of configuration Debug for project Tests ****
+Info: Internal Builder is used for build
+gcc "-LD:\\Common\\projects\\mikro\\Tests\\lib" "-LD:\\Common\\projects\\mikro\\BaseProject\\Output" -o Tests.exe "Source\\Suites.o" "Source\\Alloc\\gpAlloc.o" "Source\\AllTests.o" -lcunit -lGPAlloc -lGPMath -lGPBase 
+00:43:56 **** Incremental Build of configuration Debug for project BaseProject ****
+make all 
+mkdir -p D:\Common\projects\mikro\BaseProject\Output
+for dir in Include Source; do \
+		make all -C $dir; \
+	done
+make[1]: Entering directory `/d/Common/projects/mikro/BaseProject/Include'
+for dir in Base; do \
+		make all -C $dir; \
+	done
+make[2]: Entering directory `/d/Common/projects/mikro/BaseProject/Include/Base'
+for dir in Generator; do \
+		make all -C $dir; \
+	done
+make[3]: Entering directory `/d/Common/projects/mikro/BaseProject/Include/Base/Generator'
+rm -f *.o *.exe
+gcc -DDEBUG -g -std=c99  -Wno-main -Wall    generator.c   -o generator
+./generator.exe
+donemake[3]: Leaving directory `/d/Common/projects/mikro/BaseProject/Include/Base/Generator'
+make[2]: Leaving directory `/d/Common/projects/mikro/BaseProject/Include/Base'
+make[1]: Leaving directory `/d/Common/projects/mikro/BaseProject/Include'
+make[1]: Entering directory `/d/Common/projects/mikro/BaseProject/Source'
+for dir in Base Math Alloc; do \
+		make all -C $dir; \
+	done
+make[2]: Entering directory `/d/Common/projects/mikro/BaseProject/Source/Base'
+gcc -g -I"../../Include/Base" -DDEBUG -std=c99  -Wno-main -Wall -o "D:\Common\projects\mikro\BaseProject\Output\gp_example" gp_error.o gp_types.o gp_error_codes.o gp_example.o
+ar -r D:\Common\projects\mikro\BaseProject\Output\libGPBase.a gp_error.o gp_types.o gp_error_codes.o
+make[2]: Leaving directory `/d/Common/projects/mikro/BaseProject/Source/Base'
+make[2]: Entering directory `/d/Common/projects/mikro/BaseProject/Source/Math'
+rm -f *.o *.exe *.a
+gcc -c -g -I"D:\Common\projects\mikro\BaseProject\Include/Base" -I"D:\Common\projects\mikro\BaseProject\Include/Math" -DDEBUG -std=c99  -Wno-main -Wall -o gp_Math.o gp_Math.c
+ar -r D:\Common\projects\mikro\BaseProject\Output\libGPMath.a gp_Math.o
+make[2]: Leaving directory `/d/Common/projects/mikro/BaseProject/Source/Math'
+make[2]: Entering directory `/d/Common/projects/mikro/BaseProject/Source/Alloc'
+rm -f *.o *.exe *.a
+gcc -c -g -I"D:\Common\projects\mikro\BaseProject\Include/Base" -I"D:\Common\projects\mikro\BaseProject\Include/Math" -I"D:\Common\projects\mikro\BaseProject\Include/Alloc" -DDEBUG -std=c99  -Wno-main -Wall -o gp_Alloc.o gp_Alloc.c
+gp_Alloc.c: In function 'gpAlloc_alloc':
+gp_Alloc.c:36:3: warning: return discards 'const' qualifier from pointer target type [enabled by default]
+gp_Alloc.c:46:3: warning: return discards 'const' qualifier from pointer target type [enabled by default]
+gp_Alloc.c: In function 'nearestFreeSpace':
+gp_Alloc.c:55:22: warning: initialization from incompatible pointer type [enabled by default]
+gp_Alloc.c:56:2: warning: passing argument 3 of 'freeSpaceInRange' from incompatible pointer type [enabled by default]
+gp_Alloc.c:8:17: note: expected 'gpUByte *' but argument is of type 'gpInt *'
+gp_Alloc.c:56:21: warning: initialization from incompatible pointer type [enabled by default]
+gp_Alloc.c:60:3: warning: return from incompatible pointer type [enabled by default]
+gp_Alloc.c: In function 'freeSpaceInRange':
+gp_Alloc.c:94:2: warning: return discards 'const' qualifier from pointer target type [enabled by default]
+ar -r D:\Common\projects\mikro\BaseProject\Output\libGPAlloc.a gp_Alloc.o
+make[2]: Leaving directory `/d/Common/projects/mikro/BaseProject/Source/Alloc'
+make[1]: Leaving directory `/d/Common/projects/mikro/BaseProject/Source'
+00:43:58 **** Incremental Build of configuration Debug for project Tests ****
+Info: Internal Builder is used for build
+gcc "-LD:\\Common\\projects\\mikro\\Tests\\lib" "-LD:\\Common\\projects\\mikro\\BaseProject\\Output" -o Tests.exe "Source\\Suites.o" "Source\\Alloc\\gpAlloc.o" "Source\\AllTests.o" -lcunit -lGPAlloc -lGPMath -lGPBase 
+00:53:44 **** Incremental Build of configuration Debug for project BaseProject ****
+make all 
+mkdir -p D:\Common\projects\mikro_repo\Mikro\project\BaseProject\Output
+for dir in Include Source; do \
+		make all -C $dir; \
+	done
+make[1]: Entering directory `/d/Common/projects/mikro_repo/Mikro/project/BaseProject/Include'
+for dir in Base; do \
+		make all -C $dir; \
+	done
+make[2]: Entering directory `/d/Common/projects/mikro_repo/Mikro/project/BaseProject/Include/Base'
+for dir in Generator; do \
+		make all -C $dir; \
+	done
+make[3]: Entering directory `/d/Common/projects/mikro_repo/Mikro/project/BaseProject/Include/Base/Generator'
+rm -f *.o *.exe
+gcc -DDEBUG -g -std=c99  -Wno-main -Wall    generator.c   -o generator
+./generator.exe
+donemake[3]: Leaving directory `/d/Common/projects/mikro_repo/Mikro/project/BaseProject/Include/Base/Generator'
+make[2]: Leaving directory `/d/Common/projects/mikro_repo/Mikro/project/BaseProject/Include/Base'
+make[1]: Leaving directory `/d/Common/projects/mikro_repo/Mikro/project/BaseProject/Include'
+make[1]: Entering directory `/d/Common/projects/mikro_repo/Mikro/project/BaseProject/Source'
+for dir in Base Math Alloc; do \
+		make all -C $dir; \
+	done
+make[2]: Entering directory `/d/Common/projects/mikro_repo/Mikro/project/BaseProject/Source/Base'
+gcc -g -I"../../Include/Base" -DDEBUG -std=c99  -Wno-main -Wall -o "D:\Common\projects\mikro_repo\Mikro\project\BaseProject\Output\gp_example" gp_error.o gp_types.o gp_error_codes.o gp_example.o
+ar -r D:\Common\projects\mikro_repo\Mikro\project\BaseProject\Output\libGPBase.a gp_error.o gp_types.o gp_error_codes.o
+make[2]: Leaving directory `/d/Common/projects/mikro_repo/Mikro/project/BaseProject/Source/Base'
+make[2]: Entering directory `/d/Common/projects/mikro_repo/Mikro/project/BaseProject/Source/Math'
+rm -f *.o *.exe *.a
+gcc -c -g -I"D:\Common\projects\mikro_repo\Mikro\project\BaseProject\Include/Base" -I"D:\Common\projects\mikro_repo\Mikro\project\BaseProject\Include/Math" -DDEBUG -std=c99  -Wno-main -Wall -o gp_Math.o gp_Math.c
+ar -r D:\Common\projects\mikro_repo\Mikro\project\BaseProject\Output\libGPMath.a gp_Math.o
+make[2]: Leaving directory `/d/Common/projects/mikro_repo/Mikro/project/BaseProject/Source/Math'
+make[2]: Entering directory `/d/Common/projects/mikro_repo/Mikro/project/BaseProject/Source/Alloc'
+rm -f *.o *.exe *.a
+gcc -c -g -I"D:\Common\projects\mikro_repo\Mikro\project\BaseProject\Include/Base" -I"D:\Common\projects\mikro_repo\Mikro\project\BaseProject\Include/Math" -I"D:\Common\projects\mikro_repo\Mikro\project\BaseProject\Include/Alloc" -DDEBUG -std=c99  -Wno-main -Wall -o gp_Alloc.o gp_Alloc.c
+gp_Alloc.c: In function 'gpAlloc_alloc':
+gp_Alloc.c:36:3: warning: return discards 'const' qualifier from pointer target type [enabled by default]
+gp_Alloc.c:46:3: warning: return discards 'const' qualifier from pointer target type [enabled by default]
+gp_Alloc.c: In function 'nearestFreeSpace':
+gp_Alloc.c:55:22: warning: initialization from incompatible pointer type [enabled by default]
+gp_Alloc.c:56:2: warning: passing argument 3 of 'freeSpaceInRange' from incompatible pointer type [enabled by default]
+gp_Alloc.c:8:17: note: expected 'gpUByte *' but argument is of type 'gpInt *'
+gp_Alloc.c:56:21: warning: initialization from incompatible pointer type [enabled by default]
+gp_Alloc.c:60:3: warning: return from incompatible pointer type [enabled by default]
+gp_Alloc.c: In function 'freeSpaceInRange':
+gp_Alloc.c:94:2: warning: return discards 'const' qualifier from pointer target type [enabled by default]
+ar -r D:\Common\projects\mikro_repo\Mikro\project\BaseProject\Output\libGPAlloc.a gp_Alloc.o
+make[2]: Leaving directory `/d/Common/projects/mikro_repo/Mikro/project/BaseProject/Source/Alloc'
+make[1]: Leaving directory `/d/Common/projects/mikro_repo/Mikro/project/BaseProject/Source'
+00:53:46 **** Incremental Build of configuration Debug for project BaseProject ****
+make all 
+mkdir -p D:\Common\projects\mikro_repo\Mikro\project\BaseProject\Output
+for dir in Include Source; do \
+		make all -C $dir; \
+	done
+make[1]: Entering directory `/d/Common/projects/mikro_repo/Mikro/project/BaseProject/Include'
+for dir in Base; do \
+		make all -C $dir; \
+	done
+make[2]: Entering directory `/d/Common/projects/mikro_repo/Mikro/project/BaseProject/Include/Base'
+for dir in Generator; do \
+		make all -C $dir; \
+	done
+make[3]: Entering directory `/d/Common/projects/mikro_repo/Mikro/project/BaseProject/Include/Base/Generator'
+rm -f *.o *.exe
+gcc -DDEBUG -g -std=c99  -Wno-main -Wall    generator.c   -o generator
+./generator.exe
+donemake[3]: Leaving directory `/d/Common/projects/mikro_repo/Mikro/project/BaseProject/Include/Base/Generator'
+make[2]: Leaving directory `/d/Common/projects/mikro_repo/Mikro/project/BaseProject/Include/Base'
+make[1]: Leaving directory `/d/Common/projects/mikro_repo/Mikro/project/BaseProject/Include'
+make[1]: Entering directory `/d/Common/projects/mikro_repo/Mikro/project/BaseProject/Source'
+for dir in Base Math Alloc; do \
+		make all -C $dir; \
+	done
+make[2]: Entering directory `/d/Common/projects/mikro_repo/Mikro/project/BaseProject/Source/Base'
+gcc -g -I"../../Include/Base" -DDEBUG -std=c99  -Wno-main -Wall -o "D:\Common\projects\mikro_repo\Mikro\project\BaseProject\Output\gp_example" gp_error.o gp_types.o gp_error_codes.o gp_example.o
+ar -r D:\Common\projects\mikro_repo\Mikro\project\BaseProject\Output\libGPBase.a gp_error.o gp_types.o gp_error_codes.o
+make[2]: Leaving directory `/d/Common/projects/mikro_repo/Mikro/project/BaseProject/Source/Base'
+make[2]: Entering directory `/d/Common/projects/mikro_repo/Mikro/project/BaseProject/Source/Math'
+rm -f *.o *.exe *.a
+gcc -c -g -I"D:\Common\projects\mikro_repo\Mikro\project\BaseProject\Include/Base" -I"D:\Common\projects\mikro_repo\Mikro\project\BaseProject\Include/Math" -DDEBUG -std=c99  -Wno-main -Wall -o gp_Math.o gp_Math.c
+ar -r D:\Common\projects\mikro_repo\Mikro\project\BaseProject\Output\libGPMath.a gp_Math.o
+make[2]: Leaving directory `/d/Common/projects/mikro_repo/Mikro/project/BaseProject/Source/Math'
+make[2]: Entering directory `/d/Common/projects/mikro_repo/Mikro/project/BaseProject/Source/Alloc'
+rm -f *.o *.exe *.a
+gcc -c -g -I"D:\Common\projects\mikro_repo\Mikro\project\BaseProject\Include/Base" -I"D:\Common\projects\mikro_repo\Mikro\project\BaseProject\Include/Math" -I"D:\Common\projects\mikro_repo\Mikro\project\BaseProject\Include/Alloc" -DDEBUG -std=c99  -Wno-main -Wall -o gp_Alloc.o gp_Alloc.c
+gp_Alloc.c: In function 'gpAlloc_alloc':
+gp_Alloc.c:36:3: warning: return discards 'const' qualifier from pointer target type [enabled by default]
+gp_Alloc.c:46:3: warning: return discards 'const' qualifier from pointer target type [enabled by default]
+gp_Alloc.c: In function 'nearestFreeSpace':
+gp_Alloc.c:55:22: warning: initialization from incompatible pointer type [enabled by default]
+gp_Alloc.c:56:2: warning: passing argument 3 of 'freeSpaceInRange' from incompatible pointer type [enabled by default]
+gp_Alloc.c:8:17: note: expected 'gpUByte *' but argument is of type 'gpInt *'
+gp_Alloc.c:56:21: warning: initialization from incompatible pointer type [enabled by default]
+gp_Alloc.c:60:3: warning: return from incompatible pointer type [enabled by default]
+gp_Alloc.c: In function 'freeSpaceInRange':
+gp_Alloc.c:94:2: warning: return discards 'const' qualifier from pointer target type [enabled by default]
+ar -r D:\Common\projects\mikro_repo\Mikro\project\BaseProject\Output\libGPAlloc.a gp_Alloc.o
+make[2]: Leaving directory `/d/Common/projects/mikro_repo/Mikro/project/BaseProject/Source/Alloc'
+make[1]: Leaving directory `/d/Common/projects/mikro_repo/Mikro/project/BaseProject/Source'
+00:53:48 **** Incremental Build of configuration Debug for project Tests ****
+Info: Internal Builder is used for build
+gcc "-LD:\\Common\\projects\\mikro_repo\\Mikro\\project\\Tests\\lib" "-LD:\\Common\\projects\\mikro_repo\\Mikro\\project\\BaseProject\\Output" -o Tests.exe "Source\\Suites.o" "Source\\Alloc\\gpAlloc.o" "Source\\AllTests.o" -lcunit -lGPAlloc -lGPMath -lGPBase 

@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <string.h>
+#include <CUnit.h>
+#include <Basic.h>
+#include <TestDB.h>
+
+/* Pointer to the file used by the tests. */
+static FILE* temp_file = NULL;
+
+/* The suite initialization function.
+ * Opens the temporary file used by the tests.
+ * Returns zero on success, non-zero otherwise.
+ */
+int init_suite1(void)
+{
+   if (NULL == (temp_file = fopen("temp.txt", "w+"))) {
+      return -1;
+   }
+   else {
+      return 0;
+   }
+}
+
+
+
+
+CU_TestInfo gp_allocTests[] = {
+		TEST_ENTRY(testFPRINTF),
+		TEST_ENTRY(testFREAD),
+  CU_TEST_INFO_NULL
+};

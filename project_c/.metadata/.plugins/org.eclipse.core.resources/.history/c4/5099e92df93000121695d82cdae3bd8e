@@ -1,0 +1,9 @@
+#include <TestDB.h>
+
+extern CU_TestInfo allocTests[];
+
+CU_SuiteInfo suites[] = {
+  { "suitename1", NULL, NULL, allocTests },
+ // { "suitename2", suite2_init-func, suite2_cleanup_func, test_array2 },
+  CU_SUITE_INFO_NULL,
+};

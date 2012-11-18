@@ -1,0 +1,16 @@
+CC=gcc
+CFLAGS=-I"../../Include/Base" -D${MODE} -std=c99  -Wno-main -Wall
+
+all: gp_example	
+clean:;	rm -f *.o *.exe
+
+debug:;	 make _all MODE=DEBUG; 
+release:;	make _all MODE=UNCHECKED;
+
+_all:	clean gp_example
+
+gp_example:gp_error.o gp_types.o gp_error_codes.o
+	mkdir ${OUTPUT}\Base
+	gcc -o ${OUTPUT}\Base\${@}.exe $^
+	
+gp_error.o:gp_error_codes.o
