@@ -1,4 +1,5 @@
 SUBDIRS ?= Include Source
+OUTPUT="C:/Users/Janiec/Documents/GitHub/Mikro/project_c/BaseProject/Output"
 
 all: ${subdirs}
 	mkdir -p ${OUTPUT}

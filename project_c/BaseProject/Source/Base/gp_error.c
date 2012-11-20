@@ -4,6 +4,7 @@
 #ifdef DEBUG
 #include <string.h>
 #include <stdio.h>
+#include <gp_bool.h>
 #include <gp_error_codes.h>
 #define size 4096            // a la constant :)
 static void ___nth(FILE* fd, gpInt line){
