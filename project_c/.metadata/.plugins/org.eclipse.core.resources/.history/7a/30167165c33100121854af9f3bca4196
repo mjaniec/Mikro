@@ -1,0 +1,18 @@
+/*
+ * gp_Gestures.h
+ *
+ *  Created on: Nov 18, 2012
+ *      Author: Bartek
+ */
+
+#ifndef GP_GESTURES_H_
+#define GP_GESTURES_H_
+
+struct gpGesture {
+	gpInt code;
+	union info{
+
+	};
+};
+
+#endif /* GP_GESTURES_H_ */

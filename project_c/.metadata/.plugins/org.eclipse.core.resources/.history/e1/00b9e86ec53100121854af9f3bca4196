@@ -1,0 +1,11 @@
+CC=gcc
+CFLAGS=${DEBUGINFO} -I"${INCLUDE}/Base" -D${MODE} -std=c99  -Wno-main -Wall
+
+all: clean libInstanceLearner.a
+clean:;	rm -f *.o *.exe *.a
+
+libGPMath.a: gp_Math.o
+	ar -r ${OUTPUT}\$@ $^
+	
+%.o:%.c
+	gcc -c ${CFLAGS} -o $@ $<

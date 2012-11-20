@@ -1,4 +1,7 @@
-#include <gp_types.h>
+#ifndef gp_types_c
+#define gp_types_c
+
+#include "..\..\Include\Base\gp_types.h"
 
 const long GP_FLOAT_BASE=10000;
 const gpBool true=1;
@@ -17,3 +20,5 @@ inline gpFloat gpDiv(gpFloat a, gpFloat b){
 inline gpFloat gpSub(gpFloat a, gpFloat b){return a-b;}
 inline gpFloat gpAdd(gpFloat a, gpFloat b){return a+b;}
 inline gpFloat gpNeg(gpFloat a){return -a;}
+
+#endif

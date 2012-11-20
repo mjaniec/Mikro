@@ -1,0 +1,22 @@
+#ifndef GPINSTANCE_H_
+#define GPINSTANCE_H_
+
+#include "../Base/gp.h"
+#include "../Gesture/gp_Gesture.h"
+
+typedef struct gpInstance {
+	// the feature vector
+	gpFloat* vector;
+
+	gpWord size;
+
+	// the label can be null
+	gpString label;
+
+	// the id of the instance
+	gpWord id;
+} gpInstance;
+
+gpInstance* gpInstance_createInstance(gpInt, gpInt, gpGesture*, gpString);
+
+#endif

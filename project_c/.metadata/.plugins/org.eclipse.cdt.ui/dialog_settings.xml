@@ -7,6 +7,8 @@
 	</section>
 	<section name="completion_proposal_size">
 	</section>
+	<section name="NewClassWizardPage">
+	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration.internal">
 		<item value="1016" key="size.width"/>
 		<item value="180" key="size.height"/>
@@ -14,6 +16,13 @@
 	<section name="RenameInformationPopup">
 	</section>
 	<section name="CRenameRefactoringInputPage">
+	</section>
+	<section name="org.eclipse.cdt.internal.ui.preferences.EditTemplateDialog_dialogBounds">
+		<item value="780" key="DIALOG_WIDTH"/>
+		<item value="166" key="DIALOG_Y_ORIGIN"/>
+		<item value="345" key="DIALOG_HEIGHT"/>
+		<item value="6" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
 	</section>

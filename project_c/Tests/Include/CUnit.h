@@ -55,15 +55,13 @@
  * @{
  */
 
+#ifndef _CUNIT_CUNIT_H
+#define _CUNIT_CUNIT_H
 
 #include <string.h>
 #include <math.h>
-
 #include "CUError.h"
 #include "TestDB.h"   /* not needed here - included for user convenience */
-
-#ifndef _CUNIT_CUNIT_H
-#define _CUNIT_CUNIT_H
 
 #ifdef __cplusplus
 extern "C" {

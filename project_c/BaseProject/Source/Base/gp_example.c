@@ -1,3 +1,6 @@
+#ifndef gp_example_c
+#ifndef gp_example_c
+
 #include <gp.h>
 #include <stdio.h>
 
@@ -27,3 +30,5 @@ gpInt main(){
 	gpLibFun1()$e;
 	return 0;
 }
+
+#endif

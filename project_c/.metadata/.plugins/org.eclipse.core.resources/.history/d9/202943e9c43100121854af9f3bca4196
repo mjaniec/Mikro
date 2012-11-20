@@ -1,0 +1,42 @@
+#ifndef GP_GESTURES_H_
+#define GP_GESTURES_H_
+
+struct gpGesture {
+	gpInt code;
+	union info{
+		struct {				// two finger scroll
+			gpFloat x;
+			gpFloat y;
+			gpBool direction;
+		};
+		struct {				// zoom
+			gpBool direction;
+			gpFloat magnification;
+		};
+		struct {				// scroll
+			gpFloat x;
+			gpFloat y;
+			gpBool direction;
+		};
+		struct {				// flick
+			gpFloat x;
+			gpFloat y;
+			gpBool direction;
+		};
+		struct {				// rotation
+			gpBool direction;
+			gpFloat angle;
+		};
+		struct {				// move
+			gpFloat x;
+			gpFloat y;
+			gpByte direction;
+		};
+		struct {				// press, double tap, tap
+			gpFloat x;
+			gpFloat y;
+		};
+	};
+};
+
+#endif /* GP_GESTURES_H_ */

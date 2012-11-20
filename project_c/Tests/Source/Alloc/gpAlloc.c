@@ -7,16 +7,16 @@
 
 void shouldntAllocateBecauseOfMaxSize()
 {
-	gpVoid* mem = gpAlloc_alloc(gp_MAX_MEM);
+	gpVoid* mem = gpAlloc_alloc(_gpAlloc_MAX_MEM);
 	CU_ASSERT_PTR_NULL(mem);
 }
 
 void shouldntAllocateBecauseOfMaxSizeInTwoAllocations()
 {
-	gpVoid* mem = gpAlloc_alloc(gp_MAX_MEM / 2);
+	gpVoid* mem = gpAlloc_alloc(_gpAlloc_MAX_MEM / 2);
 	CU_ASSERT_PTR_NOT_NULL(mem);
 
-	gpVoid* mem2 = gpAlloc_alloc(gp_MAX_MEM / 2);
+	gpVoid* mem2 = gpAlloc_alloc(_gpAlloc_MAX_MEM / 2);
 	CU_ASSERT_PTR_NULL(mem2);
 
 	gpAlloc_free(mem);
@@ -30,17 +30,17 @@ void shouldntAllocateBecauseOfSizeBelowZero()
 
 void shouldAllocate()
 {
-	gpVoid* mem = gpAlloc_alloc(gp_MAX_MEM - sizeof(gpInt));
+	gpVoid* mem = gpAlloc_alloc(_gpAlloc_MAX_MEM - sizeof(gpInt));
 	CU_ASSERT_PTR_NOT_NULL(mem);
 	gpAlloc_free(mem);
 }
 
 void shouldAllocateInTwoAllocations()
 {
-	gpVoid* mem = gpAlloc_alloc(gp_MAX_MEM / 2 - sizeof(gpInt));
+	gpVoid* mem = gpAlloc_alloc(_gpAlloc_MAX_MEM / 2 - sizeof(gpInt));
 	CU_ASSERT_PTR_NOT_NULL(mem);
 
-	gpVoid* mem2 = gpAlloc_alloc(gp_MAX_MEM / 2 - sizeof(gpInt));
+	gpVoid* mem2 = gpAlloc_alloc(_gpAlloc_MAX_MEM / 2 - sizeof(gpInt));
 	CU_ASSERT_PTR_NOT_NULL(mem2);
 
 	gpAlloc_free(mem);
@@ -49,11 +49,11 @@ void shouldAllocateInTwoAllocations()
 
 void shouldAllocateInTwoAllocationsBecauseOfFree()
 {
-	gpVoid* mem = gpAlloc_alloc(gp_MAX_MEM - sizeof(gpInt));
+	gpVoid* mem = gpAlloc_alloc(_gpAlloc_MAX_MEM - sizeof(gpInt));
 	CU_ASSERT_PTR_NOT_NULL(mem);
 	gpAlloc_free(mem);
 
-	mem = gpAlloc_alloc(gp_MAX_MEM - sizeof(gpInt));
+	mem = gpAlloc_alloc(_gpAlloc_MAX_MEM - sizeof(gpInt));
 	CU_ASSERT_PTR_NOT_NULL(mem);
 	gpAlloc_free(mem);
 }

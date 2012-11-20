@@ -1,11 +1,10 @@
-#include "../Base/gp.h"
-
 #ifndef GP_MATH_H
 #define GP_MATH_H
+#include "../Base/gp.h"
 
-
-gpInt gpMinInt(gpInt, gpInt);
-gpInt* gpMinIntP(gpInt*, gpInt*);
+gpInt gpMath_MinInt(gpInt, gpInt);
+gpInt* gpMath_MinIntP(gpInt*, gpInt*);
+//gpMath_PI = TODO
 
 
 #endif

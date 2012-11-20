@@ -1,11 +1,16 @@
-#include <gp_Math.h>
+#ifndef gp_Math_c
+#define gp_Math_c
 
-gpInt gpMinInt(gpInt a, gpInt b)
+#include "..\..\Include\Math\gp_Math.h"
+
+gpInt gpMath_MinInt(gpInt a, gpInt b)
 {
 	return a > b ? b : a;
 }
 
-gpInt* gpMinIntP(gpInt* a, gpInt* b)
+gpInt* gpMath_MinIntP(gpInt* a, gpInt* b)
 {
 	return a > b ? b : a;
 }
+
+#endif

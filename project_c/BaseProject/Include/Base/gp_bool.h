@@ -4,4 +4,4 @@
 extern const gpBool true;
 extern const gpBool false;
 
-#endif /* GP_BOOL_H_ */
+#endif

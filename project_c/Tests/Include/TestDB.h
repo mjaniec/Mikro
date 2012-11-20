@@ -64,7 +64,6 @@
 #define _CUNIT_TESTDB_H
 
 #include <setjmp.h>   /* jmp_buf */
-
 #include "CUError.h"
 
 #ifdef __cplusplus
