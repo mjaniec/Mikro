@@ -27,6 +27,7 @@ obj/local/armeabi/objs/gpMain/gp_Main.o: jni/gp_Main.c \
  C:/Users/Bartek/Desktop/android-ndk-r8c/platforms/android-3/arch-arm/usr/include/memory.h \
  jni/..\source\base\/..\..\Include\Base\/gp_types.h \
  jni/..\source\base\/..\..\Include\Base\/gp_error_codes.h \
+ jni/..\source\base\/..\..\Include\Base\gp_bool.h \
  jni/..\source\base\/..\..\Include\Base\gp_error_codes.h \
  jni/..\source\base\/gp_error_codes.c jni/..\source\alloc\gp_Alloc.c \
  jni/..\source\alloc\/..\..\Include\Alloc\gp_Alloc.h \
@@ -108,6 +109,8 @@ C:/Users/Bartek/Desktop/android-ndk-r8c/platforms/android-3/arch-arm/usr/include
 jni/..\source\base\/..\..\Include\Base\/gp_types.h:
 
 jni/..\source\base\/..\..\Include\Base\/gp_error_codes.h:
+
+jni/..\source\base\/..\..\Include\Base\gp_bool.h:
 
 jni/..\source\base\/..\..\Include\Base\gp_error_codes.h:
 

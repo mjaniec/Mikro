@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=${DEBUGINFO} -I"../../Include/Base" -D${MODE} -std=c99  -Wno-main -Wall
+CFLAGS=${DEBUGINFO} -I"../../Include/Base" ${MODE} -std=c99  -Wno-main -Wall
 
 all: gp_example
 clean:;	rm -f *.o *.exe

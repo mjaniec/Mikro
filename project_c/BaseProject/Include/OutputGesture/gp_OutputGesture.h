@@ -3,47 +3,48 @@
 
 #include "../Base/gp_types.h"
 
-struct gpOutputGesture {
-	gpInt code;
+struct {
+	gpFloat x;
+	gpFloat y;
+	gpBool direction;
+} gpOutputGesture_two_finger_scroll ;
 
-	union {
-		struct {
-			gpFloat x;
-			gpFloat y;
-			gpBool direction;
-		} two_finger_scroll ;
-		struct {
-			gpBool direction;
-			gpFloat magnification;
-		} zoom;
-		struct {
-			gpFloat x;
-			gpFloat y;
-			gpBool direction;
-		} scroll;
-		struct {
-			gpFloat x;
-			gpFloat y;
-			gpBool direction;
-		} flick;
-		struct {
-			gpBool direction;
-			gpFloat angle;
-		} rotation;
-		struct {
-			gpFloat x;
-			gpFloat y;
-			gpByte direction;
-		} move;
-		struct {
-			gpFloat x;
-			gpFloat y;
-		} press;
-		struct {
-			gpFloat x;
-			gpFloat y;
-		} tap;
-	} info;
-};
+struct {
+	gpBool direction;
+	gpFloat magnification;
+} gpOutputGesture_zoom;
+
+struct {
+	gpFloat x;
+	gpFloat y;
+	gpBool direction;
+} gpOutputGesture_scroll;
+
+struct {
+	gpFloat x;
+	gpFloat y;
+	gpBool direction;
+} gpOutputGesture_flick;
+
+struct {
+	gpBool direction;
+	gpFloat angle;
+} gpOutputGesture_rotation;
+
+struct {
+	gpFloat x;
+	gpFloat y;
+	gpByte direction;
+} gpOutputGesture_move;
+
+struct {
+	gpFloat x;
+	gpFloat y;
+} gpOutputGesture_press;
+
+struct {
+	gpFloat x;
+	gpFloat y;
+} gpOutputGesture_tap;
 
 #endif

@@ -1,5 +1,4 @@
 #ifndef gp_example_c
-#ifndef gp_example_c
 
 #include <gp.h>
 #include <stdio.h>
@@ -12,7 +11,7 @@ gpVoid gpLibFun2(){
 }
 
 
-gpInt gpLibFun1(){
+gpVoid gpLibFun1(){
 	$fun;
 	//calls another library function
 	//print position and [R]ise up

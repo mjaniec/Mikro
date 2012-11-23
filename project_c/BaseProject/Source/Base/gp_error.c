@@ -2,6 +2,7 @@
 #define gp_error_c
 
 #include "..\..\Include\Base\gp_error.h"
+#include "..\..\Include\Base\gp_bool.h"
 
 #ifdef DEBUG
 #include <string.h>
