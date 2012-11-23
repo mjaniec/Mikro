@@ -9,5 +9,9 @@
 #include "Instance/gp_Instance.h"
 #include "InstanceLearner/gp_InstanceLearner.h"
 #include "OutputGesture/gp_OutputGesture.h"
+#include "GestureDetector/gp_GestureDetector.h"
+#include "GestureHandler/gp_GestureHandler.h"
+#include "MotionEvent/gp_MotionEvent.h"
+#include "VelocityTracker/gp_VelocityTracker.h"
 
 #endif

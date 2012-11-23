@@ -7,4 +7,5 @@ typedef struct {
 
 
 gpGestureHandler* gpGestureHandler_createInstance();
+
 #endif

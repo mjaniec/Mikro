@@ -16,7 +16,7 @@ gpFloat[] ORIENTATIONS = {
 */
 
 
-gpInstance* New(gpWord id, gpFloat* sample, gpWord size, gpString label)
+gpInstance* _gpInstance_createInstance(gpWord id, gpFloat* sample, gpWord size, gpString label)
 {
 	gpInstance* instance = gpAlloc_alloc(sizeof(gpInstance));
 	instance->id = id;
@@ -47,11 +47,11 @@ gpInstance* gpInstance_createInstance(gpInt sequenceType, gpInt orientationType,
         gpInstance* instance;
         if (sequenceType == gpGestureStore_SEQUENCE_SENSITIVE) {
   //          pts = temporalSampler(orientationType, gesture, &size);
-            instance = New(gesture->id, pts, size, label);
+            instance = _gpInstance_createInstance(gesture->id, pts, size, label);
             _gpInstance_normalize(instance);
         } else {
     //        pts = spatialSampler(gesture, &size);
-            instance = New(gesture->id, pts, size, label);
+            instance = _gpInstance_createInstance(gesture->id, pts, size, label);
         }
         return instance;
     }

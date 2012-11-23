@@ -50,7 +50,23 @@ obj/local/armeabi/objs/gpMain/gp_Main.o: jni/gp_Main.c \
  jni/..\source\instancelearner\gp_InstanceLearner.c \
  jni/..\source\instancelearner\/..\..\Include\InstanceLearner\gp_InstanceLearner.h \
  jni/..\source\instancelearner\/..\..\Include\InstanceLearner\/../Base/gp_types.h \
- jni/..\source\instancelearner\/..\..\Include\InputGesture\gp_InputGesture.h
+ jni/..\source\instancelearner\/..\..\Include\InputGesture\gp_InputGesture.h \
+ jni/..\source\GestureDetector\gp_GestureDetector.c \
+ jni/..\source\GestureDetector\/..\..\Include\GestureDetector\gp_GestureDetector.h \
+ jni/..\source\GestureDetector\/..\..\Include\GestureDetector\/../GestureHandler/gp_GestureHandler.h \
+ jni/..\source\GestureDetector\/..\..\Include\GestureDetector\/../VelocityTracker/gp_VelocityTracker.h \
+ jni/..\source\GestureDetector\/..\..\Include\GestureDetector\/../VelocityTracker/../MotionEvent/gp_MotionEvent.h \
+ jni/..\source\GestureDetector\/..\..\Include\GestureDetector\/../VelocityTracker/../MotionEvent/../Base/gp_types.h \
+ jni/..\source\GestureDetector\/..\..\Include\Base\gp.h \
+ jni/..\source\GestureDetector\/..\..\Include\MotionEvent\gp_MotionEvent.h \
+ jni/..\source\GestureDetector\/../../Include/GestureHandler/gp_GestureHandler.h \
+ jni/..\source\GestureHandler\gp_GestureHandler.c \
+ jni/..\source\GestureHandler\/../../Include/GestureHandler/gp_GestureHandler.h \
+ jni/..\source\MotionEvent\gp_MotionEvent.c \
+ jni/..\source\MotionEvent\/../../Include/MotionEvent/gp_MotionEvent.h \
+ jni/..\source\MotionEvent\/../../Include/Base/gp.h \
+ jni/..\source\VelocityTracker\gp_VelocityTracker.c \
+ jni/..\source\VelocityTracker\/../../Include/VelocityTracker/gp_VelocityTracker.h
 
 jni/..\source\base\gp.c:
 
@@ -159,3 +175,35 @@ jni/..\source\instancelearner\/..\..\Include\InstanceLearner\gp_InstanceLearner.
 jni/..\source\instancelearner\/..\..\Include\InstanceLearner\/../Base/gp_types.h:
 
 jni/..\source\instancelearner\/..\..\Include\InputGesture\gp_InputGesture.h:
+
+jni/..\source\GestureDetector\gp_GestureDetector.c:
+
+jni/..\source\GestureDetector\/..\..\Include\GestureDetector\gp_GestureDetector.h:
+
+jni/..\source\GestureDetector\/..\..\Include\GestureDetector\/../GestureHandler/gp_GestureHandler.h:
+
+jni/..\source\GestureDetector\/..\..\Include\GestureDetector\/../VelocityTracker/gp_VelocityTracker.h:
+
+jni/..\source\GestureDetector\/..\..\Include\GestureDetector\/../VelocityTracker/../MotionEvent/gp_MotionEvent.h:
+
+jni/..\source\GestureDetector\/..\..\Include\GestureDetector\/../VelocityTracker/../MotionEvent/../Base/gp_types.h:
+
+jni/..\source\GestureDetector\/..\..\Include\Base\gp.h:
+
+jni/..\source\GestureDetector\/..\..\Include\MotionEvent\gp_MotionEvent.h:
+
+jni/..\source\GestureDetector\/../../Include/GestureHandler/gp_GestureHandler.h:
+
+jni/..\source\GestureHandler\gp_GestureHandler.c:
+
+jni/..\source\GestureHandler\/../../Include/GestureHandler/gp_GestureHandler.h:
+
+jni/..\source\MotionEvent\gp_MotionEvent.c:
+
+jni/..\source\MotionEvent\/../../Include/MotionEvent/gp_MotionEvent.h:
+
+jni/..\source\MotionEvent\/../../Include/Base/gp.h:
+
+jni/..\source\VelocityTracker\gp_VelocityTracker.c:
+
+jni/..\source\VelocityTracker\/../../Include/VelocityTracker/gp_VelocityTracker.h:
