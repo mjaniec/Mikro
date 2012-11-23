@@ -1,0 +1,14 @@
+C:/Users/Janiec/workspace/Mikro/obj/local/armeabi/objs/jni_ex/jni_ex.o: \
+ C:/Users/Janiec/workspace/Mikro/jni/jni_ex.c \
+ C:/Users/Janiec/workspace/Mikro/jni/jni.h \
+ C:/Users/Janiec/workspace/Mikro/jni/stdio.h \
+ C:/Users/Janiec/workspace/Mikro/jni/_mingw.h \
+ C:/Users/Janiec/workspace/Mikro/jni/jni_md.h
+
+C:/Users/Janiec/workspace/Mikro/jni/jni.h:
+
+C:/Users/Janiec/workspace/Mikro/jni/stdio.h:
+
+C:/Users/Janiec/workspace/Mikro/jni/_mingw.h:
+
+C:/Users/Janiec/workspace/Mikro/jni/jni_md.h:
