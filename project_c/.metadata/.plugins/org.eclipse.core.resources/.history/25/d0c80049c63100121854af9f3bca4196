@@ -1,0 +1,11 @@
+#include <gp_InstanceLearner.h>
+#include <gp_Gestures.h>
+
+
+
+gpInt gpInstanceLearer_classify(gpInt, gpInt, gpFloat[])
+{
+
+
+
+}

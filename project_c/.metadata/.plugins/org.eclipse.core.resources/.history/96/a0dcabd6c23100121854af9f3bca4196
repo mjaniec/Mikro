@@ -1,0 +1,8 @@
+
+#ifndef GP_LEARNER_H_
+#define GP_LEARNER_H_
+#include "../Base/gp.h"
+
+gpInt gp_InstanceLearer_classify(gpInt sequenceType, gpInt orientationType, gpFloat[] vector);
+
+#endif

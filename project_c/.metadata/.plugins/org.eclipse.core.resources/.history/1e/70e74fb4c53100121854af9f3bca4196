@@ -1,0 +1,11 @@
+CC=gcc
+CFLAGS=${DEBUGINFO} -I"${INCLUDE}/Base" -I"${INCLUDE}/Gestures" -I"${INCLUDE}/InstanceLearner"-D${MODE} -std=c99  -Wno-main -Wall
+
+all: clean libGPInstanceLearner.a
+clean:;	rm -f *.o *.exe *.a
+
+libGPInstanceLearner.a: gp_InstanceLearner.o
+	ar -r ${OUTPUT}\$@ $^
+	
+%.o:%.c
+	gcc -c ${CFLAGS} -o $@ $<

@@ -1,11 +1,12 @@
-#include <gp_Alloc.h>
-#include <gp_Math.h>
+#ifndef gp_Alloc_c
+#define gp_Alloc_c
+#include "..\..\Include\Alloc\gp_Alloc.h"
 
-static gpUByte gp_allocated_memory[gp_MAX_MEM];
-static gpUByte* after_last_allocated_index = gp_allocated_memory;
+gpUByte _gpAlloc_allocated_memory[_gpAlloc_MAX_MEM];
+gpUByte* _gpAlloc_after_last_allocated_index = _gpAlloc_allocated_memory;
 
-static gpUByte* nearestFreeSpace(gpInt);
-static gpUByte* freeSpaceInRange(gpInt, gpUByte*, gpUByte*);
+gpUByte* _gpAlloc_nearestFreeSpace(gpInt);
+gpUByte* _gpAlloc_freeSpaceInRange(gpInt, gpUByte*, gpUByte*);
 
 gpVoid gpAlloc_free(gpVoid* ptr)
 {
@@ -13,8 +14,8 @@ gpVoid gpAlloc_free(gpVoid* ptr)
 	gpUByte* start_ptr = ((gpUByte*) ptr) - sizeof(gpInt) + 1;
 	gpInt size = *start_ptr;
 
-	$assert (start_ptr >= gp_allocated_memory, GP_MEMVIOL);
-	$assert (start_ptr + size <= gp_allocated_memory + gp_MAX_MEM, GP_MEMVIOL);
+	$assert (start_ptr >= _gpAlloc_allocated_memory, GP_MEMVIOL);
+	$assert (start_ptr + size <= _gpAlloc_allocated_memory + _gpAlloc_MAX_MEM, GP_MEMVIOL);
 
 	for(gpUByte* i = start_ptr; i < start_ptr + size + sizeof(gpInt); i++)
 	{
@@ -36,7 +37,7 @@ gpVoid* gpAlloc_alloc(gpInt size)
 		return null;
 	}
 
-	gpUByte* freeSpace = nearestFreeSpace(size + sizeof(gpInt));
+	gpUByte* freeSpace = _gpAlloc_nearestFreeSpace(size + sizeof(gpInt));
 	if(freeSpace == null)
 	{
 
@@ -46,25 +47,25 @@ gpVoid* gpAlloc_alloc(gpInt size)
 		return null;
 	}
 	*((gpInt*)freeSpace) = size;
-	after_last_allocated_index = freeSpace + size + sizeof(gpInt);
+	_gpAlloc_after_last_allocated_index = freeSpace + size + sizeof(gpInt);
 	return freeSpace + sizeof(gpInt) - 1;
 }
 
-static gpUByte* nearestFreeSpace(gpInt size)
+gpUByte* _gpAlloc_nearestFreeSpace(gpInt size)
 {
-	gpInt* rightBound = gp_allocated_memory + gp_MAX_MEM - 1;
-	gpInt* freeSpace = freeSpaceInRange(size, after_last_allocated_index, rightBound) $c;
+	gpUByte* rightBound = _gpAlloc_allocated_memory + _gpAlloc_MAX_MEM - 1;
+	gpUByte* freeSpace = _gpAlloc_freeSpaceInRange(size, _gpAlloc_after_last_allocated_index, rightBound) $c;
 
 	if(freeSpace != null)
 	{
 		return freeSpace;
 	}
 
-	return freeSpaceInRange(size, gp_allocated_memory, after_last_allocated_index);
+	return _gpAlloc_freeSpaceInRange(size, _gpAlloc_allocated_memory, _gpAlloc_after_last_allocated_index);
 }
 
 
-static gpUByte* freeSpaceInRange(gpInt size, gpUByte* start, gpUByte* end)
+gpUByte* _gpAlloc_freeSpaceInRange(gpInt size, gpUByte* start, gpUByte* end)
 {
 	while(start + size - 1 <= end)
 	{
@@ -93,3 +94,4 @@ static gpUByte* freeSpaceInRange(gpInt size, gpUByte* start, gpUByte* end)
 
 	return null;
 }
+#endif

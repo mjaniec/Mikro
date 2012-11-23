@@ -1,0 +1,17 @@
+#ifndef GP_GESTURES_H_
+#define GP_GESTURES_H_
+
+struct gpGesture {
+	gpInt code;
+	union info{
+		struct {				// positon
+			gpFloat x;
+			gpFloat y;
+			gpBool direction;	// flick
+		};
+		gpBool in;				// zoom
+		gpBool out;				// zoom
+	};
+};
+
+#endif /* GP_GESTURES_H_ */

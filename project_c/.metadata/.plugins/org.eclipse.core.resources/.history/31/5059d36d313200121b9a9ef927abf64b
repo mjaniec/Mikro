@@ -1,0 +1,8 @@
+#ifndef __GP_C
+#define __GP_C
+
+#include "gp_types.c"
+#include "gp_error.c"
+#include "gp_error_codes.c"
+
+#endif

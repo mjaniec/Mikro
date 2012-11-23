@@ -1,21 +1,32 @@
-#include <gp_error.h>
+#ifndef gp_error_c
+#define gp_error_c
 
+#include "..\..\Include\Base\gp_error.h"
+#include "..\..\Include\Base\gp_bool.h"
 
 #ifdef DEBUG
 #include <string.h>
 #include <stdio.h>
+<<<<<<< HEAD
 #include <gp_bool.h>
 #include <gp_error_codes.h>
 #define size 4096            // a la constant :)
+=======
+#include "..\..\Include\Base\gp_error_codes.h"
+
+#define _gpError_SIZE 4096            // a la constant :)
+
+
+>>>>>>> b74117b7844fb7cf113fd3a8e1fe727947193f51
 static void ___nth(FILE* fd, gpInt line){
    gpInt stat, cline=1, i, j;
    gpBool nend=true, all=false;
-   gpChar buff[size+1];                   //+ one for eventually null.
+   gpChar buff[_gpError_SIZE+1];                   //+ one for eventually null.
    
    while(nend){
-      stat=fread(buff,1,size,fd);
+      stat=fread(buff,1,_gpError_SIZE,fd);
       if(stat==-1)return;
-      if(stat<size)nend=false,all=true;
+      if(stat<_gpError_SIZE)nend=false,all=true;
       for(i=0; cline<line && i<stat; ++i)
          if(buff[i]=='\n')
             ++cline;
@@ -30,7 +41,7 @@ static void ___nth(FILE* fd, gpInt line){
             buff[stat]='\0';
             strcpy(buff,buff+i);
             i=0;
-            fread(buff+i,1,size-i,fd);
+            fread(buff+i,1,_gpError_SIZE-i,fd);
             for(j=i+1; j<stat && buff[j]!='\n';++j);
             if(j<stat)buff[j]='\0';     
             else return;        //probably line is longer than 4096 or an error occurred.
@@ -62,3 +73,4 @@ gpVoid __print_assertion(){
 
 #endif
 
+#endif

@@ -1,0 +1,11 @@
+CC=gcc
+CFLAGS=${DEBUGINFO} -I"${INCLUDE}/Base" -I"${INCLUDE}/Alloc" -I"${INCLUDE}/GestureStore" -I"${INCLUDE}/Instance" -D${MODE} -std=c99  -Wno-main -Wall -L"${OUTPUT}" -lGPAlloc
+
+all: clean libGPInstance.a
+clean:;	rm -f *.o *.exe *.a
+
+libGPInstance.a: gp_Instance.o
+	ar -r ${OUTPUT}\$@ $^
+	
+%.o:%.c
+	gcc -c ${CFLAGS} -o $@ $<

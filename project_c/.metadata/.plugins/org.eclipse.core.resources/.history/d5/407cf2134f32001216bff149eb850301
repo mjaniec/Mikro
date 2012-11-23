@@ -1,0 +1,10 @@
+#ifndef gp_Main_c
+#define gp_Main_c
+
+#include "base\gp.c"
+#include "alloc\gp_Alloc.c"
+#include "math\gp_Math.c"
+#include "instance\gp_Instance.c"
+#include "instancelearner\gp_InstanceLearner.c"
+
+#endif
