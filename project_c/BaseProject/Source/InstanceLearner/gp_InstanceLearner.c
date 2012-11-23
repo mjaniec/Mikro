@@ -6,7 +6,7 @@
 
 
 /*
-gpInt gpInstanceLearer_classify(gpInt, gpInt, gpFloat[])
+gpInt gpInstanceLearner_classify(gpInt, gpInt, gpFloat[])
 {
 	ArrayList<Prediction> predictions = new ArrayList<Prediction>();
 	ArrayList<Instance> instances = getInstances();

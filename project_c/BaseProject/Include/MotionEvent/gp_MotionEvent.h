@@ -7,7 +7,10 @@ typedef struct gpMotionEvent {
 	gpInt actionType;
 	gpFloat* coordinates;
 	gpWord size;
+	gpWord time;
 } gpMotionEvent;
 
+gpFloat gpMotionEvent_getX(gpMotionEvent*, gpInt index);
+gpFloat gpMotionEvent_getY(gpMotionEvent*, gpInt index);
 
 #endif

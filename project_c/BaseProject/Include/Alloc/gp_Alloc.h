@@ -3,8 +3,8 @@
 
 #include "../Base/gp_types.h"
 
-#ifndef _gpAlloc_MAX_MEM
-#define _gpAlloc_MAX_MEM 1000
+#ifndef gpAlloc_MAX_MEM
+#define gpAlloc_MAX_MEM 1000
 #endif
 
 gpVoid* gpAlloc_alloc(gpInt size);

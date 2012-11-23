@@ -1,0 +1,20 @@
+#ifndef GP_GESTUREDETECTOR_C_
+#define GP_GESTUREDETECTOR_C_
+
+#include "..\..\Include\GestureDetector\gp_GestureDetector.h"
+
+gpGestureDetector* gpGestureDetector_createInstance() {
+        if (handler != null) {
+            mHandler = new GestureHandler(handler);
+        } else {
+            mHandler = new GestureHandler();
+        }
+        mListener = listener;
+        if (listener instanceof OnDoubleTapListener) {
+            setOnDoubleTapListener((OnDoubleTapListener) listener);
+        }
+        init(context, ignoreMultitouch);
+    }
+
+
+#endif

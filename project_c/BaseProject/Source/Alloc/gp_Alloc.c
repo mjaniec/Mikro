@@ -2,7 +2,7 @@
 #define gp_Alloc_c
 #include "..\..\Include\Alloc\gp_Alloc.h"
 
-gpUByte _gpAlloc_allocated_memory[_gpAlloc_MAX_MEM];
+gpUByte _gpAlloc_allocated_memory[gpAlloc_MAX_MEM];
 gpUByte* _gpAlloc_after_last_allocated_index = _gpAlloc_allocated_memory;
 
 gpUByte* _gpAlloc_nearestFreeSpace(gpInt);
@@ -15,7 +15,7 @@ gpVoid gpAlloc_free(gpVoid* ptr)
 	gpInt size = *start_ptr;
 
 	$assert (start_ptr >= _gpAlloc_allocated_memory, GP_MEMVIOL);
-	$assert (start_ptr + size <= _gpAlloc_allocated_memory + _gpAlloc_MAX_MEM, GP_MEMVIOL);
+	$assert (start_ptr + size <= _gpAlloc_allocated_memory + gpAlloc_MAX_MEM, GP_MEMVIOL);
 
 	for(gpUByte* i = start_ptr; i < start_ptr + size + sizeof(gpInt); i++)
 	{
@@ -53,7 +53,7 @@ gpVoid* gpAlloc_alloc(gpInt size)
 
 gpUByte* _gpAlloc_nearestFreeSpace(gpInt size)
 {
-	gpUByte* rightBound = _gpAlloc_allocated_memory + _gpAlloc_MAX_MEM - 1;
+	gpUByte* rightBound = _gpAlloc_allocated_memory + gpAlloc_MAX_MEM - 1;
 	gpUByte* freeSpace = _gpAlloc_freeSpaceInRange(size, _gpAlloc_after_last_allocated_index, rightBound) $c;
 
 	if(freeSpace != null)

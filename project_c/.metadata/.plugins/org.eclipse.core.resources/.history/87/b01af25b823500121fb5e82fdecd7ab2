@@ -1,0 +1,13 @@
+#ifndef GP_GESTUREDETECTOR_C_
+#define GP_GESTUREDETECTOR_C_
+
+#include "..\..\Include\GestureDetector\gp_GestureDetector.h"
+
+gpGestureDetector* gpGestureDetector_createInstance() {
+	gpGestureDetector* gestureDetector = gpAlloc_alloc(sizeof(gpGestureDetector));
+	gestureDetector->handler = gpGestureHandler_createInstance();
+    // ustawianie listenera
+    _gpGestureDetector_init();
+   }
+
+#endif

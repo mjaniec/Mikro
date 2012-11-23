@@ -1,0 +1,13 @@
+#include "../../Include/MotionEvent/gp_MotionEvent.h"
+#include "../../Include/Base/gp.h"
+
+gpFloat gpMotionEvent_getX(gpMotionEvent* event, gpInt index)
+{
+	$assert
+	return event->coordinates[index * 2];
+}
+
+gpFloat gpMotionEvent_getY(gpMotionEvent* event, gpInt index)
+{
+	return event->coordinates[index * 2 + 1];
+}

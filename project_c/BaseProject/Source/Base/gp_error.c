@@ -7,17 +7,10 @@
 #ifdef DEBUG
 #include <string.h>
 #include <stdio.h>
-<<<<<<< HEAD
-#include <gp_bool.h>
-#include <gp_error_codes.h>
-#define size 4096            // a la constant :)
-=======
 #include "..\..\Include\Base\gp_error_codes.h"
 
 #define _gpError_SIZE 4096            // a la constant :)
 
-
->>>>>>> b74117b7844fb7cf113fd3a8e1fe727947193f51
 static void ___nth(FILE* fd, gpInt line){
    gpInt stat, cline=1, i, j;
    gpBool nend=true, all=false;

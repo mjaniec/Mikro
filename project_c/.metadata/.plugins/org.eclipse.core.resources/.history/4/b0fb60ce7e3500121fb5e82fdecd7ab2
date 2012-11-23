@@ -1,0 +1,5 @@
+#ifndef GP_GESTUREDETECTOR_H_
+#define GP_GESTUREDETECTOR_H_
+
+gpGestureDetector* gpGestureDetector_createInstance();
+#endif

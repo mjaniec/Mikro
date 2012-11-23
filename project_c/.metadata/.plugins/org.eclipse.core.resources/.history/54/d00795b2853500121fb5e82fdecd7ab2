@@ -1,0 +1,26 @@
+#ifndef GP_GESTUREDETECTOR_C_
+#define GP_GESTUREDETECTOR_C_
+
+#include "..\..\Include\GestureDetector\gp_GestureDetector.h"
+
+gpVoid
+
+gpGestureDetector* gpGestureDetector_createInstance() {
+	gpGestureDetector* gestureDetector = gpAlloc_alloc(sizeof(gpGestureDetector));
+	gestureDetector->handler = gpGestureHandler_createInstance();
+    // ustawianie listenera
+    _gpGestureDetector_init();
+   }
+
+
+
+
+_gpGestureDetector_init() {
+	gpInt touchSlop = ViewConfiguration.getTouchSlop();
+	mMinimumFlingVelocity = ViewConfiguration.getMinimumFlingVelocity();
+	mMaximumFlingVelocity = ViewConfiguration.getMaximumFlingVelocity();
+	mTouchSlopSquare = touchSlop * touchSlop;
+	mDoubleTapSlopSquare = doubleTapSlop * doubleTapSlop;
+}
+
+#endif

@@ -1,0 +1,5 @@
+
+
+
+gpFloat gpMotionEvent_getX(gpMotionEvent*, gpInt index);
+gpFloat gpMotionEvent_getY(gpMotionEvent*, gpInt index);

@@ -1,0 +1,11 @@
+#ifndef GP_GESTUREDETECTOR_H_
+#define GP_GESTUREDETECTOR_H_
+
+
+typedef struct {
+
+
+} gpGestureDetector;
+
+gpGestureDetector* gpGestureDetector_createInstance();
+#endif

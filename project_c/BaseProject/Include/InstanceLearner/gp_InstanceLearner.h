@@ -3,6 +3,6 @@
 
 #include "../Base/gp_types.h"
 
-gpInt gpInstanceLearer_classify(gpInt, gpInt, gpFloat[]);
+gpInt gpInstanceLearner_classify(gpInt, gpInt, gpFloat[]);
 
 #endif

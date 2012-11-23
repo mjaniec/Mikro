@@ -1,0 +1,18 @@
+#ifndef GP_GESTUREDETECTOR_H_
+#define GP_GESTUREDETECTOR_H_
+
+#include "../GestureHandler/gp_GestureHandler.h"
+
+typedef struct {
+	gpGestureHandler* handler;
+	gpInt* gpListener; // byl jako parametr konstruktora, nie wspieramy tego
+} gpGestureDetector;
+
+
+#define gpGestureDetector_MINIMUM_FLING_VELOCITY
+#define gpGestureDetector_MAXIMUM_FLING_VELOCITY
+ViewConfiguration.getTouchSlop();
+	mMinimumFlingVelocity = ViewConfiguration.getMinimumFlingVelocity();
+	mMaximumFlingVelocity = ViewConfiguration.getMaximumFlingVelocity();
+gpGestureDetector* gpGestureDetector_createInstance();
+#endif

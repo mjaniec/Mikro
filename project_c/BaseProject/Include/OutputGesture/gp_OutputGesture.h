@@ -3,48 +3,49 @@
 
 #include "../Base/gp_types.h"
 
-struct {
+typedef struct {
 	gpFloat x;
 	gpFloat y;
 	gpBool direction;
 } gpOutputGesture_two_finger_scroll ;
 
-struct {
+typedef struct {
 	gpBool direction;
 	gpFloat magnification;
 } gpOutputGesture_zoom;
 
-struct {
+typedef struct {
 	gpFloat x;
 	gpFloat y;
 	gpBool direction;
 } gpOutputGesture_scroll;
 
-struct {
+typedef struct {
 	gpFloat x;
 	gpFloat y;
 	gpBool direction;
 } gpOutputGesture_flick;
 
-struct {
+typedef struct {
 	gpBool direction;
 	gpFloat angle;
 } gpOutputGesture_rotation;
 
-struct {
+typedef struct {
 	gpFloat x;
 	gpFloat y;
 	gpByte direction;
 } gpOutputGesture_move;
 
-struct {
+typedef struct {
 	gpFloat x;
 	gpFloat y;
 } gpOutputGesture_press;
 
-struct {
+typedef struct {
 	gpFloat x;
 	gpFloat y;
 } gpOutputGesture_tap;
+
 
 #endif
