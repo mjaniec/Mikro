@@ -1,1 +1,0 @@
-INDEX VERSION 1.126+D:\Common\projects\mikro_repo\Mikro\project_c\.metadata\.plugins\org.eclipse.jdt.core

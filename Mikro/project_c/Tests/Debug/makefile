@@ -11,7 +11,7 @@ all: clean Tests.exe
 
 # Tool invocations
 Tests.exe:
-	gcc -std=c99  -Wall $(INCLUDES) ../Source/AllTests.c  -o Tests.exe  $(LIBS)
+	gcc -std=c99  -Wall $(INCLUDES) ../Source/AllTests.c  $(LIBS) -o Tests.exe -g3  
 	-@echo ' '
 
 # Other Targets

@@ -24,7 +24,7 @@ void shouldntPushBecauseOfNegativeSize(){
   gpInt x;
   gpVector_init(&v);
   gpVector_pushBack(&v,&x,-sizeof(gpInt));
-  CU_ASSERT($error==GP_ENULLPTR);
+  CU_ASSERT($error==GP_EARG);
   gpVector_destroy(&v);
 }
 

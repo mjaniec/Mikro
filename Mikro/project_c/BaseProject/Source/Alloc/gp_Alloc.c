@@ -17,11 +17,15 @@ gpVoid gpAlloc_free(gpVoid* ptr)
 	gpInt size = *start_ptr;
 
 	$assert (start_ptr >= _gpAlloc_allocated_memory, GP_MEMVIOL);
-	$assert (start_ptr + size <= _gpAlloc_allocated_memory + gpAlloc_MAX_MEM, GP_MEMVIOL);
+	$assert (start_ptr + size + sizeof(gpInt) <= _gpAlloc_allocated_memory + gpAlloc_MAX_MEM, GP_MEMVIOL);
 
 	for(gpUByte* i = start_ptr; i < start_ptr + size + sizeof(gpInt); i++)
 	{
 		*i = 0;
+	}
+	if(start_ptr < _gpAlloc_after_last_allocated_index)
+	{
+		_gpAlloc_after_last_allocated_index = start_ptr;
 	}
 }
 
@@ -62,7 +66,7 @@ gpUByte* _gpAlloc_nearestFreeSpace(gpInt size)
 		return freeSpace;
 	}
 
-	return _gpAlloc_freeSpaceInRange(size, _gpAlloc_allocated_memory, _gpAlloc_after_last_allocated_index);
+	return _gpAlloc_freeSpaceInRange(size, _gpAlloc_allocated_memory, _gpAlloc_after_last_allocated_index - 1);
 }
 
 
@@ -73,7 +77,7 @@ gpUByte* _gpAlloc_freeSpaceInRange(gpInt size, gpUByte* start, gpUByte* end)
 		gpInt startValue = *start;
 		if(startValue != 0)
 		{
-			start += startValue;
+			start += startValue + sizeof(gpInt);
 		}
 		else
 		{

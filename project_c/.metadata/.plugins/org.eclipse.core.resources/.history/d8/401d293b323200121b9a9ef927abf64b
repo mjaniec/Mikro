@@ -1,8 +1,0 @@
-#ifndef GP_GESTURE_H_
-#define GP_GESTURE_H_
-
-typedef struct gpGesture {
-	gpWord id;
-} gpGesture;
-
-#endif

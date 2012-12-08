@@ -1,6 +1,0 @@
-#ifndef GP_GESTUREHANDLER_C_
-#define GP_GESTUREHANDLER_C_
-
-#include "../../Include/GestureHandler/gp_GestureHandler.h"
-
-#endif

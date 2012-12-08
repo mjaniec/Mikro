@@ -1,8 +1,0 @@
-CC=gcc
-CFLAGS=-D${MODE} -std=c99  -Wno-main -Wall
-
-all: clean generator
-	./generator.exe
-	
-clean:;	rm -f *.o *.exe
- 

@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;Gesture Recognizer/res/layout/activity_gesture_recognizer.xml&apos; to &apos;main.xml&apos;" description="Rename resource &apos;activity_gesture_recognizer.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="res/layout/activity_gesture_recognizer.xml" name="main.xml" stamp="1353080707814" updateReferences="true"/>
-</session>

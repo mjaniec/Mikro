@@ -70,8 +70,8 @@ void shouldntAllocateBecauseOfNoConsistentSpace(){
 	gpAlloc_free(mem1);
 	gpVoid* mem3=gpAlloc_alloc(gpAlloc_MAX_MEM-20-sizeof(gpInt));
 	CU_ASSERT_PTR_NULL(mem3);
-	gpAlloc_free(mem3);
 	gpAlloc_free(mem2);
+	gpAlloc_free(mem3);
 }
 
 void stressTest(){
@@ -95,13 +95,13 @@ void stressTest(){
 }
 
 CU_TestInfo gp_allocTests[] = {
-		TEST_ENTRY(shouldntAllocateBecauseOfNoConsistentSpace),
 		TEST_ENTRY(shouldAllocate),
 		TEST_ENTRY(shouldntAllocateBecauseOfMaxSize),
 		TEST_ENTRY(shouldntAllocateBecauseOfSizeBelowZero),
-		TEST_ENTRY(stressTest),
+		TEST_ENTRY(shouldntAllocateBecauseOfNoConsistentSpace),
 		TEST_ENTRY(shouldntAllocateBecauseOfMaxSizeInTwoAllocations),
 		TEST_ENTRY(shouldAllocateInTwoAllocations),
 		TEST_ENTRY(shouldAllocateInTwoAllocationsBecauseOfFree),
-  CU_TEST_INFO_NULL
+		TEST_ENTRY(stressTest),
+		CU_TEST_INFO_NULL
 };
