@@ -32,6 +32,8 @@ gpFloat gpMkFloat(gpString x){
 	gpFloat res=0;
 	gpBool neg=false;
 	gpFloat mul;
+
+	$assert0(x!=null,GP_ENULLPTR);
 	if(*x=='-')++x,neg=true;
 	else if(*x=='+')++x;
 

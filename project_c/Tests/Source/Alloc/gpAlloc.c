@@ -3,11 +3,6 @@
 #include <TestDB.h>
 #include <gp_Alloc.h>
 #include <stdlib.h>
-/*
-#ifndef false
-#define false 0
-#endif
-*/
 
 void shouldntAllocateBecauseOfMaxSize()
 {

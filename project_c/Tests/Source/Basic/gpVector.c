@@ -24,12 +24,12 @@ void shouldntPushBecauseOfNegativeSize(){
   gpInt x;
   gpVector_init(&v);
   gpVector_pushBack(&v,&x,-sizeof(gpInt));
-  CU_ASSERT($error==GP_ENULLPTR);
+  CU_ASSERT($error==GP_EARG);
   gpVector_destroy(&v);
 }
 
 
-void functionalTest()
+void vectorFunctionalTest()
 {
 	gpInt C=17;
 	gpVector v;
@@ -54,12 +54,30 @@ void functionalTest()
 	gpVector_destroy(&v);
 }
 
+void vectorStressTest(){
+	gpVector vec;
+	gpVector_init(&vec);
+	for(gpInt i=0; i<100; ++i){
+		gpVector_clean(&vec);
+		for(gpInt j=0; j<i; ++j){
+			gpPoint p;
+			p.x=j; p.y=j;
+			gpVector_pushBack(&vec,&p,sizeof(gpPoint));
+		}
+		for(gpInt j=0; j<i; ++j){
+			CU_ASSERT(j==((gpPoint*)gpVector_at(&vec,j))->x);
+		}
+	}
+	gpVector_destroy(&vec);
+}
+
 
 
 CU_TestInfo gp_VectorTests[] = {
 		TEST_ENTRY(shouldntPopBecauseOfEmptyness),
 		TEST_ENTRY(shouldntPushBecauseOfNullPtr),
 		TEST_ENTRY(shouldntPushBecauseOfNegativeSize),
-		TEST_ENTRY(functionalTest),
+		TEST_ENTRY(vectorFunctionalTest),
+		TEST_ENTRY(vectorStressTest),
   CU_TEST_INFO_NULL
 };

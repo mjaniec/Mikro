@@ -18,13 +18,16 @@ gpVoid gpRecognize(gpMotionEvent*event){
 
 	static gpBool init=true;
 	static gpRecognizeContext context;
-	static gpVector __v;
-	static gpPoint  __p;
+	static gpVector __v1, __v2;
+	static gpPoint  __p1, __p2;
 	if(init){
 		init=false;
-		context.first=&__p;
-		context.gesture=&__v;
-		gpVector_init(context.gesture)$r;
+		context.first1=&__p1;
+		context.first2=&__p2;
+		context.finger1=&__v1;
+		context.finger2=&__v2;
+		gpVector_init(context.finger1)$r;
+		gpVector_init(context.finger2)$r;
 	}
 	switch(event->actionType){
 		case GP_ME_ACTION_DOWN: _gpHandleDown(event,&context)$r; break;
@@ -35,11 +38,11 @@ gpVoid gpRecognize(gpMotionEvent*event){
 
 gpVoid _gpHandleDown(gpMotionEvent*event,gpRecognizeContext*context){
 	$fun;
-	gpVector_clean(context->gesture)$r;
+	gpVector_clean(context->finger1)$r;
 	context->firstTime=event->time;
-	gp_MoveData.begx=context->first->x=gpMotionEvent_getX(event,0)$r;
-	gp_MoveData.begy=context->first->y=gpMotionEvent_getY(event,0)$r;
-	gpVector_pushBack(context->gesture,context->first,sizeof(gpPoint))$r;
+	gp_MoveData.begx=context->first1->x=gpMotionEvent_getX(event,0)$r;
+	gp_MoveData.begy=context->first1->y=gpMotionEvent_getY(event,0)$r;
+	gpVector_pushBack(context->finger1,context->first1,sizeof(gpPoint))$r;
 }
 gpVoid _gpHandleMove(gpMotionEvent*event,gpRecognizeContext*context){
 	$fun;
@@ -51,15 +54,16 @@ gpVoid _gpHandleMove(gpMotionEvent*event,gpRecognizeContext*context){
 	current.x=gpMotionEvent_getX(event,0)$r;
 	current.y=gpMotionEvent_getY(event,0)$r;
 
-	gpVector_pushBack(context->gesture,&current,sizeof(gpPoint))$r;
+	gpVector_pushBack(context->finger1,&current,sizeof(gpPoint))$r;
 }
 gpVoid _gpHandleUp  (gpMotionEvent*event,gpRecognizeContext*context){
 	$fun;
-	/*gpTryTap(event,context)$r;
+	gpTryTap(event,context)$r;
 	gpTryPress(event,context)$r;
 	gpTryScroll(event,context)$r;
-	gpTryFlick(event,context)$r;*/
-	gpVector_clean(context->gesture);
+	gpTryFlick(event,context)$r;
+	gpVector_clean(context->finger1)$r;
+	gpVector_clean(context->finger2)$r;
 }
 
 

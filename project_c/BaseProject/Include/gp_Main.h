@@ -31,8 +31,11 @@ gpOutputGesture_two_finger_scroll 	gp_TwoFingerScrollData;
 gpOutputGesture_two_finger_tap		gp_TwoFingerTapData;
 
 typedef struct{
-	gpVector* gesture;
-	gpPoint* first;
+	gpVector* finger1;
+	gpVector* finger2;
+	gpPoint* first1;
+	gpPoint* first2;
+	gpByte fingers;
 	gpInt firstTime;
 }gpRecognizeContext;
 
