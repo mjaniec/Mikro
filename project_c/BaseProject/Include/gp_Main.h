@@ -6,7 +6,6 @@
 #include "Base/gp.h"
 #include "Alloc/gp_Alloc.h"
 #include "Math/gp_Math.h"
-<<<<<<< HEAD
 #include "InOut/gp_MotionEvent.h"
 #include "InOut/gp_OutputGesture.h"
 #include "Gestures/gp_gestures_parameters.h"
@@ -50,15 +49,5 @@ gpVoid gpTryZoom			(gpMotionEvent*event,gpRecognizeContext*context);
 gpVoid gpTryTwoFingerScroll	(gpMotionEvent*event,gpRecognizeContext*context);
 gpVoid gpTryTowFIngerTap	(gpMotionEvent*event,gpRecognizeContext*context);
 
-
-=======
-#include "Instance/gp_Instance.h"
-#include "InstanceLearner/gp_InstanceLearner.h"
-#include "OutputGesture/gp_OutputGesture.h"
-#include "GestureDetector/gp_GestureDetector.h"
-#include "GestureHandler/gp_GestureHandler.h"
-#include "MotionEvent/gp_MotionEvent.h"
-#include "VelocityTracker/gp_VelocityTracker.h"
->>>>>>> 2825189a131db1a4d528cfda8d59dc02cfcb0613
 
 #endif
