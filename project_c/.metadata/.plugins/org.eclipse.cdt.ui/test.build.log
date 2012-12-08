@@ -1,8 +1,0 @@
-
-**** Build of configuration Default for project test ****
-
-C:\Users\Bartek\Desktop\android-ndk-r8b\ndk-build.cmd all 
-Install        : libtest.so => libs/armeabi/libtest.so
-
-
-**** Build Finished ****

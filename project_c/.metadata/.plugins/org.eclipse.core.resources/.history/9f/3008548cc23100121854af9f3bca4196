@@ -1,8 +1,0 @@
-
-#ifndef GP_LEARNER_H_
-#define GP_LEARNER_H_
-#include "../Base/gp.h"
-
-ArrayList<Prediction> classify(int sequenceType, int orientationType, float[] vector) {
-
-#endif

@@ -1,7 +1,0 @@
-#include <TestDB.h>
-
-CU_SuiteInfo suites[] = {
-  { "suitename1", NULL, NULL, test_array1 },
- // { "suitename2", suite2_init-func, suite2_cleanup_func, test_array2 },
-  CU_SUITE_INFO_NULL,
-};

@@ -1,9 +1,0 @@
-#ifndef GP_VELOCITYTRACKER_H_
-#define GP_VELOCITYTRACKER_H_
-
-
-typedef struct gpVelocityTracker {
-
-};
-
-#endif

@@ -1,8 +1,0 @@
-
-**** Build of configuration Default for project GestureBuilder ****
-
-C:\Users\Bartek\Desktop\android-ndk-r8b\ndk-build.cmd all 
-Android NDK: Your APP_BUILD_SCRIPT points to an unknown file: ./jni/Android.mk    
-C:/Users/Bartek/Desktop/android-ndk-r8b/build/core/add-application.mk:133: *** Android NDK: Aborting...    .  Stop.
-
-**** Build Finished ****
