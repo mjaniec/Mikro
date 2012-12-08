@@ -57,8 +57,6 @@ C:/Users/Janiec/Documents/GitHub/Mikro/Mikro/project_java//obj/local/armeabi/obj
  C:/Users/Janiec/Documents/GitHub/Mikro/Mikro/project_java//jni/../../project_c/BaseProject/Source/Gestures\/gp_rotation.c \
  C:/Users/Janiec/Documents/GitHub/Mikro/Mikro/project_java//jni/../../project_c/BaseProject/Source/Gestures\/gp_scroll.c \
  C:/Users/Janiec/Documents/GitHub/Mikro/Mikro/project_java//jni/../../project_c/BaseProject/Source/Gestures\/gp_tap.c \
- C:/Users/Janiec/Documents/GitHub/Mikro/Mikro/project_java//jni/../../project_c/BaseProject/Source/Gestures\/gp_two_finger_scroll.c \
- C:/Users/Janiec/Documents/GitHub/Mikro/Mikro/project_java//jni/../../project_c/BaseProject/Source/Gestures\/gp_two_finger_tap.c \
  C:/Users/Janiec/Documents/GitHub/Mikro/Mikro/project_java//jni/../../project_c/BaseProject/Source/Gestures\/gp_zoom.c \
  C:/Users/Janiec/Documents/GitHub/Mikro/Mikro/project_java//jni/../../project_c/BaseProject/Source/InOut\gp_MotionEvent.c \
  C:/Users/Janiec/Documents/GitHub/Mikro/Mikro/project_java//jni/../../project_c/BaseProject/Source/InOut\/../../Include/InOut/gp_MotionEvent.h \
@@ -177,10 +175,6 @@ C:/Users/Janiec/Documents/GitHub/Mikro/Mikro/project_java//jni/../../project_c/B
 C:/Users/Janiec/Documents/GitHub/Mikro/Mikro/project_java//jni/../../project_c/BaseProject/Source/Gestures\/gp_scroll.c:
 
 C:/Users/Janiec/Documents/GitHub/Mikro/Mikro/project_java//jni/../../project_c/BaseProject/Source/Gestures\/gp_tap.c:
-
-C:/Users/Janiec/Documents/GitHub/Mikro/Mikro/project_java//jni/../../project_c/BaseProject/Source/Gestures\/gp_two_finger_scroll.c:
-
-C:/Users/Janiec/Documents/GitHub/Mikro/Mikro/project_java//jni/../../project_c/BaseProject/Source/Gestures\/gp_two_finger_tap.c:
 
 C:/Users/Janiec/Documents/GitHub/Mikro/Mikro/project_java//jni/../../project_c/BaseProject/Source/Gestures\/gp_zoom.c:
 

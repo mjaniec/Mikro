@@ -5,5 +5,5 @@ public class Flick {
 	public final boolean direction;
 	Flick(float _x, float _y, boolean _direction){
 		x=_x; y=_y; direction=_direction;
-	}
+ 	}
 }

@@ -24,7 +24,7 @@ import android.widget.Toast;
 public class MainActivity extends Activity implements OnTouchListener {
 
 	static{
-		try{
+		try{ 
 			System.loadLibrary("gp_Delegator");
 		}catch(Exception e){
 			e.printStackTrace();

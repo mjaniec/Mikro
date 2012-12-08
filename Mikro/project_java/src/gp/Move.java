@@ -8,5 +8,5 @@ public class Move {
 		begx=_begx;
 		begy=_begy;
 	}
-	
+	 
 }
