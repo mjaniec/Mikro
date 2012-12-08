@@ -13,4 +13,10 @@ gpFloat gpPoint_distance2(gpPoint*a,gpPoint*b){
 	return gpAdd(gpMul(dx,dx),gpMul(dy,dy));
 }
 
+gpPoint gpPoint_init(gpFloat x,gpFloat y){
+	gpPoint r;
+	r.x=x; r.y=y;
+	return r;
+}
+
 #endif

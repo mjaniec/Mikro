@@ -31,24 +31,23 @@ gpOutputGesture_two_finger_scroll 	gp_TwoFingerScrollData;
 gpOutputGesture_two_finger_tap		gp_TwoFingerTapData;
 
 typedef struct{
-	gpVector* gesture;
-	gpPoint* first;
+	gpVector* finger1;
+	gpVector* finger2;
+	gpByte fingers;
 	gpInt firstTime;
 }gpRecognizeContext;
 
-
 gpVoid gpRecognize(gpMotionEvent*event);
 
-gpVoid gpTryTap				(gpMotionEvent*event,gpRecognizeContext*context);
-gpVoid gpTryPress			(gpMotionEvent*event,gpRecognizeContext*context);
-gpVoid gpTryFlick			(gpMotionEvent*event,gpRecognizeContext*context);
+gpBool gpTryTap				(gpMotionEvent*event,gpRecognizeContext*context);
+gpBool gpTryPress			(gpMotionEvent*event,gpRecognizeContext*context);
+gpBool gpTryFlick			(gpMotionEvent*event,gpRecognizeContext*context);
 //Notice no gpTryMove
-gpVoid gpTryRotation		(gpMotionEvent*event,gpRecognizeContext*context);
-gpVoid gpTryScroll			(gpMotionEvent*event,gpRecognizeContext*context);
-gpVoid gpTryZoom			(gpMotionEvent*event,gpRecognizeContext*context);
-gpVoid gpTryTwoFingerScroll	(gpMotionEvent*event,gpRecognizeContext*context);
-gpVoid gpTryTowFIngerTap	(gpMotionEvent*event,gpRecognizeContext*context);
-
+gpBool gpTryRotation		(gpMotionEvent*event,gpRecognizeContext*context);
+gpBool gpTryScroll			(gpMotionEvent*event,gpRecognizeContext*context);
+gpBool gpTryZoom			(gpMotionEvent*event,gpRecognizeContext*context);
+gpBool gpTryTwoFingerScroll	(gpMotionEvent*event,gpRecognizeContext*context);
+gpBool gpTryTowFIngerTap	(gpMotionEvent*event,gpRecognizeContext*context);
 
 
 #endif

@@ -23,10 +23,10 @@ gpVoid gpAlloc_free(gpVoid* ptr)
 	{
 		*i = 0;
 	}
-	if(start_ptr < _gpAlloc_after_last_allocated_index)
+	/*if(start_ptr < _gpAlloc_after_last_allocated_index)
 	{
 		_gpAlloc_after_last_allocated_index = start_ptr;
-	}
+	}*/
 }
 
 gpVoid* gpAlloc_alloc(gpInt size)

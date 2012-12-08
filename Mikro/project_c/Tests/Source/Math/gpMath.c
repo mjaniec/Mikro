@@ -5,9 +5,9 @@
 #endif
 
 void gpMkFloatTest(){
-	CU_ASSERT(GP_FLOAT_BASE==gpMkFloat("1"));
-	CU_ASSERT(GP_FLOAT_BASE/10+GP_FLOAT_BASE==gpMkFloat("1.1"));
-	CU_ASSERT(-2*GP_FLOAT_BASE/100==gpMkFloat("-0.02"));
+	CU_ASSERT(gpMath_Equals(GP_FLOAT_BASE,gpMkFloat("1")));
+	CU_ASSERT(gpMath_Equals(GP_FLOAT_BASE/10+GP_FLOAT_BASE,gpMkFloat("1.1")));
+	CU_ASSERT(gpMath_Equals(-2*GP_FLOAT_BASE/100,gpMkFloat("-0.02")));
 }
 
 void gpMath_EqualsTest(){
@@ -22,6 +22,7 @@ void gpMath_EqualsTest(){
 void gpMulTest(){
 	CU_ASSERT(gpMath_Equals(gpMul(gpMkFloat("9"),gpMkFloat("9")),gpMkFloat("81")));
 	CU_ASSERT(gpMath_Equals(gpMul(gpMkFloat("125"),gpMkFloat("8")),gpMkFloat("1000")));
+	CU_ASSERT(gpMath_Equals(gpMul(gpMkFloat("500"),gpMkFloat("200")),gpMkFloat("100000")));
 }
 
 void gpDivTest(){

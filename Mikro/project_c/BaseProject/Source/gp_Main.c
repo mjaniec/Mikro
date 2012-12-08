@@ -18,28 +18,31 @@ gpVoid gpRecognize(gpMotionEvent*event){
 
 	static gpBool init=true;
 	static gpRecognizeContext context;
-	static gpVector __v;
-	static gpPoint  __p;
+	static gpVector __v1, __v2;
+
 	if(init){
 		init=false;
-		context.first=&__p;
-		context.gesture=&__v;
-		gpVector_init(context.gesture)$r;
+		context.fingers=0;
+		context.finger1=&__v1;
+		context.finger2=&__v2;
+		gpVector_init(context.finger1)$r;
+		gpVector_init(context.finger2)$r;
 	}
 	switch(event->actionType){
 		case GP_ME_ACTION_DOWN: _gpHandleDown(event,&context)$r; break;
 		case GP_ME_ACTION_MOVE: _gpHandleMove(event,&context)$r; break;
+		case GP_ME_ACTION_POINTER_1_DOWN: printf("one down"); break;
+		case GP_ME_ACTION_POINTER_1_UP: printf("one up"); break;
+		case GP_ME_ACTION_POINTER_2_DOWN: printf("second down"); break;
+		case GP_ME_ACTION_POINTER_2_UP: printf("second up"); break;
 		case GP_ME_ACTION_UP:   _gpHandleUp  (event,&context)$r; break;
 	}
 }
 
 gpVoid _gpHandleDown(gpMotionEvent*event,gpRecognizeContext*context){
 	$fun;
-	gpVector_clean(context->gesture)$r;
+	printf("down");
 	context->firstTime=event->time;
-	gp_MoveData.begx=context->first->x=gpMotionEvent_getX(event,0)$r;
-	gp_MoveData.begy=context->first->y=gpMotionEvent_getY(event,0)$r;
-	gpVector_pushBack(context->gesture,context->first,sizeof(gpPoint))$r;
 }
 gpVoid _gpHandleMove(gpMotionEvent*event,gpRecognizeContext*context){
 	$fun;
@@ -47,19 +50,37 @@ gpVoid _gpHandleMove(gpMotionEvent*event,gpRecognizeContext*context){
 	gp_MoveData.x=gpMotionEvent_getX(event,0)$r;
 	gp_MoveData.y=gpMotionEvent_getY(event,0)$r;
 
-	gpPoint current;
-	current.x=gpMotionEvent_getX(event,0)$r;
-	current.y=gpMotionEvent_getY(event,0)$r;
+	gpPoint current1;
+	gpPoint current2;
 
-	gpVector_pushBack(context->gesture,&current,sizeof(gpPoint))$r;
+	current1.x=gpMotionEvent_getX(event,0)$r;
+	current1.y=gpMotionEvent_getY(event,0)$r;
+
+	gpVector_pushBack(context->finger1,&current1,sizeof(gpPoint))$r;
+
+	if(event->size==2){
+		current2.x=gpMotionEvent_getX(event,1)$r;
+		current2.y=gpMotionEvent_getY(event,1)$r;
+		gpVector_pushBack(context->finger2,&current2,sizeof(gpPoint))$r;
+	}
 }
 gpVoid _gpHandleUp  (gpMotionEvent*event,gpRecognizeContext*context){
 	$fun;
-	/*gpTryTap(event,context)$r;
-	gpTryPress(event,context)$r;
+	printf("up");
+
 	gpTryScroll(event,context)$r;
-	gpTryFlick(event,context)$r;*/
-	gpVector_clean(context->gesture);
+	gpTryTwoFingerScroll(event,context)$r;
+
+	gpTryTap(event,context)$r;
+	gpTryPress(event,context)$r;
+
+	gpTryFlick(event,context)$r;
+	//gpTryRotation(event,context)$r;
+	//;
+	gpTryTwoFingerTap(event,context)$r;
+	//gpTryZoom(event,context)$r;*/
+	gpVector_clean(context->finger1)$r;
+	gpVector_clean(context->finger2)$r;
 }
 
 

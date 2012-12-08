@@ -67,7 +67,6 @@ gpVoid gpVector_popBack(gpVector *self, gpVoid*where, gpInt size){
 	self->size--;
 	gpAlloc_copy(self->data[self->size],where,size)$r;
 	gpAlloc_free(self->data[self->size])$r;
-
 }
 
 #endif

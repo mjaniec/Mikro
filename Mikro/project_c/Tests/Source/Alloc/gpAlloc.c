@@ -74,7 +74,7 @@ void shouldntAllocateBecauseOfNoConsistentSpace(){
 	gpAlloc_free(mem3);
 }
 
-void stressTest(){
+void allocStressTest(){
 	gpVoid* mem[30];
 	for(int i=0; i<30; ++i)
 		mem[i]=null;
@@ -102,6 +102,6 @@ CU_TestInfo gp_allocTests[] = {
 		TEST_ENTRY(shouldntAllocateBecauseOfMaxSizeInTwoAllocations),
 		TEST_ENTRY(shouldAllocateInTwoAllocations),
 		TEST_ENTRY(shouldAllocateInTwoAllocationsBecauseOfFree),
-		TEST_ENTRY(stressTest),
+		TEST_ENTRY(allocStressTest),
 		CU_TEST_INFO_NULL
 };
