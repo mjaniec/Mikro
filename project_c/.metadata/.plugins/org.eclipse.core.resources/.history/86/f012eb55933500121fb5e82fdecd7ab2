@@ -1,0 +1,19 @@
+#ifndef GP_VELOCITYTRACKER_C_
+#define GP_VELOCITYTRACKER_C_
+
+#include "../../Include/VelocityTracker/gp_VelocityTracker.h"
+
+gpVelocityTracker* gpVelocityTracker_createInstance()
+{
+	gpVelocityTracker* velocityTracker = gpAlloc_alloc(sizeof(gpVelocityTracker));
+	velocityTracker->head = null;
+	velocityTracker->last = null;
+	return velocityTracker;
+}
+
+gpVoid gpVelocityTracker_addMovement(gpVelocityTracker* velocityTracker, gpMotionEvent* motionEvent)
+{
+	velocityTracker->
+
+}
+#endif

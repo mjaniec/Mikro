@@ -1,0 +1,20 @@
+#ifndef GP_VELOCITYTRACKER_H_
+#define GP_VELOCITYTRACKER_H_
+
+typedef struct {
+	gpMotionEvent event;
+	_gpVelocityNode* next;
+	_gpVelocityNode* previous;
+} _gpVelocityNode;
+
+
+typedef struct {
+	_gpVelocityNode* head;
+	_gpVelocityNode* end;
+} gpVelocityTracker;
+
+
+gpVoid gpVelocityTracker_addMovement(gpVelocityTracker*, gpMotionEvent*);
+gpVelocityTracker* gpVelocityTracker_createInstance();
+
+#endif
