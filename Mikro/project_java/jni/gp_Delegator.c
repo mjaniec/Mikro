@@ -187,8 +187,8 @@ JNIEXPORT jobject JNICALL Java_gp_Delegator_isZoom(JNIEnv *env, jobject self){
  * Signature: ()Lgp/TwoFingerTap;
  */
 JNIEXPORT jobject JNICALL Java_gp_Delegator_isTwoFingerTap(JNIEnv *env, jobject self){
-	if(!gp_isTwoFingerScroll)return jnull;
-	gp_isTwoFingerScroll=false;
+	if(!gp_isTwoFingerTap)return jnull;
+	gp_isTwoFingerTap=false;
 
 	jclass clazz=(*env)->FindClass(env,"gp/TwoFingerTap");
 	if(!clazz)return jnull;

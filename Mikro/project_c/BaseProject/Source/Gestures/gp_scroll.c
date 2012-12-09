@@ -58,8 +58,8 @@ gpBool gpTryTwoFingerScroll	(gpMotionEvent*event,gpRecognizeContext*context){
 	if(firstFinger && secondFinger && firstFinger->direction==secondFinger->direction){
 		gp_isTwoFingerScroll=true;
 		gp_TwoFingerScrollData.direction=firstFinger->direction;
-		gp_TwoFingerTapData.x=gpDiv(gpAdd(firstFinger->x,secondFinger->x),gpMkFloat("2"));
-		gp_TwoFingerTapData.y=gpDiv(gpAdd(firstFinger->y,secondFinger->y),gpMkFloat("2"));
+		gp_TwoFingerScrollData.x=gpDiv(gpAdd(firstFinger->x,secondFinger->x),gpMkFloat("2"));
+		gp_TwoFingerScrollData.y=gpDiv(gpAdd(firstFinger->y,secondFinger->y),gpMkFloat("2"));
 		return true;
 	}
 	return false;
