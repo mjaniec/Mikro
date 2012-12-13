@@ -45,7 +45,6 @@ gpBool gpTryTwoFingerTap(gpMotionEvent*event,gpRecognizeContext*context){
 		gp_isTwoFingerTap=true;
 		gp_TwoFingerTapData.x=gpDiv(gpAdd(one->x,two->x),gpMkFloat("2"));
 		gp_TwoFingerTapData.y=gpDiv(gpAdd(one->y,two->y),gpMkFloat("2"));
-		printf("two finger tap");
 		return true;
 	}
 	return false;

@@ -8,6 +8,6 @@
 #define GP_SCROLL_MIN_LEN gpMkFloat("20")
 #define GP_FLICK_MIN_LEN gpMkFloat("15")
 #define GP_TWO_FINGER_TAP_MAX_DIST gpMkFloat("60")
-
+#define GP_ZOOM_MIN_CHANGE gpMkFloat("10")
 
 #endif /* GP_GESTURE_PARAMETERS_H_ */

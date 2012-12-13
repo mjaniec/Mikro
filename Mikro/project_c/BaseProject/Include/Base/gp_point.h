@@ -9,5 +9,6 @@ typedef struct{
 
 gpFloat gpPoint_distance(gpPoint*a,gpPoint*b);
 gpFloat gpPoint_distance2(gpPoint*a,gpPoint*b);
+gpPoint gpPoint_init(gpFloat x,gpFloat y);
 
 #endif /* GP_POINT_H_ */

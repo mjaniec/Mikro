@@ -78,7 +78,7 @@ gpVoid _gpHandleUp  (gpMotionEvent*event,gpRecognizeContext*context){
 	//gpTryRotation(event,context)$r;
 	//;
 	gpTryTwoFingerTap(event,context)$r;
-	//gpTryZoom(event,context)$r;*/
+	gpTryZoom(event,context)$r;
 	gpVector_clean(context->finger1)$r;
 	gpVector_clean(context->finger2)$r;
 }

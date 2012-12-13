@@ -3,6 +3,12 @@
 
 #include "..\..\Include\Math\gp_Math.h"
 
+gpByte gpMath_Sign(gpFloat x){
+	if(x<0)return -1;
+	if(x>0)return +1;
+	return 0;
+}
+
 //It have to have short name
 inline gpFloat gpMul(gpFloat a, gpFloat b){
 	$fun;
@@ -10,11 +16,28 @@ inline gpFloat gpMul(gpFloat a, gpFloat b){
 	long Y=b/GP_FLOAT_BASE, y=b%GP_FLOAT_BASE;
 	return X*Y*GP_FLOAT_BASE +X*y+Y*x+x*y/GP_FLOAT_BASE;
 }
-inline gpFloat gpDiv(gpFloat a, gpFloat b){
+
+
+gpFloat gpDiv(gpFloat a, gpFloat b){
 	$fun;
-	$assert0(b!=gpMath_0,GP_EARG);
-	long A=a, B=b;
-	return (A*GP_FLOAT_HALF)/B*GP_FLOAT_HALF;
+
+	if(gpMath_Sign(a)*gpMath_Sign(b)==-1)
+		return gpNeg(gpDiv(gpMath_Abs(a),gpMath_Abs(b)));
+
+	a=gpMath_Abs(a); b=gpMath_Abs(b);
+	if(a==gpMath_0)return gpMath_0;
+	gpFloat x=1,y,z;
+	for(;gpMul(x,b)<=a;x<<=1);
+
+	x>>=1;
+	for(y=x>>1; y>0; y>>=1){
+		z=gpAdd(x,y);
+		if(gpMul(z,b)<=a)
+			x=z;;
+	}
+	if(gpMul(x,b)>a)--x;
+
+	return x;
 }
 
 inline gpInt gpMath_Int(gpFloat a){
@@ -24,6 +47,36 @@ inline gpInt gpMath_Int(gpFloat a){
 inline gpFloat gpMath_FloatI(gpInt a){
 	return ((gpFloat)a)*GP_FLOAT_BASE;
 }
+
+gpFloat gpMath_AngleToAzimut(gpPoint*a,gpPoint*b){
+	gpPoint x=gpPoint_init(b->x-a->x,b->y-a->y);
+
+	gpFloat product=gpNeg(x.y);
+	gpFloat length =gpMath_Sqrt(gpAdd(gpMath_Square(x.x),gpMath_Square(x.y)));
+	gpFloat sin=gpNeg(gpDiv(product,length));
+	printf("\nproduct: %d.%d, length: %d.%d",
+			(int)(product/GP_FLOAT_BASE),(int)(product%GP_FLOAT_BASE),
+			(int)(length/GP_FLOAT_BASE),(int)(length%GP_FLOAT_BASE));
+	//product = length(x)*sin(\alpha)
+
+
+	printf("\na: (%d.%d,%d.%d),  sin: %d.%d\n",
+			(int)((x.x)/GP_FLOAT_BASE),(int)((x.x)%GP_FLOAT_BASE),
+			(int)((x.y)/GP_FLOAT_BASE),(int)((x.y)%GP_FLOAT_BASE),
+			(int)(sin  /GP_FLOAT_BASE),(int)(sin  %GP_FLOAT_BASE));
+
+	if(gpMath_Equals(x.x,gpMath_0)){
+		return (x.y>gpMath_0)?gpMath_PI2:gpNeg(gpMath_PI);
+	}
+	if(x.x>0){
+		return gpMath_ASin(sin);
+	}
+	else{
+		return gpAdd(gpMath_PI,gpMath_ASin(gpMath_Abs(sin)));
+	}
+	return 0;
+}
+
 
 gpFloat gpMkFloat(gpString x){
 	$fun;
@@ -76,7 +129,7 @@ gpFloat gpMath_MaxFloat(gpFloat a, gpFloat b){
 gpBool gpMath_Equals(gpFloat a, gpFloat b){
 	$fun;
 	gpFloat denom=gpMath_MinFloat(gpMath_Abs(a),gpMath_Abs(b));
-	if(denom<=gpMath_EPSILION)
+	if(denom<GP_FLOAT_BASE)
 		return gpMath_Abs(gpSub(a,b))<gpMath_EPSILION;
 	else return gpMath_Abs(gpDiv(gpSub(a,b),denom))<gpMath_EPSILION;
 }
@@ -165,9 +218,9 @@ gpFloat gpMath_Cos(gpFloat x){
 	if(x>gpMath_PI4)return gpMath_Sin(gpSub(gpMath_PI2,x));
 
 	gpFloat d1=gpMkFloat("-2");
-	gpFloat d2=gpMkFloat("-12");
-	gpFloat d3=gpMkFloat("-30");
-	gpFloat d4=gpMkFloat("-56");
+	gpFloat d2=gpMkFloat("6");
+	gpFloat d3=gpMkFloat("15");
+	gpFloat d4=gpMkFloat("28");
 
 	gpFloat x2=gpDiv(gpMath_Square(x),d1);
 	gpFloat x4=gpDiv(gpMul(x2,x2),d2);
@@ -185,28 +238,69 @@ gpFloat gpMath_Tan(gpFloat x){
 	$assert0(!gpMath_Equals(gpMath_PI2,x),GP_EARG);
 	return gpDiv(gpMath_Sin(x),gpMath_Cos(x));
 }
+
 gpFloat gpMath_ASin(gpFloat x){
 	$fun;
 	$assert0(gpNeg(gpMath_1)<=x && x<=gpMath_1,GP_EARG);
-	gpFloat m1=gpMkFloat("0.1667");
-	gpFloat m2=gpMkFloat("0.075");
-	gpFloat m3=gpMkFloat("0.0446");
-
-	gpFloat x2=gpMath_Square(x);
-	gpFloat x3=gpMul(x ,x2);
-	gpFloat x5=gpMul(x3,x2);
-	gpFloat x7=gpMul(x5,x2);
-
-	return gpAdd(x,gpAdd(gpMul(x3,m1),gpAdd(gpMul(x5,m2),gpMul(x7,m3))));
+	gpFloat denom=gpAdd(gpMath_1,gpMath_Sqrt(gpSub(gpMath_1,gpMath_Square(x))));
+	return gpMul(gpMath_2,gpMath_ATan(gpDiv(x,denom)));
 }
+
 gpFloat gpMath_ACos(gpFloat x){
 	$fun;
 	$assert0(gpNeg(gpMath_1)<=x && x<=gpMath_1,GP_EARG);
 	return gpMath_PI2-gpMath_ASin(x);
 }
+
+gpFloat _gpMath_ATan_PadeApproximation(gpFloat x)
+{
+	$fun;
+	x=gpSub(x,gpMath_1);
+	gpFloat m1=gpMkFloat("0.25");
+	gpFloat m2=gpMkFloat("5.1416");
+	gpFloat m3=gpMkFloat("2.0472");
+	gpFloat m4=gpMkFloat("0.3333");
+	gpFloat x2=gpMath_Square(x);
+
+	gpFloat value=gpAdd(gpMath_PI,gpAdd(gpMul(m2,x),gpMul(m3,x2)));
+	gpFloat denom=gpAdd(gpMath_1,gpAdd(x,gpMul(m4,x2)));
+
+	value=gpMul(m1,gpDiv(value,denom));
+	//return value;
+	gpFloat rest=gpMath_0;
+	//poprawka
+	x=gpAdd(x,gpMath_1);
+	if(x<gpMath_2)return value;
+
+	if(x<gpMkFloat("10") ){
+		rest=gpMul(gpSub(x,gpMath_2),gpMkFloat("0.0021"));
+		return gpAdd(value,rest);
+	}else if(x<gpMkFloat("30")){
+		rest=gpMkFloat("0.0168");
+		rest=gpAdd(rest,gpMul(gpMkFloat("0.0005"),gpSub(x,gpMkFloat("10"))));
+		return gpAdd(value,rest);
+	}else {
+		return(gpAdd(value,gpMkFloat("0.03")));
+	}
+}
+
+gpFloat _gpMath_ATan_TylorApproximation(gpFloat x){
+	$fun;
+	gpFloat m1=gpMkFloat("-0.3333");
+	gpFloat m2=gpMkFloat("0.2");
+	gpFloat x2=gpMath_Square(x);
+	gpFloat x3=gpMul(x2,x);
+	gpFloat x5=gpMul(x2,x3);
+	return gpAdd(x,gpAdd(gpMul(m1,x3),gpMul(m2,x5)));
+}
+
+
 gpFloat gpMath_ATan(gpFloat x){
 	$fun;
-	return gpMath_ASin(gpDiv(x,gpMath_Sqrt(gpAdd(gpMath_Square(x),1))));
+	if(x<gpMath_0)return gpNeg(gpMath_ATan(gpNeg(x)));
+	if(x<gpMkFloat("0.46"))
+		return _gpMath_ATan_TylorApproximation(x);
+	else return _gpMath_ATan_PadeApproximation(x);
 }
 
 

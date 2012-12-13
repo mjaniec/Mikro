@@ -15,7 +15,7 @@ gpBool gpTryFlick(gpMotionEvent*event,gpRecognizeContext*context){
 
 	if(gpMath_Abs(dx)<GP_FLICK_MIN_LEN)return false;
 	if(gpMath_Abs(gpMul(gpMkFloat("3"),dy))>gpMath_Abs(dx))return false;
-	gpBool dir=dx>gpMath_0;
+	gpBool dir_right=dx>gpMath_0;
 
 	size-=bounds;
 	gpPoint*current;
@@ -27,12 +27,12 @@ gpBool gpTryFlick(gpMotionEvent*event,gpRecognizeContext*context){
 	   dx=current->x-prevoius->x;
 	   dy=current->y-prevoius->y;
 	   if(gpMath_Abs(dy)>gpMath_Abs(dx))return false;
-	   if((dir&&dx<gpMath_0) || (!dir&&dx>gpMath_0))return false;
+	   if((dir_right&&dx<gpMath_0) || (!dir_right&&dx>gpMath_0))return false;
 	   prevoius=current;
 	}
 	//FLICK
 	gp_isFlick=true;
-	gp_FlickData.direction=dir;
+	gp_FlickData.direction=dir_right;
 	gp_FlickData.x=last.x;
 	gp_FlickData.y=last.y;
 	return true;

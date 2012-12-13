@@ -15,7 +15,7 @@ gpOutputGesture_scroll* _gpCheckForScrollInVector(gpVector*vec){
 
 	if(gpMath_Abs(dy)<GP_SCROLL_MIN_LEN)return false;
 	if(gpMath_Abs(gpMul(gpMkFloat("3"),dx))>gpMath_Abs(dy))return false;
-	gpBool dir=dy>gpMath_0;
+	gpBool dir_down=dy>gpMath_0;
 
 	size-=bounds;
 	gpPoint*current;
@@ -27,11 +27,11 @@ gpOutputGesture_scroll* _gpCheckForScrollInVector(gpVector*vec){
 	   dx=current->x-prevoius->x;
 	   dy=current->y-prevoius->y;
 	   if(gpMath_Abs(dx)>gpMath_Abs(dy))return false;
-	   if((dir&&dy<gpMath_0) || (!dir&&dy>gpMath_0))return false;
+	   if((dir_down&&dy<gpMath_0) || (!dir_down&&dy>gpMath_0))return false;
 	   prevoius=current;
 	}
 	static gpOutputGesture_scroll out;
-    out.direction=dir;
+    out.direction=dir_down;
     out.x=last.x;
     out.y=last.y;
 

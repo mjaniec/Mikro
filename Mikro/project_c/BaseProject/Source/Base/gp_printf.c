@@ -20,4 +20,14 @@ gpInt __android_prinf(gpString fmt,...){
 
 #endif
 
+#ifdef DEBUG
+
+#include "../../Include/Base/gp.h"
+
+gpVoid gpPrintFloat(gpFloat x){
+	printf("%ld.%ld\n",x/GP_FLOAT_BASE,x%GP_FLOAT_BASE);
+}
+
+#endif
+
 #endif
