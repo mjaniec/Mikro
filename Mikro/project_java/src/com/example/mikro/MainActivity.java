@@ -65,7 +65,7 @@ public class MainActivity extends Activity implements OnTouchListener {
 		if(scroll!=null)Toast.makeText(getApplicationContext(), "Scroll: "+scroll.direction,Toast.LENGTH_SHORT).show();
 		if(flick!=null)Toast.makeText(getApplicationContext(), "Flick: "+flick.direction, Toast.LENGTH_SHORT).show();
 		if(twoFingerScroll!=null)Toast.makeText(getApplicationContext(), "TwoFingerScroll: "+twoFingerScroll.direction, Toast.LENGTH_SHORT).show();
-		if(move!=null){}
+		//if(move!=null)Toast.makeText(getApplicationContext(), "Move: "+move.begx+ " " + move.begy + " " + move.x + " " + move.y, Toast.LENGTH_SHORT).show();
 		if(zoom!=null)Toast.makeText(getApplicationContext(), "Zoom: "+zoom.direction+","+zoom.maginfication,Toast.LENGTH_SHORT).show(); 
 		if(rotation!=null)Toast.makeText(getApplicationContext(), "Rotation: "+rotation.direction+", "+rotation.angle, Toast.LENGTH_SHORT).show();
 		if(twoFingerTap!=null)Toast.makeText(getApplicationContext(), "TwoFingerTap: "+twoFingerTap.x+", "+twoFingerTap.y, Toast.LENGTH_SHORT).show();

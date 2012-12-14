@@ -27,13 +27,22 @@ gpFloat gpDiv(gpFloat a, gpFloat b){
 	a=gpMath_Abs(a); b=gpMath_Abs(b);
 	if(a==gpMath_0)return gpMath_0;
 	gpFloat x=1,y,z;
-	for(;gpMul(x,b)<=a;x<<=1);
+	gpFloat tmp = gpMul(x, b);
+
+	for(;tmp <= a && tmp >= gpMath_0;)
+	{
+		x <<= 1;
+		tmp = gpMul(x, b);
+	}
+
 
 	x>>=1;
 	for(y=x>>1; y>0; y>>=1){
 		z=gpAdd(x,y);
-		if(gpMul(z,b)<=a)
-			x=z;;
+		if(gpMul(z,b)<=a && gpMul(z, b) > 0)
+		{
+			x=z;
+		}
 	}
 	if(gpMul(x,b)>a)--x;
 
@@ -54,16 +63,16 @@ gpFloat gpMath_AngleToAzimut(gpPoint*a,gpPoint*b){
 	gpFloat product=gpNeg(x.y);
 	gpFloat length =gpMath_Sqrt(gpAdd(gpMath_Square(x.x),gpMath_Square(x.y)));
 	gpFloat sin=gpNeg(gpDiv(product,length));
-	printf("\nproduct: %d.%d, length: %d.%d",
-			(int)(product/GP_FLOAT_BASE),(int)(product%GP_FLOAT_BASE),
-			(int)(length/GP_FLOAT_BASE),(int)(length%GP_FLOAT_BASE));
+	//printf("\nproduct: %d.%d, length: %d.%d",
+	//		(int)(product/GP_FLOAT_BASE),(int)(product%GP_FLOAT_BASE),
+	//		(int)(length/GP_FLOAT_BASE),(int)(length%GP_FLOAT_BASE));
 	//product = length(x)*sin(\alpha)
 
 
-	printf("\na: (%d.%d,%d.%d),  sin: %d.%d\n",
-			(int)((x.x)/GP_FLOAT_BASE),(int)((x.x)%GP_FLOAT_BASE),
-			(int)((x.y)/GP_FLOAT_BASE),(int)((x.y)%GP_FLOAT_BASE),
-			(int)(sin  /GP_FLOAT_BASE),(int)(sin  %GP_FLOAT_BASE));
+	//printf("\na: (%d.%d,%d.%d),  sin: %d.%d\n",
+	//		(int)((x.x)/GP_FLOAT_BASE),(int)((x.x)%GP_FLOAT_BASE),
+	//		(int)((x.y)/GP_FLOAT_BASE),(int)((x.y)%GP_FLOAT_BASE),
+	//		(int)(sin  /GP_FLOAT_BASE),(int)(sin  %GP_FLOAT_BASE));
 
 	if(gpMath_Equals(x.x,gpMath_0)){
 		return (x.y>gpMath_0)?gpMath_PI2:gpNeg(gpMath_PI);
@@ -147,17 +156,31 @@ gpInt* gpMath_MinIntP(gpInt* a, gpInt* b)
 gpFloat gpMath_Sqrt(gpFloat a){
 	$fun;
 	$assert0(a>=gpMath_0, GP_EARG);
+	/*
 	if(a==gpMath_0)return gpMath_0;
 	gpFloat x=gpMath_1;
 	gpFloat x2=gpMath_1;
 	gpFloat two=gpMkFloat("2");
-
+	printf("before loop\n");
 	while(!gpMath_Equals(a,gpMath_Square(x)) || !gpMath_Equals(x,x2)){
 		x2=x;
 		x=gpDiv(x+gpDiv(a,x),two);
 	}
+	printf("after loop\n");
 	return x;
+	*/
+	/*meine version*/
+	gpFloat xn = a;
+	gpFloat xn_1;
+	gpFloat two = gpMkFloat("2");
+	do
+	{
+		xn_1 = xn;
+		xn = gpDiv(gpAdd(xn_1, gpDiv(a, xn_1)), two);
+	} while(!gpMath_Equals(xn, xn_1));
+	return xn;
 }
+
 gpFloat gpMath_Exp(gpFloat a){
 	$fun;
 	gpFloat res=gpMath_1;
@@ -303,5 +326,64 @@ gpFloat gpMath_ATan(gpFloat x){
 	else return _gpMath_ATan_PadeApproximation(x);
 }
 
+gpFloat gpMath_ATan2(gpFloat x, gpFloat y)
+{
+	if(x > 0)
+	{
+		return gpMath_ATan(gpDiv(y, x));
+	}
+	else if(y >= 0 && x < 0)
+	{
+		return gpAdd(gpMath_ATan(gpDiv(y, x)), gpMath_PI);
+	}
+	else if(y < 0 && x < 0)
+	{
+		return gpSub(gpMath_ATan(gpDiv(y, x)), gpMath_PI);
+	}
+	else if(y > 0 && gpMath_Equals(x, gpMath_0))
+	{
+		return gpDiv(gpMath_PI, gpMkFloat("2"));
+	}
+	else if(y < 0 && gpMath_Equals(x, gpMath_0))
+	{
+		return gpNeg(gpDiv(gpMath_PI, gpMkFloat("2")));
+	}
+	else
+	{
+		printf("undefined atan2");
+		return gpMath_PI;
+	}
+}
+
+gpFloat gpMath_AngleToAzimut_ByRotationGuy(gpPoint first, gpPoint second)
+{
+	gpFloat delta_x = gpSub(first.x, second.x);
+	gpFloat delta_y = gpNeg(gpSub(first.y, second.y));
+	gpFloat tmp =  gpMath_ATan2(delta_x, delta_y);
+	while(tmp > gpMath_PI)
+	{
+		tmp = gpSub(tmp, gpMath_PI);
+	}
+
+	while(tmp < gpNeg(gpMath_PI))
+	{
+		tmp = gpAdd(tmp, gpMath_PI);
+	}
+
+	if(delta_x > 0 && delta_y > 0)
+	{
+		tmp = gpSub(gpDiv(gpMath_PI, gpMath_2), tmp);
+	}
+	else if(delta_x < 0 && delta_y > 0)
+	{
+		tmp = gpSub(gpAdd(gpMath_2PI, gpDiv(gpMath_PI, gpMath_2)), tmp);
+	}
+	else
+	{
+		tmp = gpAdd(gpNeg(tmp), gpDiv(gpMath_PI, gpMath_2));
+	}
+
+	return tmp;
+}
 
 #endif

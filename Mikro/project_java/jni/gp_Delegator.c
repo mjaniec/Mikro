@@ -176,9 +176,9 @@ JNIEXPORT jobject JNICALL Java_gp_Delegator_isZoom(JNIEnv *env, jobject self){
 
 	jclass clazz=(*env)->FindClass(env,"gp/Zoom");
 	if(!clazz)return jnull;
-	jmethodID constructor=(*env)->GetMethodID(env,clazz,"<init>","(ZF)V");
+	jmethodID constructor=(*env)->GetMethodID(env,clazz,"<init>","(FZ)V");
 	if(!constructor)return jnull;
-	return (*env)->NewObject(env,clazz,constructor,gp_ZoomData.direction,gpf2jf(gp_ZoomData.magnification));
+	return (*env)->NewObject(env,clazz,constructor, gpf2jf(gp_ZoomData.magnification), gp_ZoomData.direction);
 }
 
 /*
@@ -194,7 +194,7 @@ JNIEXPORT jobject JNICALL Java_gp_Delegator_isTwoFingerTap(JNIEnv *env, jobject 
 	if(!clazz)return jnull;
 	jmethodID constructor=(*env)->GetMethodID(env,clazz,"<init>","(FF)V");
 	if(!constructor)return jnull;
-	return (*env)->NewObject(env,clazz,constructor,gp_TwoFingerTapData.x,gp_TwoFingerTapData.y);
+	return (*env)->NewObject(env,clazz,constructor,gpf2jf(gp_TwoFingerTapData.x),gpf2jf(gp_TwoFingerTapData.y));
 }
 
 

@@ -29,13 +29,13 @@ gpVoid gpRecognize(gpMotionEvent*event){
 		gpVector_init(context.finger2)$r;
 	}
 	switch(event->actionType){
-		case GP_ME_ACTION_DOWN: _gpHandleDown(event,&context)$r; break;
+		case GP_ME_ACTION_DOWN: _gpHandleDown(event,&context)$r; context.fingers = 1; break;
 		case GP_ME_ACTION_MOVE: _gpHandleMove(event,&context)$r; break;
 		case GP_ME_ACTION_POINTER_1_DOWN: printf("one down"); break;
 		case GP_ME_ACTION_POINTER_1_UP: printf("one up"); break;
-		case GP_ME_ACTION_POINTER_2_DOWN: printf("second down"); break;
+		case GP_ME_ACTION_POINTER_2_DOWN: printf("second down"); context.fingers = 2; break;
 		case GP_ME_ACTION_POINTER_2_UP: printf("second up"); break;
-		case GP_ME_ACTION_UP:   _gpHandleUp  (event,&context)$r; break;
+		case GP_ME_ACTION_UP:   _gpHandleUp  (event,&context)$r; context.fingers = 0; break;
 	}
 }
 
@@ -46,9 +46,15 @@ gpVoid _gpHandleDown(gpMotionEvent*event,gpRecognizeContext*context){
 }
 gpVoid _gpHandleMove(gpMotionEvent*event,gpRecognizeContext*context){
 	$fun;
-	gp_isMove=true;
-	gp_MoveData.x=gpMotionEvent_getX(event,0)$r;
-	gp_MoveData.y=gpMotionEvent_getY(event,0)$r;
+	if(event->size == 1 && context->fingers == 1 &&  gpVector_getSize(context->finger1) > 0)
+	{
+		gp_isMove=true;
+		gp_MoveData.x = gpMotionEvent_getX(event,0)$r;
+		gp_MoveData.y = gpMotionEvent_getY(event,0)$r;
+		gpPoint* previousPoint = gpVector_at(context->finger1, gpVector_getSize(context->finger1) - 1)$r;
+		gp_MoveData.begx = previousPoint->x;
+		gp_MoveData.begy = previousPoint->y;
+	}
 
 	gpPoint current1;
 	gpPoint current2;
@@ -75,8 +81,7 @@ gpVoid _gpHandleUp  (gpMotionEvent*event,gpRecognizeContext*context){
 	gpTryPress(event,context)$r;
 
 	gpTryFlick(event,context)$r;
-	//gpTryRotation(event,context)$r;
-	//;
+	gpTryRotation(event,context)$r;
 	gpTryTwoFingerTap(event,context)$r;
 	gpTryZoom(event,context)$r;
 	gpVector_clean(context->finger1)$r;

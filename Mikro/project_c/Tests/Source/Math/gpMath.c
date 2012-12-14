@@ -37,6 +37,7 @@ void gpDivTest(){
 	CU_ASSERT(gpMath_Equals(gpDiv(gpMkFloat("-1"),gpMkFloat("-0.001")),gpMkFloat("1000")));
 	CU_ASSERT(gpMath_Equals(gpDiv(gpMath_0,gpMkFloat("457")),gpMath_0));
 	CU_ASSERT(gpMath_Equals(gpDiv(gpMkFloat("-18"),gpMkFloat("-2")),gpMkFloat("9")));
+	CU_ASSERT(gpMath_Equals(gpDiv(gpMkFloat("183440"),gpMkFloat("429.5084")), gpMkFloat("427.0929")));
 }
 
 void gpMath_AbsTest(){
@@ -139,6 +140,30 @@ void gpMath_AngleToAzimutTest(){
 	CU_ASSERT(gpMath_Equals(gpMkFloat("3.6052"),gpMath_AngleToAzimut(&_0,&px)));
 }
 
+void gpMath_AngleToAzimut_ByRotationGuyTest()
+{
+	/*
+	gpPoint _10_10=gpPoint_init(gpMkFloat("10"),gpMkFloat("10"));
+	gpPoint _12_10=gpPoint_init(gpMkFloat("12"),gpMkFloat("10"));
+	gpPoint _12_12=gpPoint_init(gpMkFloat("12"),gpMkFloat("12"));
+	gpPoint _10_12=gpPoint_init(gpMkFloat("10"),gpMkFloat("12"));
+	gpPoint _0   = gpPoint_init(gpMath_0,gpMath_0);
+	gpPoint _1_3 = gpPoint_init(gpMath_1,gpMath_3);
+	gpPoint px   = gpPoint_init(gpNeg(gpMath_2),gpMath_1);
+
+	CU_ASSERT(gpMath_Equals(gpMath_0,gpMath_AngleToAzimut_ByRotationGuy(_10_10,_12_10)));
+	CU_ASSERT(gpMath_Equals(gpMath_PI4,gpMath_AngleToAzimut_ByRotationGuy(_10_10,_12_12)));
+	//printf("110: %d %d",gpMath_AngleToAzimut(&_10_10,&_12_12), gpMath_PI4);
+	CU_ASSERT(gpMath_Equals(gpMul(gpMkFloat("5"),gpMath_PI4),
+			gpMath_AngleToAzimut_ByRotationGuy(_12_12,_10_10)
+							));
+	CU_ASSERT(gpMath_Equals(gpMath_PI2,gpMath_AngleToAzimut_ByRotationGuy(_10_10,_10_12)));
+	CU_ASSERT(gpMath_Equals(gpMkFloat("1.2490"),gpMath_AngleToAzimut_ByRotationGuy(_0,_1_3)));
+	printf("%d", gpMath_AngleToAzimut_ByRotationGuy(_0,px));
+	CU_ASSERT(gpMath_Equals(gpMkFloat("3.6052"),gpMath_AngleToAzimut_ByRotationGuy(_0,px)));
+	*/
+}
+
 
 CU_TestInfo gp_MathTests[] = {
 		TEST_ENTRY(gpMkFloatTest),
@@ -157,5 +182,7 @@ CU_TestInfo gp_MathTests[] = {
 		TEST_ENTRY(gpMath_ACosTest),
 		TEST_ENTRY(gpMath_ATanTest),
 		TEST_ENTRY(gpMath_AngleToAzimutTest),
+		TEST_ENTRY(gpMath_AngleToAzimut_ByRotationGuyTest),
   CU_TEST_INFO_NULL
 };
+

@@ -3,7 +3,7 @@
 #include "../../Include/Base/gp.h"
 
 gpFloat gpPoint_distance(gpPoint*a,gpPoint*b){
-	return gpMath_Square(gpPoint_distance2(a,b));
+	return gpMath_Sqrt(gpPoint_distance2(a,b));
 }
 
 gpFloat gpPoint_distance2(gpPoint*a,gpPoint*b){
