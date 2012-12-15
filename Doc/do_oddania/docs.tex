@@ -1,17 +1,88 @@
-\documentclass[10pt,a4paper]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[polish]{babel}
+\documentclass[a4paper,12pt]{article}
+\usepackage[english,polish]{babel}
 \usepackage{polski}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{cancel}
 \usepackage{underscore}
-\usepackage{hyperref}
-\author{Michał Janiec Bartosz Polnik}
-\title{Gesture Processing Library}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{tabulary}
+\usepackage{array}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\setlength\fboxsep{1pt}
+\setlength\fboxrule{0pt}
+\def \tscale {0.3}
+
 \begin{document}
-\maketitle
+
+\begin{titlepage}
+	\begin{center}
+		\includegraphics[width=0.4\textwidth]{../data/logo} \\[1cm]
+		\textsc{\LARGE Technika Mikroprocesorowa} \\[0.8cm]
+		\HRule \\[0.4cm]
+		{ \huge \bfseries Gesture Processing Library} \\[0.4cm]
+		\HRule \\[1.5cm]
+	\end{center}
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushleft} \large
+		\emph{Autorzy:} \\
+		Michał \textsc{Janiec} \\
+		Bartosz \textsc{Polnik}
+		\end{flushleft}
+	\end{minipage}
+\end{titlepage}
+\thispagestyle{empty}
+
 \tableofcontents
+
+\section{Temat} \ \\[0.1cm]
+\indent Stworzenie niskopoziomowej biblioteki do przetwarzania gestów, dedykowanej dla mikroprocesorów jedno-układowych.
+
+\section{Cel} \ \\[0.1cm]
+\indent Celem projektu jest przede wszystkim stworzenie ww. biblioteki pozwalającej na wygodne korzystanie z technologi multi-touch na różnorodnych urządzeniach. Ponadto utworzona zostanie aplikacja na platformę Android służąca zaprezentowaniu działania biblioteki. Jej zadaniem będzie odczytywanie gestów wykonanych przez użytkownika i wyświetlanie ich nazw.
+
+\section{Opis zagadnienia} \ \\[0.1cm]
+\indent Zadaniem biblioteki będzie odczytywanie gestów z urządzenia dotykowego. Biblioteka będzie periodycznie odczytywać stan urządzenia (wejście biblioteki). Na tej podstawie będzie rozpoznawać ruchy, które będzie dopasowywać do listy gestów. Po rozpoznaniu gest informacja o wykonanym geście zostanie umieszczona w kolejce gestów (wyjście biblioteki). Użytkownik biblioteki powinien periodycznie sprawdzać czy coś pojawiło się w kolejce i samodzielnie przetwarzać jej zawartość. Gesty będą dodawane do biblioteki w czasie kompilacji. Biblioteka zostanie napisana w języku C bez użycia zewnętrznych bibliotek.
+
+
+
+\section{Lista gestów} \ \\[0.1cm]
+\indent W celu uniknięcia niejednoznaczności proponujemy anglojęzyczne nazwy gestów.\\
+
+\begin{tabulary}{\linewidth}{|>{\bf}c|c|C|C|}
+\hline	\textbf{Nazwa}&\textbf{Rysunek}&\textbf{Opis}&\textbf{Parametry}\\ \hline 
+	
+     Tap & 
+	\fbox{\includegraphics[scale=\tscale]{../data/Tap}} & 
+		Pojedyncze stuknięcie w multi-touch. & 	Pozycja (x,y)  \\ \hline
+	 	
+	 Press & \fbox{\includegraphics[scale=\tscale]{../data/Press}} &
+	 	Stuknięcie i przytrzymanie palca przez dłuższy czas. & 	Pozycja(x,y) \\ \hline
+	 	
+	 Move & \fbox{\includegraphics[scale=\tscale]{../data/Move}} &
+	 	Przesunięcie palca w dowolnym kierunku. & Pozycja(x,y) Pozycja(x,y) \\ \hline
+	 	
+	 Rotate & \fbox{\includegraphics[scale=\tscale]{../data/Rotate}} &
+	 	Obrót w lewo lub w prawo. & Left/Right Obrót, (kąt) \\ \hline
+	 
+	 Flick & \fbox{\includegraphics[scale=\tscale]{../data/Flick}} &
+	 	Przesunięcie palca w lewo lub prawo i puszczenie. &	Left/Right, Pozycja(x,y) \\ \hline
+	 	
+\end{tabulary}
+
+\begin{tabulary}{\linewidth}{|>{\bf}C|c|C|C|}
+\hline	\textbf{Nazwa}&\textbf{Rysunek}&\textbf{Opis}&\textbf{Parametry}\\ \hline 
+
+	 Scroll & 
+\fbox{\includegraphics[scale=\tscale]{../data/Scroll}} &
+	 	Przesunięcie palca w górę lub w dół i puszczenie. &	Up/Down, Pozycja(x,y) \\ \hline
+	 
+	 Zoom & \fbox{\includegraphics[scale=\tscale]{../data/Zoom}} &
+	 	Przybliżenie lub oddalenie palca wskazującego i kciuka do siebie. &	In/Out, Przybliżenie (liczba) \\ \hline
+	 
+	 Two Finger Scroll & \fbox{\includegraphics[scale=\tscale]{../data/TwoFingerScroll}} &
+	 	Przesunięcie dwóch palców równolegle w górę lub w dół. & Up/Down, Pozycja(x,y) \\ \hline
+		
+\end{tabulary}
 
 \include{funkcje}
 \end{document}
