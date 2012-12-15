@@ -26,8 +26,8 @@ gpFloat _gp_rotation_calculateAngle(gpVector* points, gpPoint base)
 		gpPoint* previous = gpVector_at(points, i);
 		gpPoint* next = gpVector_at(points, i + 1);
 
-		gpFloat anglePrevious = gpMath_AngleToAzimut_ByRotationGuy(*previous, base);
-		gpFloat angleNext = gpMath_AngleToAzimut_ByRotationGuy(*next, base);
+		gpFloat anglePrevious = gpMath_AngleToAzimut(*previous, base);
+		gpFloat angleNext = gpMath_AngleToAzimut(*next, base);
 
 		gpFloat diff = gpSub(angleNext, anglePrevious);
 

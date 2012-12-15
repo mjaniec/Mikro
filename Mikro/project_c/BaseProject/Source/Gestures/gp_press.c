@@ -13,8 +13,6 @@ gpBool gpTryPress(gpMotionEvent*event,gpRecognizeContext*context){
 	 if(gpPoint_distance2(&first,current)>maxDistSquare)return false;
   }
 
-  //PRESS!
-
   gp_isPress=true;
   gp_PressData.x=first.x;
   gp_PressData.y=first.y;

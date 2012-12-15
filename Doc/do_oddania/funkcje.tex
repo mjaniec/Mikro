@@ -1,0 +1,542 @@
+\section{Exposed Functionality}
+\subsection{gp_Main.h}
+\subsubsection{Gesture declarations}
+\begin{itemize}
+\item \textit{gpOutputGesture_tap}\quad gp_TapData
+\item \textit{gpOutputGesture_press}\quad gp_PressData
+\item \textit{gpOutputGesture_flick}\quad gp_FlickData
+\item \textit{gpOutputGesture_move}\quad gp_MoveData
+\item \textit{gpOutputGesture_rotation}\quad gp_RotationData
+\item \textit{gpOutputGesture_scroll}\quad gp_ScrollData
+\item \textit{gpOutputGesture_zoom}\quad gp_ZoomData
+\item \textit{gpOutputGesture_two_finger_scroll}\quad gp_TwoFingerScrollData
+\item \textit{gpOutputGesture_two_finger_tap}\quad gp_TwoFingerTapData
+\end{itemize}
+\subsubsection{Data structures}
+\textsf{gpRecognizeContext}
+	\begin{itemize}
+		\item \textit{gpVector* finger1}\quad opis
+		\item \textit{gpVector* finger2}\quad opis
+		\item \textit{gpByte fingers}\quad opis
+		\item \textit{gpInt firstTime}\quad opis
+	\end{itemize}
+\ \\
+\subsubsection{Functions}
+\mbox{\textsf{gpVoid gpRecognize(gpMotionEvent* event)}}
+	\begin{itemize}
+		\item \textit{gpMotionEvent* event}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpBool gpTryTap(gpMotionEvent* event, gpRecognizeContext* context)}}
+	\begin{itemize}
+		\item \textit{gpMotionEvent* event}\quad opis
+		\item \textit{gpRecognizeContext* context}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpBool gpTryPress(gpMotionEvent* event, gpRecognizeContext* context)}}
+	\begin{itemize}
+		\item \textit{gpMotionEvent* event}\quad opis
+		\item \textit{gpRecognizeContext* context}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpBool gpTryFlick(gpMotionEvent* event, gpRecognizeContext* context)}}
+	\begin{itemize}
+		\item \textit{gpMotionEvent* event}\quad opis
+		\item \textit{gpRecognizeContext* context}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpBool gpTryRotation(gpMotionEvent* event, gpRecognizeContext* context)}}
+	\begin{itemize}
+		\item \textit{gpMotionEvent* event}\quad opis
+		\item \textit{gpRecognizeContext* context}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpBool gpTryScroll(gpMotionEvent* event, gpRecognizeContext* context)}}
+	\begin{itemize}
+		\item \textit{gpMotionEvent* event}\quad opis
+		\item \textit{gpRecognizeContext* context}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpBool gpTryZoom(gpMotionEvent* event, gpRecognizeContext* context)}}
+	\begin{itemize}
+		\item \textit{gpMotionEvent* event}\quad opis
+		\item \textit{gpRecognizeContext* context}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpBool gpTryTwoFingerScroll(gpMotionEvent* event, gpRecognizeContext* context)}}
+	\begin{itemize}
+		\item \textit{gpMotionEvent* event}\quad opis
+		\item \textit{gpRecognizeContext* context}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpBool gpTryTowFIngerTap(gpMotionEvent* event, gpRecognizeContext* context)}}
+	\begin{itemize}
+		\item \textit{gpMotionEvent* event}\quad opis
+		\item \textit{gpRecognizeContext* context}\quad opis
+	\end{itemize}
+
+ \ \\
+
+\subsection{gp_Alloc.h}
+\subsubsection{Constants}
+\begin{itemize}
+\item \textit{gpAlloc_MAX_MEM\quad 1000000}\qquad opis
+\end{itemize}
+\subsubsection{Functions}
+\mbox{\textsf{gpVoid* gpAlloc_alloc(gpInt size)}}
+	\begin{itemize}
+		\item \textit{gpInt size}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpVoid gpAlloc_free(gpVoid* ptr)}}
+	\begin{itemize}
+		\item \textit{gpVoid* ptr}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpVoid gpAlloc_copy(gpVoid* from, gpVoid* to, gpInt size)}}
+	\begin{itemize}
+		\item \textit{gpVoid* from}\quad opis
+		\item \textit{gpVoid* to}\quad opis
+		\item \textit{gpInt size}\quad opis
+	\end{itemize}
+
+ \ \\
+
+\subsection{gp.h}
+
+\subsection{gp_bool.h}
+\subsubsection{Constants}
+\begin{itemize}
+\item \textit{false\quad 0}\qquad opis
+\item \textit{true\quad 1}\qquad opis
+\end{itemize}
+
+\subsection{gp_point.h}
+\subsubsection{Data structures}
+\textsf{gpPoint}
+	\begin{itemize}
+		\item \textit{gpFloat x}\quad opis
+		\item \textit{gpFloat y}\quad opis
+	\end{itemize}
+\ \\
+\subsubsection{Functions}
+\mbox{\textsf{gpFloat gpPoint_distance(gpPoint* a, gpPoint* b)}}
+	\begin{itemize}
+		\item \textit{gpPoint* a}\quad opis
+		\item \textit{gpPoint* b}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpFloat gpPoint_distance2(gpPoint* a, gpPoint* b)}}
+	\begin{itemize}
+		\item \textit{gpPoint* a}\quad opis
+		\item \textit{gpPoint* b}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpPoint gpPoint_init(gpFloat x, gpFloat y)}}
+	\begin{itemize}
+		\item \textit{gpFloat x}\quad opis
+		\item \textit{gpFloat y}\quad opis
+	\end{itemize}
+
+ \ \\
+
+\subsection{gp_printf.h}
+\subsubsection{Constants}
+\begin{itemize}
+\item \textit{printf\quad __android_prinf}\qquad opis
+\end{itemize}
+
+\subsection{gp_types.h}
+\subsubsection{Data types}
+\begin{itemize}
+\item \textit{typedef void gpVoid}
+\item \textit{typedef char gpBool}
+\item \textit{typedef unsigned char gpUByte}
+\item \textit{typedef signed char gpByte}
+\item \textit{typedef unsigned short gpUWord}
+\item \textit{typedef signed short gpWord}
+\item \textit{typedef unsigned long gpUInt}
+\item \textit{typedef signed long gpInt}
+\item \textit{typedef char gpChar}
+\item \textit{typedef char* gpString}
+\item \textit{typedef long gpFloat}
+\end{itemize}
+\subsubsection{Constants}
+\begin{itemize}
+\item \textit{null\quad ((gpVoid*)(0))}\qquad opis
+\end{itemize}
+
+\subsection{gp_vector.h}
+\subsubsection{Data structures}
+\textsf{gpVector}
+	\begin{itemize}
+		\item \textit{gpVoid** data}\quad opis
+		\item \textit{gpInt capacity}\quad opis
+		\item \textit{gpInt size}\quad opis
+	\end{itemize}
+\ \\
+\subsubsection{Functions}
+\mbox{\textsf{gpVoid gpVector_init(gpVector* self)}}
+	\begin{itemize}
+		\item \textit{gpVector* self}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpVoid gpVector_destroy(gpVector* self)}}
+	\begin{itemize}
+		\item \textit{gpVector* self}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpInt gpVector_getSize(gpVector* self)}}
+	\begin{itemize}
+		\item \textit{gpVector* self}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpVoid* gpVector_at(gpVector* self, gpInt index)}}
+	\begin{itemize}
+		\item \textit{gpVector* self}\quad opis
+		\item \textit{gpInt index}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpVoid gpVector_clean(gpVector* sefl)}}
+	\begin{itemize}
+		\item \textit{gpVector* sefl}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpVoid gpVector_pushBack(gpVector* self, gpVoid* what, gpInt size)}}
+	\begin{itemize}
+		\item \textit{gpVector* self}\quad opis
+		\item \textit{gpVoid* what}\quad opis
+		\item \textit{gpInt size}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpVoid gpVector_popBack(gpVector* self, gpVoid* where, gpInt size)}}
+	\begin{itemize}
+		\item \textit{gpVector* self}\quad opis
+		\item \textit{gpVoid* where}\quad opis
+		\item \textit{gpInt size}\quad opis
+	\end{itemize}
+
+ \ \\
+
+\subsection{gp_gestures_parameters.h}
+\subsubsection{Constants}
+\begin{itemize}
+\item \textit{GP_DEBOUNCE_TIME\quad 5}\qquad opis
+\item \textit{GP_TAP_MAX_TIME\quad 40}\qquad opis
+\item \textit{GP_TAP_MAX_MOVE\quad gpMkFloat("12")}\qquad opis
+\item \textit{GP_ROTATION_MAX_MOVE\quad gpMkFloat("20")}\qquad opis
+\item \textit{GP_TAP_PRESS_MOVE\quad gpMkFloat("10")}\qquad opis
+\item \textit{GP_SCROLL_MIN_LEN\quad gpMkFloat("20")}\qquad opis
+\item \textit{GP_FLICK_MIN_LEN\quad gpMkFloat("15")}\qquad opis
+\item \textit{GP_TWO_FINGER_TAP_MAX_DIST\quad gpMkFloat("60")}\qquad opis
+\item \textit{GP_ZOOM_MIN_CHANGE\quad gpMkFloat("10")}\qquad opis
+\end{itemize}
+
+\subsection{gp_gestures_results.h}
+\subsubsection{Constants}
+\begin{itemize}
+\item \textit{GP_SCROLL_DOWN\quad true}\qquad opis
+\item \textit{GP_SCROLL_UP\quad false}\qquad opis
+\item \textit{GP_FLICK_LEFT\quad false}\qquad opis
+\item \textit{GP_FLICK_RIGHT\quad true}\qquad opis
+\item \textit{GP_ZOOM_IN\quad true}\qquad opis
+\item \textit{GP_ZOOM_OUT\quad false}\qquad opis
+\end{itemize}
+
+\subsection{gp_MotionEvent.h}
+\subsubsection{Constants}
+\begin{itemize}
+\item \textit{GP_ME_ACTION_CANCEL\quad 3}\qquad opis
+\item \textit{GP_ME_ACTION_DOWN\quad 0}\qquad opis
+\item \textit{GP_ME_ACTION_HOVER_ENTER\quad 9}\qquad opis
+\item \textit{GP_ME_ACTION_HOVER_EXIT\quad 10}\qquad opis
+\item \textit{GP_ME_ACTION_HOVER_MOVE\quad 7}\qquad opis
+\item \textit{GP_ME_ACTION_MOVE\quad 2}\qquad opis
+\item \textit{GP_ME_ACTION_POINTER_1_DOWN\quad 5}\qquad opis
+\item \textit{GP_ME_ACTION_POINTER_1_UP\quad 6}\qquad opis
+\item \textit{GP_ME_ACTION_POINTER_2_DOWN\quad 261}\qquad opis
+\item \textit{GP_ME_ACTION_POINTER_2_UP\quad 262}\qquad opis
+\item \textit{GP_ME_ACTION_POINTER_DOWN\quad 5}\qquad opis
+\item \textit{GP_ME_ACTION_POINTER_UP\quad 6}\qquad opis
+\item \textit{GP_ME_ACTION_SCROLL\quad 8}\qquad opis
+\item \textit{GP_ME_ACTION_UP\quad 1}\qquad opis
+\end{itemize}
+
+\subsection{gp_OutputGesture.h}
+\subsubsection{Data structures}
+\textsf{gpOutputGesture_two_finger_scroll}
+	\begin{itemize}
+		\item \textit{gpFloat x}\quad opis
+		\item \textit{gpFloat y}\quad opis
+		\item \textit{gpBool direction}\quad opis
+	\end{itemize}
+\ \\
+\textsf{gpOutputGesture_zoom}
+	\begin{itemize}
+		\item \textit{gpBool direction}\quad opis
+		\item \textit{gpFloat magnification}\quad opis
+	\end{itemize}
+\ \\
+\textsf{gpOutputGesture_scroll}
+	\begin{itemize}
+		\item \textit{gpFloat x}\quad opis
+		\item \textit{gpFloat y}\quad opis
+		\item \textit{gpBool direction}\quad opis
+	\end{itemize}
+\ \\
+\textsf{gpOutputGesture_flick}
+	\begin{itemize}
+		\item \textit{gpFloat x}\quad opis
+		\item \textit{gpFloat y}\quad opis
+		\item \textit{gpBool direction}\quad opis
+	\end{itemize}
+\ \\
+\textsf{gpOutputGesture_rotation}
+	\begin{itemize}
+		\item \textit{gpBool direction}\quad opis
+		\item \textit{gpFloat angle}\quad opis
+	\end{itemize}
+\ \\
+\textsf{gpOutputGesture_move}
+	\begin{itemize}
+		\item \textit{gpFloat x}\quad opis
+		\item \textit{gpFloat y}\quad opis
+		\item \textit{gpFloat begx}\quad opis
+		\item \textit{gpFloat begy}\quad opis
+	\end{itemize}
+\ \\
+\textsf{gpOutputGesture_press}
+	\begin{itemize}
+		\item \textit{gpFloat x}\quad opis
+		\item \textit{gpFloat y}\quad opis
+	\end{itemize}
+\ \\
+\textsf{gpOutputGesture_tap}
+	\begin{itemize}
+		\item \textit{gpFloat x}\quad opis
+		\item \textit{gpFloat y}\quad opis
+	\end{itemize}
+\ \\
+\textsf{gpOutputGesture_two_finger_tap}
+	\begin{itemize}
+		\item \textit{gpFloat x}\quad opis
+		\item \textit{gpFloat y}\quad opis
+	\end{itemize}
+\ \\
+
+\subsection{gp_Math.h}
+\subsubsection{Constants}
+\begin{itemize}
+\item \textit{GP_FLOAT_BASE\quad 10000}\qquad opis
+\item \textit{gpMath_EPSILION\quad 10}\qquad opis
+\item \textit{gpMath_PI\quad 31416}\qquad opis
+\item \textit{gpMath_2PI\quad 62832}\qquad opis
+\item \textit{gpMath_PI2\quad 15708}\qquad opis
+\item \textit{gpMath_PI4\quad 7854}\qquad opis
+\item \textit{gpMath_PI6\quad 5236}\qquad opis
+\item \textit{gpMath_E\quad 27183}\qquad opis
+\item \textit{gpMath_1\quad 10000}\qquad opis
+\item \textit{gpMath_2\quad 20000}\qquad opis
+\item \textit{gpMath_3\quad 30000}\qquad opis
+\item \textit{gpMath_SINPI4\quad 7071}\qquad opis
+\item \textit{gpMath_0\quad 0}\qquad opis
+\end{itemize}
+\subsubsection{Functions}
+\mbox{\textsf{gpFloat gpMul(gpFloat a, gpFloat b)}}
+	\begin{itemize}
+		\item \textit{gpFloat a}\quad opis
+		\item \textit{gpFloat b}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpFloat gpDiv(gpFloat a, gpFloat b)}}
+	\begin{itemize}
+		\item \textit{gpFloat a}\quad opis
+		\item \textit{gpFloat b}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpFloat gpSub(gpFloat a, gpFloat b)}}
+	\begin{itemize}
+		\item \textit{gpFloat a}\quad opis
+		\item \textit{gpFloat b}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpFloat gpAdd(gpFloat a, gpFloat b)}}
+	\begin{itemize}
+		\item \textit{gpFloat a}\quad opis
+		\item \textit{gpFloat b}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpFloat gpNeg(gpFloat a)}}
+	\begin{itemize}
+		\item \textit{gpFloat a}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpInt gpMath_MinInt()}}
+
+ \ \\
+\mbox{\textsf{gpByte gpMath_Sign(gpFloat x)}}
+	\begin{itemize}
+		\item \textit{gpFloat x}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpFloat gpMath_Abs(gpFloat a)}}
+	\begin{itemize}
+		\item \textit{gpFloat a}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpFloat gpMath_Square(gpFloat a)}}
+	\begin{itemize}
+		\item \textit{gpFloat a}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpFloat gpMath_Sqrt(gpFloat a)}}
+	\begin{itemize}
+		\item \textit{gpFloat a}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpFloat gpMath_Exp(gpFloat a)}}
+	\begin{itemize}
+		\item \textit{gpFloat a}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpFloat gpMath_PowI(gpFloat base, gpInt exp)}}
+	\begin{itemize}
+		\item \textit{gpFloat base}\quad opis
+		\item \textit{gpInt exp}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpFloat gpMath_Sin(gpFloat x)}}
+	\begin{itemize}
+		\item \textit{gpFloat x}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpFloat gpMath_Cos(gpFloat x)}}
+	\begin{itemize}
+		\item \textit{gpFloat x}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpFloat gpMath_Tan(gpFloat x)}}
+	\begin{itemize}
+		\item \textit{gpFloat x}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpFloat gpMath_ATan2(gpFloat x, gpFloat y)}}
+	\begin{itemize}
+		\item \textit{gpFloat x}\quad opis
+		\item \textit{gpFloat y}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpFloat gpMath_ASin(gpFloat x)}}
+	\begin{itemize}
+		\item \textit{gpFloat x}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpFloat gpMath_ACos(gpFloat x)}}
+	\begin{itemize}
+		\item \textit{gpFloat x}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpFloat gpMath_ATan(gpFloat x)}}
+	\begin{itemize}
+		\item \textit{gpFloat x}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpFloat gpMath_MinFloat(gpFloat a, gpFloat b)}}
+	\begin{itemize}
+		\item \textit{gpFloat a}\quad opis
+		\item \textit{gpFloat b}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpFloat gpMath_MaxFloat(gpFloat a, gpFloat b)}}
+	\begin{itemize}
+		\item \textit{gpFloat a}\quad opis
+		\item \textit{gpFloat b}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpBool gpMath_Equals(gpFloat a, gpFloat b)}}
+	\begin{itemize}
+		\item \textit{gpFloat a}\quad opis
+		\item \textit{gpFloat b}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpInt gpMath_Int(gpFloat a)}}
+	\begin{itemize}
+		\item \textit{gpFloat a}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpFloat gpMath_FloatI(gpInt a)}}
+	\begin{itemize}
+		\item \textit{gpInt a}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpFloat gpMath_AngleToAzimut(gpPoint a, gpPoint b)}}
+	\begin{itemize}
+		\item \textit{gpPoint a}\quad opis
+		\item \textit{gpPoint b}\quad opis
+	\end{itemize}
+
+ \ \\
+\mbox{\textsf{gpFloat gpMkFloat(gpString x)}}
+	\begin{itemize}
+		\item \textit{gpString x}\quad opis
+	\end{itemize}
+
+ \ \\
+
+\section{File location}
+\begin{itemize}
+\item \textit{gp_Main.h}\quad project_c\textbackslash BaseProject\textbackslash Include
+\item \textit{gp_Alloc.h}\quad project_c\textbackslash BaseProject\textbackslash Include\textbackslash Alloc
+\item \textit{gp.h}\quad project_c\textbackslash BaseProject\textbackslash Include\textbackslash Base
+\item \textit{gp_bool.h}\quad project_c\textbackslash BaseProject\textbackslash Include\textbackslash Base
+\item \textit{gp_point.h}\quad project_c\textbackslash BaseProject\textbackslash Include\textbackslash Base
+\item \textit{gp_printf.h}\quad project_c\textbackslash BaseProject\textbackslash Include\textbackslash Base
+\item \textit{gp_types.h}\quad project_c\textbackslash BaseProject\textbackslash Include\textbackslash Base
+\item \textit{gp_vector.h}\quad project_c\textbackslash BaseProject\textbackslash Include\textbackslash Base
+\item \textit{gp_gestures_parameters.h}\quad project_c\textbackslash BaseProject\textbackslash Include\textbackslash Gestures
+\item \textit{gp_gestures_results.h}\quad project_c\textbackslash BaseProject\textbackslash Include\textbackslash Gestures
+\item \textit{gp_MotionEvent.h}\quad project_c\textbackslash BaseProject\textbackslash Include\textbackslash InOut
+\item \textit{gp_OutputGesture.h}\quad project_c\textbackslash BaseProject\textbackslash Include\textbackslash InOut
+\item \textit{gp_Math.h}\quad project_c\textbackslash BaseProject\textbackslash Include\textbackslash Math
+\end{itemize}

@@ -6,7 +6,7 @@
 #ifdef DEBUG
 #include "..\..\Include\Base\gp_error_codes.h"
 #endif
-#define _gpError_SIZE 4096            // a la constant :)
+#define _gpError_SIZE 4096
 
 
 

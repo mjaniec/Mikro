@@ -1,0 +1,34 @@
+\BOOKMARK [1][-]{section.1}{Exposed Functionality}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{gp\137Main.h}{section.1}% 2
+\BOOKMARK [3][-]{subsubsection.1.1.1}{Gesture declarations}{subsection.1.1}% 3
+\BOOKMARK [3][-]{subsubsection.1.1.2}{Data structures}{subsection.1.1}% 4
+\BOOKMARK [3][-]{subsubsection.1.1.3}{Functions}{subsection.1.1}% 5
+\BOOKMARK [2][-]{subsection.1.2}{gp\137Alloc.h}{section.1}% 6
+\BOOKMARK [3][-]{subsubsection.1.2.1}{Constants}{subsection.1.2}% 7
+\BOOKMARK [3][-]{subsubsection.1.2.2}{Functions}{subsection.1.2}% 8
+\BOOKMARK [2][-]{subsection.1.3}{gp.h}{section.1}% 9
+\BOOKMARK [2][-]{subsection.1.4}{gp\137bool.h}{section.1}% 10
+\BOOKMARK [3][-]{subsubsection.1.4.1}{Constants}{subsection.1.4}% 11
+\BOOKMARK [2][-]{subsection.1.5}{gp\137point.h}{section.1}% 12
+\BOOKMARK [3][-]{subsubsection.1.5.1}{Data structures}{subsection.1.5}% 13
+\BOOKMARK [3][-]{subsubsection.1.5.2}{Functions}{subsection.1.5}% 14
+\BOOKMARK [2][-]{subsection.1.6}{gp\137printf.h}{section.1}% 15
+\BOOKMARK [3][-]{subsubsection.1.6.1}{Constants}{subsection.1.6}% 16
+\BOOKMARK [2][-]{subsection.1.7}{gp\137types.h}{section.1}% 17
+\BOOKMARK [3][-]{subsubsection.1.7.1}{Data types}{subsection.1.7}% 18
+\BOOKMARK [3][-]{subsubsection.1.7.2}{Constants}{subsection.1.7}% 19
+\BOOKMARK [2][-]{subsection.1.8}{gp\137vector.h}{section.1}% 20
+\BOOKMARK [3][-]{subsubsection.1.8.1}{Data structures}{subsection.1.8}% 21
+\BOOKMARK [3][-]{subsubsection.1.8.2}{Functions}{subsection.1.8}% 22
+\BOOKMARK [2][-]{subsection.1.9}{gp\137gestures\137parameters.h}{section.1}% 23
+\BOOKMARK [3][-]{subsubsection.1.9.1}{Constants}{subsection.1.9}% 24
+\BOOKMARK [2][-]{subsection.1.10}{gp\137gestures\137results.h}{section.1}% 25
+\BOOKMARK [3][-]{subsubsection.1.10.1}{Constants}{subsection.1.10}% 26
+\BOOKMARK [2][-]{subsection.1.11}{gp\137MotionEvent.h}{section.1}% 27
+\BOOKMARK [3][-]{subsubsection.1.11.1}{Constants}{subsection.1.11}% 28
+\BOOKMARK [2][-]{subsection.1.12}{gp\137OutputGesture.h}{section.1}% 29
+\BOOKMARK [3][-]{subsubsection.1.12.1}{Data structures}{subsection.1.12}% 30
+\BOOKMARK [2][-]{subsection.1.13}{gp\137Math.h}{section.1}% 31
+\BOOKMARK [3][-]{subsubsection.1.13.1}{Constants}{subsection.1.13}% 32
+\BOOKMARK [3][-]{subsubsection.1.13.2}{Functions}{subsection.1.13}% 33
+\BOOKMARK [1][-]{section.2}{File location}{}% 34

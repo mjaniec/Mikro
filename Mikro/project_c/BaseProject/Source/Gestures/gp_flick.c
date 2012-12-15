@@ -30,7 +30,7 @@ gpBool gpTryFlick(gpMotionEvent*event,gpRecognizeContext*context){
 	   if((dir_right&&dx<gpMath_0) || (!dir_right&&dx>gpMath_0))return false;
 	   prevoius=current;
 	}
-	//FLICK
+
 	gp_isFlick=true;
 	gp_FlickData.direction=dir_right;
 	gp_FlickData.x=last.x;

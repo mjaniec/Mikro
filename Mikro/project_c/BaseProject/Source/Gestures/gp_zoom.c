@@ -36,18 +36,18 @@ gpBool _gpCheckFingerForZoom(gpVector*vec,gpPoint *target,gpPoint*azimut,gpBool 
 	gpPoint _0;
 	_0.x = gpMath_0;
 	_0.y = gpMath_0;
-	baseAngle=gpMath_AngleToAzimut_ByRotationGuy(_0,*azimut);
+	baseAngle=gpMath_AngleToAzimut(_0,*azimut);
 	gpInt wrongPoints = 0;
 	for(gpInt i=bounce+1; i<size; ++i){
 		current=(gpPoint*)gpVector_at(vec,i)$r0;
 		currentDist=gpPoint_distance2(current,target);
 		if(dir_in)
 		{
-			angle=gpMath_AngleToAzimut_ByRotationGuy(*previous, *current);
+			angle=gpMath_AngleToAzimut(*previous, *current);
 		}
 		else
 		{
-			angle = gpMath_AngleToAzimut_ByRotationGuy(*current, *previous);
+			angle = gpMath_AngleToAzimut(*current, *previous);
 		}
 
 		gpFloat diff = gpSub(angle, baseAngle);

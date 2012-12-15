@@ -69,7 +69,7 @@ gpVoid gpVector_popBack(gpVector *self, gpVoid*where, gpInt size){
 	gpAlloc_free(self->data[self->size])$r;
 }
 
-
+#ifdef DEBUG
 gpVoid gpPrintVectorOfPoints(gpVector*vector,gpString name){
 	$fun;
 	gpInt size=gpVector_getSize(vector)$r;
@@ -80,5 +80,5 @@ gpVoid gpPrintVectorOfPoints(gpVector*vector,gpString name){
 		printf("   %d,%d",(int)gpMath_Int(p->x),(int)gpMath_Int(p->y) );
 	}
 }
-
+#endif
 #endif

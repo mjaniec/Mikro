@@ -9,8 +9,7 @@ gpByte gpMath_Sign(gpFloat x){
 	return 0;
 }
 
-//It have to have short name
-inline gpFloat gpMul(gpFloat a, gpFloat b){
+gpFloat gpMul(gpFloat a, gpFloat b){
 	$fun;
 	long X=a/GP_FLOAT_BASE, x=a%GP_FLOAT_BASE;
 	long Y=b/GP_FLOAT_BASE, y=b%GP_FLOAT_BASE;
@@ -49,14 +48,15 @@ gpFloat gpDiv(gpFloat a, gpFloat b){
 	return x;
 }
 
-inline gpInt gpMath_Int(gpFloat a){
+gpInt gpMath_Int(gpFloat a){
 	return a/GP_FLOAT_BASE;
 }
 
-inline gpFloat gpMath_FloatI(gpInt a){
+gpFloat gpMath_FloatI(gpInt a){
 	return ((gpFloat)a)*GP_FLOAT_BASE;
 }
 
+/*
 gpFloat gpMath_AngleToAzimut(gpPoint*a,gpPoint*b){
 	gpPoint x=gpPoint_init(b->x-a->x,b->y-a->y);
 
@@ -85,7 +85,7 @@ gpFloat gpMath_AngleToAzimut(gpPoint*a,gpPoint*b){
 	}
 	return 0;
 }
-
+*/
 
 gpFloat gpMkFloat(gpString x){
 	$fun;
@@ -156,23 +156,9 @@ gpInt* gpMath_MinIntP(gpInt* a, gpInt* b)
 gpFloat gpMath_Sqrt(gpFloat a){
 	$fun;
 	$assert0(a>=gpMath_0, GP_EARG);
-	/*
-	if(a==gpMath_0)return gpMath_0;
-	gpFloat x=gpMath_1;
-	gpFloat x2=gpMath_1;
-	gpFloat two=gpMkFloat("2");
-	printf("before loop\n");
-	while(!gpMath_Equals(a,gpMath_Square(x)) || !gpMath_Equals(x,x2)){
-		x2=x;
-		x=gpDiv(x+gpDiv(a,x),two);
-	}
-	printf("after loop\n");
-	return x;
-	*/
-	/*meine version*/
 	gpFloat xn = a;
 	gpFloat xn_1;
-	gpFloat two = gpMkFloat("2");
+	gpFloat two = gpMath_2;
 	do
 	{
 		xn_1 = xn;
@@ -254,7 +240,6 @@ gpFloat gpMath_Cos(gpFloat x){
 }
 gpFloat gpMath_Tan(gpFloat x){
 	$fun;
-	//I no it sucks but do we really need other solutions?
 	while(x>gpMath_PI2)x-=gpMath_PI;
 	if(x<0)return gpNeg(gpMath_Tan(gpNeg(x)));
 
@@ -289,9 +274,7 @@ gpFloat _gpMath_ATan_PadeApproximation(gpFloat x)
 	gpFloat denom=gpAdd(gpMath_1,gpAdd(x,gpMul(m4,x2)));
 
 	value=gpMul(m1,gpDiv(value,denom));
-	//return value;
 	gpFloat rest=gpMath_0;
-	//poprawka
 	x=gpAdd(x,gpMath_1);
 	if(x<gpMath_2)return value;
 
@@ -350,12 +333,11 @@ gpFloat gpMath_ATan2(gpFloat x, gpFloat y)
 	}
 	else
 	{
-		printf("undefined atan2");
 		return gpMath_PI;
 	}
 }
 
-gpFloat gpMath_AngleToAzimut_ByRotationGuy(gpPoint first, gpPoint second)
+gpFloat gpMath_AngleToAzimut(gpPoint first, gpPoint second)
 {
 	gpFloat delta_x = gpSub(first.x, second.x);
 	gpFloat delta_y = gpNeg(gpSub(first.y, second.y));

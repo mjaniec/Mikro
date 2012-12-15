@@ -31,17 +31,16 @@ gpVoid gpRecognize(gpMotionEvent*event){
 	switch(event->actionType){
 		case GP_ME_ACTION_DOWN: _gpHandleDown(event,&context)$r; context.fingers = 1; break;
 		case GP_ME_ACTION_MOVE: _gpHandleMove(event,&context)$r; break;
-		case GP_ME_ACTION_POINTER_1_DOWN: printf("one down"); break;
-		case GP_ME_ACTION_POINTER_1_UP: printf("one up"); break;
-		case GP_ME_ACTION_POINTER_2_DOWN: printf("second down"); context.fingers = 2; break;
-		case GP_ME_ACTION_POINTER_2_UP: printf("second up"); break;
+		case GP_ME_ACTION_POINTER_1_DOWN: break;
+		case GP_ME_ACTION_POINTER_1_UP: break;
+		case GP_ME_ACTION_POINTER_2_DOWN: context.fingers = 2; break;
+		case GP_ME_ACTION_POINTER_2_UP: break;
 		case GP_ME_ACTION_UP:   _gpHandleUp  (event,&context)$r; context.fingers = 0; break;
 	}
 }
 
 gpVoid _gpHandleDown(gpMotionEvent*event,gpRecognizeContext*context){
 	$fun;
-	printf("down");
 	context->firstTime=event->time;
 }
 gpVoid _gpHandleMove(gpMotionEvent*event,gpRecognizeContext*context){
@@ -72,7 +71,6 @@ gpVoid _gpHandleMove(gpMotionEvent*event,gpRecognizeContext*context){
 }
 gpVoid _gpHandleUp  (gpMotionEvent*event,gpRecognizeContext*context){
 	$fun;
-	printf("up");
 
 	gpTryScroll(event,context)$r;
 	gpTryTwoFingerScroll(event,context)$r;
