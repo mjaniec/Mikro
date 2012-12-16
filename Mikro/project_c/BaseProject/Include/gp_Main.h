@@ -47,7 +47,7 @@ gpBool gpTryRotation		(gpMotionEvent*event,gpRecognizeContext*context);
 gpBool gpTryScroll			(gpMotionEvent*event,gpRecognizeContext*context);
 gpBool gpTryZoom			(gpMotionEvent*event,gpRecognizeContext*context);
 gpBool gpTryTwoFingerScroll	(gpMotionEvent*event,gpRecognizeContext*context);
-gpBool gpTryTowFIngerTap	(gpMotionEvent*event,gpRecognizeContext*context);
+gpBool gpTryTwoFingerTap	(gpMotionEvent*event,gpRecognizeContext*context);
 
 
 #endif

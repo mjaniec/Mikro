@@ -148,11 +148,6 @@ gpInt gpMath_MinInt(gpInt a, gpInt b)
 	return a > b ? b : a;
 }
 
-gpInt* gpMath_MinIntP(gpInt* a, gpInt* b)
-{
-	return a > b ? b : a;
-}
-
 gpFloat gpMath_Sqrt(gpFloat a){
 	$fun;
 	$assert0(a>=gpMath_0, GP_EARG);

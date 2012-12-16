@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.12.15)  15 DEC 2012 22:49
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.12.15)  16 DEC 2012 01:26
 entering extended mode
 **external.tex
 (D:\Common\projects\mikro\Mikro\Doc\external.tex
@@ -440,11 +440,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 56--56
 []|\OT4/cmr/bx/n/12 Double
  []
 
-<data/Double_Tap.png, id=12, 97.11281pt x 179.16937pt>
-File: data/Double_Tap.png Graphic file (type png)
-
-<use data/Double_Tap.png>
-Package pdftex.def Info: data/Double_Tap.png used on input line 56.
+<data/DoubleTap.png, id=12, 97.11281pt x 179.16937pt>
+File: data/DoubleTap.png Graphic file (type png)
+ <use data/DoubleTap.png>
+Package pdftex.def Info: data/DoubleTap.png used on input line 56.
 (pdftex.def)             Requested size: 29.13406pt x 53.75122pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 57--57
@@ -530,10 +529,10 @@ Overfull \hbox (41.40927pt too wide) in paragraph at lines 73--86
  []
 
 [2 <D:/Common/projects/mikro/Mikro/Doc/data/Tap.png> <D:/Common/projects/mikro/
-Mikro/Doc/data/Double_Tap.png> <D:/Common/projects/mikro/Mikro/Doc/data/Press.p
-ng> <D:/Common/projects/mikro/Mikro/Doc/data/Move.png> <D:/Common/projects/mikr
-o/Mikro/Doc/data/Rotate.png> <D:/Common/projects/mikro/Mikro/Doc/data/Flick.png
->]
+Mikro/Doc/data/DoubleTap.png> <D:/Common/projects/mikro/Mikro/Doc/data/Press.pn
+g> <D:/Common/projects/mikro/Mikro/Doc/data/Move.png> <D:/Common/projects/mikro
+/Mikro/Doc/data/Rotate.png> <D:/Common/projects/mikro/Mikro/Doc/data/Flick.png>
+]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 90.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
@@ -542,24 +541,24 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 90.
  [3 <D:/Common/projects/mikro/Mikro/Doc/data/Scroll.png> <D:/Common/projects/mi
 kro/Mikro/Doc/data/Zoom.png> <D:/Common/projects/mikro/Mikro/Doc/data/TwoFinger
-Scroll.png>]
-[4] (D:\Common\projects\mikro\Mikro\Doc\external.aux) ) 
+Scroll.png>] [4]
+(D:\Common\projects\mikro\Mikro\Doc\external.aux) ) 
 Here is how much of TeX's memory you used:
  2063 strings out of 493921
- 26109 string characters out of 3147278
+ 26104 string characters out of 3147278
  83335 words of memory out of 3000000
  5327 multiletter control sequences out of 15000+200000
  13458 words of font info for 37 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  27i,12n,24p,664b,211s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX
- 2.9/fonts/enc/dvips/pl/plrm.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/p
-l/plit.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/pl/plsc.enc}<C:/Program
- Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/M
-iKTeX 2.9/fonts/type1/public/pl/plbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/pl/plcsc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/p
-lr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plti12.pfb>
-Output written on external.pdf (5 pages, 236042 bytes).
+{C:/Program Files/MiKTeX 2.9
+/fonts/enc/dvips/pl/plrm.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/pl/pl
+it.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/pl/plsc.enc}<C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/pl/plbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/pl/plcsc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plr12
+.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plti12.pfb>
+Output written on external.pdf (5 pages, 236049 bytes).
 PDF statistics:
  61 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

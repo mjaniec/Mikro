@@ -74,10 +74,8 @@ gpVoid _gpHandleUp  (gpMotionEvent*event,gpRecognizeContext*context){
 
 	gpTryScroll(event,context)$r;
 	gpTryTwoFingerScroll(event,context)$r;
-
 	gpTryTap(event,context)$r;
 	gpTryPress(event,context)$r;
-
 	gpTryFlick(event,context)$r;
 	gpTryRotation(event,context)$r;
 	gpTryTwoFingerTap(event,context)$r;

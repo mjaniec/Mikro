@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.12.15)  15 DEC 2012 23:48
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.12.15)  16 DEC 2012 02:09
 entering extended mode
 **docs.tex
 (D:\Common\projects\mikro\Mikro\Doc\do_oddania\docs.tex
@@ -450,182 +450,258 @@ Underfull \hbox (badness 10000) in paragraph at lines 48--50
 <../data/Tap.png, id=13, 92.59593pt x 173.14688pt>
 File: ../data/Tap.png Graphic file (type png)
  <use ../data/Tap.png>
-Package pdftex.def Info: ../data/Tap.png used on input line 70.
+Package pdftex.def Info: ../data/Tap.png used on input line 73.
 (pdftex.def)             Requested size: 27.77898pt x 51.94446pt.
 
-<../data/Press.png, id=15, 89.58469pt x 182.93344pt>
+<../data/DoubleTap.png, id=15, 97.11281pt x 179.16937pt>
+File: ../data/DoubleTap.png Graphic file (type png)
+
+<use ../data/DoubleTap.png>
+Package pdftex.def Info: ../data/DoubleTap.png used on input line 73.
+(pdftex.def)             Requested size: 29.13406pt x 53.75122pt.
+
+<../data/Press.png, id=16, 89.58469pt x 182.93344pt>
 File: ../data/Press.png Graphic file (type png)
  <use ../data/Press.png>
-Package pdftex.def Info: ../data/Press.png used on input line 70.
+Package pdftex.def Info: ../data/Press.png used on input line 73.
 (pdftex.def)             Requested size: 26.87561pt x 54.88045pt.
 
-<../data/Move.png, id=16, 85.82062pt x 168.63pt>
+<../data/Move.png, id=17, 85.82062pt x 168.63pt>
 File: ../data/Move.png Graphic file (type png)
  <use ../data/Move.png>
-Package pdftex.def Info: ../data/Move.png used on input line 70.
+Package pdftex.def Info: ../data/Move.png used on input line 73.
 (pdftex.def)             Requested size: 25.74637pt x 50.58939pt.
 
-<../data/Rotate.png, id=17, 140.77594pt x 168.63pt>
+<../data/Rotate.png, id=18, 140.77594pt x 168.63pt>
 File: ../data/Rotate.png Graphic file (type png)
  <use ../data/Rotate.png>
-Package pdftex.def Info: ../data/Rotate.png used on input line 70.
+Package pdftex.def Info: ../data/Rotate.png used on input line 73.
 (pdftex.def)             Requested size: 42.2331pt x 50.58939pt.
 
-<../data/Flick.png, id=18, 115.18031pt x 159.59625pt>
+<../data/Flick.png, id=19, 115.18031pt x 159.59625pt>
 File: ../data/Flick.png Graphic file (type png)
  <use ../data/Flick.png>
-Package pdftex.def Info: ../data/Flick.png used on input line 70.
+Package pdftex.def Info: ../data/Flick.png used on input line 73.
 (pdftex.def)             Requested size: 34.55435pt x 47.87923pt.
-
-[2]
 File: ../data/Tap.png Graphic file (type png)
- <use ../data/Tap.png>
-Package pdftex.def Info: ../data/Tap.png used on input line 70.
+
+<use ../data/Tap.png>
+Package pdftex.def Info: ../data/Tap.png used on input line 73.
 (pdftex.def)             Requested size: 27.77898pt x 51.94446pt.
+File: ../data/DoubleTap.png Graphic file (type png)
+ <use ../data/DoubleTap.png>
+Package pdftex.def Info: ../data/DoubleTap.png used on input line 73.
+(pdftex.def)             Requested size: 29.13406pt x 53.75122pt.
 File: ../data/Press.png Graphic file (type png)
  <use ../data/Press.png>
-Package pdftex.def Info: ../data/Press.png used on input line 70.
+Package pdftex.def Info: ../data/Press.png used on input line 73.
 (pdftex.def)             Requested size: 26.87561pt x 54.88045pt.
 File: ../data/Move.png Graphic file (type png)
- <use ../data/Move.png>
-Package pdftex.def Info: ../data/Move.png used on input line 70.
+
+<use ../data/Move.png>
+Package pdftex.def Info: ../data/Move.png used on input line 73.
 (pdftex.def)             Requested size: 25.74637pt x 50.58939pt.
 File: ../data/Rotate.png Graphic file (type png)
-
-<use ../data/Rotate.png>
-Package pdftex.def Info: ../data/Rotate.png used on input line 70.
+ <use ../data/Rotate.png>
+Package pdftex.def Info: ../data/Rotate.png used on input line 73.
 (pdftex.def)             Requested size: 42.2331pt x 50.58939pt.
 File: ../data/Flick.png Graphic file (type png)
  <use ../data/Flick.png>
-Package pdftex.def Info: ../data/Flick.png used on input line 70.
+Package pdftex.def Info: ../data/Flick.png used on input line 73.
 (pdftex.def)             Requested size: 34.55435pt x 47.87923pt.
 
-Overfull \hbox (17.2235pt too wide) in paragraph at lines 70--71
+Overfull \hbox (17.22067pt too wide) in paragraph at lines 73--74
 [][] 
  []
 
-<../data/Scroll.png, id=22, 97.86563pt x 169.38281pt>
+<../data/Scroll.png, id=20, 97.86563pt x 169.38281pt>
 File: ../data/Scroll.png Graphic file (type png)
  <use ../data/Scroll.png>
-Package pdftex.def Info: ../data/Scroll.png used on input line 85.
+Package pdftex.def Info: ../data/Scroll.png used on input line 88.
 (pdftex.def)             Requested size: 29.35991pt x 50.81523pt.
 
-<../data/Zoom.png, id=23, 130.23656pt x 160.34906pt>
+<../data/Zoom.png, id=21, 130.23656pt x 160.34906pt>
 File: ../data/Zoom.png Graphic file (type png)
  <use ../data/Zoom.png>
-Package pdftex.def Info: ../data/Zoom.png used on input line 85.
+Package pdftex.def Info: ../data/Zoom.png used on input line 88.
 (pdftex.def)             Requested size: 39.07126pt x 48.10509pt.
 
-<../data/TwoFingerScroll.png, id=24, 92.59593pt x 167.87718pt>
+<../data/TwoFingerScroll.png, id=22, 92.59593pt x 167.87718pt>
 File: ../data/TwoFingerScroll.png Graphic file (type png)
 
 <use ../data/TwoFingerScroll.png>
-Package pdftex.def Info: ../data/TwoFingerScroll.png used on input line 85.
+Package pdftex.def Info: ../data/TwoFingerScroll.png used on input line 88.
 (pdftex.def)             Requested size: 27.77898pt x 50.36354pt.
+ [2]
 File: ../data/Scroll.png Graphic file (type png)
  <use ../data/Scroll.png>
-Package pdftex.def Info: ../data/Scroll.png used on input line 85.
+Package pdftex.def Info: ../data/Scroll.png used on input line 88.
 (pdftex.def)             Requested size: 29.35991pt x 50.81523pt.
 File: ../data/Zoom.png Graphic file (type png)
 
 <use ../data/Zoom.png>
-Package pdftex.def Info: ../data/Zoom.png used on input line 85.
+Package pdftex.def Info: ../data/Zoom.png used on input line 88.
 (pdftex.def)             Requested size: 39.07126pt x 48.10509pt.
 File: ../data/TwoFingerScroll.png Graphic file (type png)
  <use ../data/TwoFingerScroll.png>
-Package pdftex.def Info: ../data/TwoFingerScroll.png used on input line 85.
+Package pdftex.def Info: ../data/TwoFingerScroll.png used on input line 88.
 (pdftex.def)             Requested size: 27.77898pt x 50.36354pt.
 
-Overfull \hbox (17.6308pt too wide) in paragraph at lines 85--86
+Overfull \hbox (17.62634pt too wide) in paragraph at lines 88--89
 [][] 
  []
 
 [3 <D:/Common/projects/mikro/Mikro/Doc/data/Tap.png> <D:/Common/projects/mikro/
-Mikro/Doc/data/Press.png> <D:/Common/projects/mikro/Mikro/Doc/data/Move.png> <D
-:/Common/projects/mikro/Mikro/Doc/data/Rotate.png> <D:/Common/projects/mikro/Mi
-kro/Doc/data/Flick.png>] [4 <D:/Common/projects/mikro/Mikro/Doc/data/Scroll.png
-> <D:/Common/projects/mikro/Mikro/Doc/data/Zoom.png> <D:/Common/projects/mikro/
-Mikro/Doc/data/TwoFingerScroll.png>]
-(D:\Common\projects\mikro\Mikro\Doc\do_oddania\funkcje.tex
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 5.
+Mikro/Doc/data/DoubleTap.png> <D:/Common/projects/mikro/Mikro/Doc/data/Press.pn
+g> <D:/Common/projects/mikro/Mikro/Doc/data/Move.png> <D:/Common/projects/mikro
+/Mikro/Doc/data/Rotate.png> <D:/Common/projects/mikro/Mikro/Doc/data/Flick.png>
+] [4 <D:/Common/projects/mikro/Mikro/Doc/data/Scroll.png> <D:/Common/projects/m
+ikro/Mikro/Doc/data/Zoom.png> <D:/Common/projects/mikro/Mikro/Doc/data/TwoFinge
+rScroll.png>] (D:\Common\projects\mikro\Mikro\Doc\do_oddania\funkcje.tex
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 7.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 5.
-LaTeX Font Info:    Try loading font information for OT4+cmss on input line 16.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 7.
+LaTeX Font Info:    Try loading font information for OT4+cmss on input line 18.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\polski\ot4cmss.fd"
 File: ot4cmss.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
-Underfull \hbox (badness 10000) in paragraph at lines 23--24
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
  []
 
 [5
 
-]
-Overfull \hbox (28.22418pt too wide) in paragraph at lines 72--74
+] [6]
+Overfull \hbox (28.22418pt too wide) in paragraph at lines 74--76
 [] 
  []
 
 
-Overfull \hbox (19.21735pt too wide) in paragraph at lines 79--81
+Overfull \hbox (19.76595pt too wide) in paragraph at lines 81--83
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--87
-
- []
-
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 113--114
+Underfull \hbox (badness 10000) in paragraph at lines 88--89
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 131--132
-
+Overfull \hbox (2.81404pt too wide) in paragraph at lines 96--97
+[]\OT4/cmr/m/it/12 gpAlloc[]-MAX[]-MEM 1000000 \OT4/cmr/m/n/12 prze-cho-wuje ro
+z-miar bu-fora pa-mi¦ci
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 153--154
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 189--190
+Underfull \hbox (badness 10000) in paragraph at lines 138--139
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--161
 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 237--238
+Underfull \hbox (badness 10000) in paragraph at lines 195--196
 
  []
 
-[10] [11] [12]
-Underfull \hbox (badness 10000) in paragraph at lines 343--344
+[10]
+Overfull \hbox (16.27182pt too wide) in paragraph at lines 227--229
+[] \OT4/cmr/m/n/12 Do-kªada ele-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--244
 
  []
 
-[13] [14] [15] [16]
-Underfull \hbox (badness 10000) in paragraph at lines 525--526
+[11]
+Overfull \hbox (1.95277pt too wide) in paragraph at lines 251--252
+[]\OT4/cmr/m/it/12 GP[]-RO-TA-TION[]-MAX[]-MOVE gpMk-Float("40") \OT4/cmr/m/n/1
+2 mak-sy-malne od-
+ []
+
+
+Overfull \hbox (1.67299pt too wide) in paragraph at lines 252--253
+[]\OT4/cmr/m/it/12 GP[]-TAP[]-PRESS[]-MOVE gpMk-Float("10") \OT4/cmr/m/n/12 mak
+-sy-mal-nie od-chy-le-
+ []
+
+
+Overfull \hbox (8.84578pt too wide) in paragraph at lines 253--254
+[]\OT4/cmr/m/it/12 GP[]-SCROLL[]-MIN[]-LEN gpMk-Float("20") \OT4/cmr/m/n/12 mi-
+ni-malna od-le-gªo±¢ dla
+ []
+
+
+Overfull \hbox (21.0531pt too wide) in paragraph at lines 255--256
+[]\OT4/cmr/m/it/12 GP[]-TWO[]-FIN-GER[]-TAP[]-MAX[]-DIST gpMk-Float("60") \OT4/
+cmr/m/n/12 mak-sy-malna
+ []
+
+
+Overfull \hbox (6.87119pt too wide) in paragraph at lines 256--257
+[]\OT4/cmr/m/it/12 GP[]-ZOOM[]-MIN[]-CHANGE gpMk-Float("10") \OT4/cmr/m/n/12 mi
+-ni-malna od-le-gªo±¢
+ []
+
+[12]
+Overfull \hbox (3.21161pt too wide) in paragraph at lines 277--278
+[]\OT4/cmr/m/it/12 GP[]-ME[]-AC-TION[]-PO-IN-TER[]-1[]-DOWN 5 \OT4/cmr/m/n/12 o
+pusz-cze-nie pierw-szego
+ []
+
+
+Overfull \hbox (16.42076pt too wide) in paragraph at lines 278--279
+[]\OT4/cmr/m/it/12 GP[]-ME[]-AC-TION[]-PO-IN-TER[]-1[]-UP 6 \OT4/cmr/m/n/12 pod
+-nie-nie-nie pierw-szego palca 
+ []
+
+
+Overfull \hbox (4.04932pt too wide) in paragraph at lines 279--280
+[]\OT4/cmr/m/it/12 GP[]-ME[]-AC-TION[]-PO-IN-TER[]-2[]-DOWN 261 \OT4/cmr/m/n/12
+ opusz-cze-nie dru-giego
+ []
+
+
+Overfull \hbox (15.36543pt too wide) in paragraph at lines 280--281
+[]\OT4/cmr/m/it/12 GP[]-ME[]-AC-TION[]-PO-IN-TER[]-2[]-UP 262 \OT4/cmr/m/n/12 p
+od-nie-sie-nie dru-giego palca 
+ []
+
+[13] [14]
+Underfull \hbox (badness 10000) in paragraph at lines 345--346
 
  []
 
-[17]) [18] (D:\Common\projects\mikro\Mikro\Doc\do_oddania\docs.aux
+[15] [16] [17] [18] [19]
+Underfull \hbox (badness 10000) in paragraph at lines 532--533
+
+ []
+
+[20]) [21] (D:\Common\projects\mikro\Mikro\Doc\do_oddania\docs.aux
 (D:\Common\projects\mikro\Mikro\Doc\do_oddania\funkcje.aux)) ) 
 Here is how much of TeX's memory you used:
- 2190 strings out of 493921
- 28339 string characters out of 3147278
- 85322 words of memory out of 3000000
- 5433 multiletter control sequences out of 15000+200000
+ 2196 strings out of 493921
+ 28469 string characters out of 3147278
+ 87322 words of memory out of 3000000
+ 5438 multiletter control sequences out of 15000+200000
  14486 words of font info for 39 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 27i,12n,24p,660b,240s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,12n,24p,660b,250s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files
 /MiKTeX 2.9/fonts/enc/dvips/pl/plrm.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/
 dvips/pl/plit.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/pl/plsc.enc}<C:/
@@ -634,9 +710,9 @@ Files/MiKTeX 2.9/fonts/type1/public/pl/plbx12.pfb><C:/Program Files/MiKTeX 2.9/
 fonts/type1/public/pl/plcsc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
 ic/pl/plr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plss12.pfb><
 C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plti12.pfb>
-Output written on docs.pdf (19 pages, 269076 bytes).
+Output written on docs.pdf (22 pages, 325769 bytes).
 PDF statistics:
- 109 PDF objects out of 1000 (max. 8388607)
+ 120 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -8,10 +8,7 @@ gpFloat gpSub(gpFloat a, gpFloat b);
 gpFloat gpAdd(gpFloat a, gpFloat b);
 gpFloat gpNeg(gpFloat a);
 
-
-
 gpInt gpMath_MinInt(gpInt, gpInt);
-gpInt* gpMath_MinIntP(gpInt*, gpInt*);
 
 gpByte gpMath_Sign(gpFloat x);
 gpFloat gpMath_Abs(gpFloat a);

@@ -7,7 +7,7 @@ gpBool _gp_rotation_checkDistance(gpPoint point, gpVector* points)
 	gpFloat baseDistance = gpPoint_distance(&point, gpVector_at(points, 0));
 	for(gpInt i = 1; i < size; i++)
 	{
-		if(gpMath_Abs(gpSub(gpPoint_distance(&point, gpVector_at(points, i)), baseDistance)) > gpMul(GP_ROTATION_MAX_MOVE, gpMath_2))
+		if(gpMath_Abs(gpSub(gpPoint_distance(&point, gpVector_at(points, i)), baseDistance)) > GP_ROTATION_MAX_MOVE)
 		{
 			return false;
 		}
