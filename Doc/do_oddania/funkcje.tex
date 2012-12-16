@@ -248,11 +248,14 @@ Opisuje parametry dotyczące tolerancyjności w wykrywaniu ruchów
 \begin{itemize} 
 \item \textit{GP_TAP_MAX_TIME\quad 40}\qquad maksymalny czas tap'a
 \item \textit{GP_TAP_MAX_MOVE\quad gpMkFloat("12")}\qquad maksymalne odchylenie ruchu dla tapa
-\item \textit{GP_ROTATION_MAX_MOVE\quad gpMkFloat("40")}\qquad maksymalne odchylenie podczas wykonywania rotacji
+\item \textit{GP_ROTATION_DIST_PARAM\quad gpMkFloat("0.35")}\qquad maksymalna różnica odległości (proporcjonalnie do odległości początkowej)
+\item \textit{GP_ROTATION_MIN_ANGLE\quad gpMkFloat("9")}\qquad minimalny kąt obrotu (stopnie)
+\item \textit{GP_ROTATION_MAX_MOVE\quad gpMkFloat("35")}\qquad maksymalne odchylenie podczas wykonywania rotacji
 \item \textit{GP_TAP_PRESS_MOVE\quad gpMkFloat("10")}\qquad maksymalnie odchylenie dla długiego przyciśnięcia
 \item \textit{GP_SCROLL_MIN_LEN\quad gpMkFloat("20")}\qquad minimalna odległość dla ruchu scroll
 \item \textit{GP_FLICK_MIN_LEN\quad gpMkFloat("15")}\qquad minimalna odległość dla ruchu flick
 \item \textit{GP_TWO_FINGER_TAP_MAX_DIST\quad gpMkFloat("60")}\qquad maksymalna odległość dla two finger tap
+\item \textit {GP_NOTATIME\quad -1}\qquad Wartość oznaczająca że czas jest nie ustawiony. 
 \item \textit{GP_ZOOM_MIN_CHANGE\quad gpMkFloat("10")}\qquad minimalna odległość dla zoom
 \end{itemize}
 

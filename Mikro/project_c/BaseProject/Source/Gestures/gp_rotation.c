@@ -97,10 +97,11 @@ gpBool gpTryRotation(gpMotionEvent*event,gpRecognizeContext*context){
 		angle = _gp_rotation_calculateAngle(context->finger1, first2);
 	}
 
-	if(angle<gpMkFloat("9")) return false;
+
+	if(gpMath_Abs(angle)<gpMkFloat("9")) return false;
 
 	gp_isRotation = true;
-	gp_RotationData.angle = angle;
+	gp_RotationData.angle = gpMath_Abs(angle);
 	gp_RotationData.direction = angle > 0;
 
 	return true;

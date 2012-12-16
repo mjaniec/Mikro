@@ -5,8 +5,8 @@ gpBool gpTryFlick(gpMotionEvent*event,gpRecognizeContext*context){
 	$fun;
 
 	gpInt size=gpVector_getSize(context->finger1)$r0;
-	gpInt bounds=2;
-	if(size<2*bounds+2)return false;
+	gpInt bounds=1;
+	if(size<=2*bounds)return false;
 	gpPoint last=*((gpPoint*)gpVector_at(context->finger1,size-1))$r0;
 	gpPoint first=*((gpPoint*)gpVector_at(context->finger1,0))$r0;
 	gpFloat dx=last.x-first.x;
@@ -26,7 +26,7 @@ gpBool gpTryFlick(gpMotionEvent*event,gpRecognizeContext*context){
 		else current=&last;
 	   dx=current->x-prevoius->x;
 	   dy=current->y-prevoius->y;
-	   if(gpMath_Abs(dy)>gpMath_Abs(dx))return false;
+	   if(gpMul(gpMath_Abs(dy),gpMath_2)>gpMul(gpMath_Abs(dx),gpMath_3))return false;
 	   if((dir_right&&dx<gpMath_0) || (!dir_right&&dx>gpMath_0))return false;
 	   prevoius=current;
 	}

@@ -36,6 +36,7 @@ gpFloat gpMath_AngleToAzimut(gpPoint a,gpPoint b);
 
 gpFloat gpMkFloat(gpString x);
 
+#define gpMath_FLOAT_MAX 2147483640
 #define GP_FLOAT_BASE 10000
 #define gpMath_EPSILION 10
 #define gpMath_PI  31416

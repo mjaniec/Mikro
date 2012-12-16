@@ -5,8 +5,8 @@
 gpOutputGesture_scroll* _gpCheckForScrollInVector(gpVector*vec){
 	$fun;
 	gpInt size=gpVector_getSize(vec)$r0;
-	gpInt bounds=2;
-	if(size<2*bounds+2)return false;
+	gpInt bounds=1;
+	if(size<=2*bounds)return false;
 	gpPoint last=*((gpPoint*)gpVector_at(vec,size-1))$r0;
 	gpPoint first=*((gpPoint*)gpVector_at(vec,0))$r0;
 	gpFloat dx=last.x-first.x;
@@ -26,16 +26,16 @@ gpOutputGesture_scroll* _gpCheckForScrollInVector(gpVector*vec){
 		else current=&last;
 	   dx=current->x-prevoius->x;
 	   dy=current->y-prevoius->y;
-	   if(gpMath_Abs(dx)>gpMath_Abs(dy))return false;
+	   if(gpMul(gpMath_2,gpMath_Abs(dx))>gpMul(gpMath_3,gpMath_Abs(dy)))return false;
 	   if((dir_down&&dy<gpMath_0) || (!dir_down&&dy>gpMath_0))return false;
 	   prevoius=current;
 	}
-	static gpOutputGesture_scroll out;
-    out.direction=dir_down;
-    out.x=last.x;
-    out.y=last.y;
+	gpOutputGesture_scroll*out=gpAlloc_alloc(sizeof(gpOutputGesture_scroll))$r0;
+    out->direction=dir_down;
+    out->x=last.x;
+    out->y=last.y;
 
-	return &out;
+	return out;
 }
 
 gpBool gpTryScroll(gpMotionEvent*event,gpRecognizeContext*context){
@@ -44,6 +44,7 @@ gpBool gpTryScroll(gpMotionEvent*event,gpRecognizeContext*context){
 	if(x){
 	    gp_isScroll=true;
 	    gp_ScrollData=*x;
+	    gpAlloc_free(x)$r0;
 	    return true;
 	}
     return false;
@@ -52,6 +53,7 @@ gpBool gpTryScroll(gpMotionEvent*event,gpRecognizeContext*context){
 
 gpBool gpTryTwoFingerScroll	(gpMotionEvent*event,gpRecognizeContext*context){
 	$fun;
+	gpBool res=false;
 	gpOutputGesture_scroll* firstFinger=_gpCheckForScrollInVector(context->finger1)$r0;
 	gpOutputGesture_scroll* secondFinger=_gpCheckForScrollInVector(context->finger2)$r0;
 
@@ -60,8 +62,10 @@ gpBool gpTryTwoFingerScroll	(gpMotionEvent*event,gpRecognizeContext*context){
 		gp_TwoFingerScrollData.direction=firstFinger->direction;
 		gp_TwoFingerScrollData.x=gpDiv(gpAdd(firstFinger->x,secondFinger->x),gpMkFloat("2"));
 		gp_TwoFingerScrollData.y=gpDiv(gpAdd(firstFinger->y,secondFinger->y),gpMkFloat("2"));
-		return true;
+		res=true;
 	}
-	return false;
+	gpAlloc_free(firstFinger)$r0;		//it is safe to free nullpointer
+	gpAlloc_free(secondFinger)$r0;
+	return res;
 }
 #endif

@@ -11,8 +11,8 @@ public class Flick implements IGesture{
 	public String getName(){
 		return "Flick";
 	}
-
-	@Override
+  
+	@Override 
 	public String getDescription() {
 		StringBuilder sb=new StringBuilder();
 		if(direction)

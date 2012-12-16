@@ -9,8 +9,8 @@ public class TwoFingerTap implements IGesture{
 	
 	@Override
 	public String getName(){
-		return "Two Finger Tap";
-	}
+		return "2 Finger Tap";
+	} 
 
 	@Override
 	public String getDescription() {

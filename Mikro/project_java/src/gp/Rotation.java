@@ -10,8 +10,8 @@ public class Rotation implements IGesture {
 	
 	@Override
 	public String getName(){
-		return "Rotation";
-	}
+		return "Rotation"; 
+	} 
 	
 	@Override
 	public String getDescription(){

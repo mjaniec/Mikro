@@ -9,7 +9,7 @@ public class TwoFingerScroll implements IGesture {
 
 	@Override
 	public String getName(){
-		return "Two Finger Scroll";
+		return "2 Finger Scroll";
 	}
 
 

@@ -73,7 +73,7 @@ gpBool _gpCheckFingerForZoom(gpVector*vec,gpPoint *target,gpPoint*azimut,gpBool 
 	    previousDist=currentDist;
 	}
 
-	if(wrongPoints > size / 4)
+	if(wrongPoints > size / 3)
 	{
 		return false;
 	}
@@ -113,7 +113,10 @@ gpBool gpTryZoom (gpMotionEvent*event,gpRecognizeContext*context){
 	}
 	gp_isZoom=true;
 	gp_ZoomData.direction=dir_in;
-	gp_ZoomData.magnification=(gpDiv(dist1,dist2));
+	if(dir_in)
+		gp_ZoomData.magnification=(gpDiv(dist1,dist2));
+	else
+		gp_ZoomData.magnification=(gpDiv(dist2,dist1));
 
 	return true;
 }

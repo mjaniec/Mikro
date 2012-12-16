@@ -46,8 +46,8 @@ gpVoid _gpHandleDown(gpMotionEvent*event,gpRecognizeContext*context){
 }
 gpVoid _gpHandleMove(gpMotionEvent*event,gpRecognizeContext*context){
 	$fun;
-	if(context->firstTime==GP_NOTATIME)
-		_gpHandleDown(event,context);
+	//if(context->firstTime==GP_NOTATIME)
+	//	_gpHandleDown(event,context);
 	if(event->size == 1 && context->fingers == 1 &&  gpVector_getSize(context->finger1) > 0)
 	{
 		gp_isMove=true;

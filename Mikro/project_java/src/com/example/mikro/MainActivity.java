@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
+import android.view.Window;
 import android.widget.TextView;
 
 public class MainActivity extends Activity implements OnTouchListener {
@@ -31,6 +32,7 @@ public class MainActivity extends Activity implements OnTouchListener {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
 		((View)(findViewById( R.id.Screen))).setOnTouchListener(this);
 	}
@@ -39,7 +41,7 @@ public class MainActivity extends Activity implements OnTouchListener {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.activity_main, menu);
 		return true;
-	}
+	} 
 	
 	private void update(String name, String data){
 		TextView name1,name2,name3;
