@@ -113,9 +113,12 @@ JNIEXPORT jobject JNICALL Java_gp_Delegator_isMove(JNIEnv *env, jobject self){
 
 	jclass clazz=(*env)->FindClass(env,"gp/Move");
 	if(!clazz)return jnull;
-	jmethodID constructor=(*env)->GetMethodID(env,clazz,"<init>","(FFFF)V");
+	jmethodID constructor=(*env)->GetMethodID(env,clazz,"<init>","(FFFFFF)V");
 	if(!constructor)return jnull;
-	return (*env)->NewObject(env,clazz,constructor,gpf2jf(gp_MoveData.x),gpf2jf(gp_MoveData.y),gpf2jf(gp_MoveData.begx),gpf2jf(gp_MoveData.begy));
+	return (*env)->NewObject(env,clazz,constructor,
+			gpf2jf(gp_MoveData.x),gpf2jf(gp_MoveData.y),
+			gpf2jf(gp_MoveData.prev_x),gpf2jf(gp_MoveData.prev_y),
+			gpf2jf(gp_MoveData.first_x),gpf2jf(gp_MoveData.first_y));
 }
 
 /*

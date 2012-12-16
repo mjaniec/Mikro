@@ -3,7 +3,7 @@ package gp;
 import android.view.MotionEvent; 
      
       
-public class Delegator { 
+public class Delegator { 	
 	static private Delegator instance;
 	static public Delegator getInstance(){
 		if(instance==null)return instance=new Delegator();

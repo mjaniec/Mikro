@@ -22,6 +22,7 @@ gpVoid gpRecognize(gpMotionEvent*event){
 
 	if(init){
 		init=false;
+		context.firstTime=GP_NOTATIME;
 		context.fingers=0;
 		context.finger1=&__v1;
 		context.finger2=&__v2;
@@ -45,14 +46,19 @@ gpVoid _gpHandleDown(gpMotionEvent*event,gpRecognizeContext*context){
 }
 gpVoid _gpHandleMove(gpMotionEvent*event,gpRecognizeContext*context){
 	$fun;
+	if(context->firstTime==GP_NOTATIME)
+		_gpHandleDown(event,context);
 	if(event->size == 1 && context->fingers == 1 &&  gpVector_getSize(context->finger1) > 0)
 	{
 		gp_isMove=true;
 		gp_MoveData.x = gpMotionEvent_getX(event,0)$r;
 		gp_MoveData.y = gpMotionEvent_getY(event,0)$r;
 		gpPoint* previousPoint = gpVector_at(context->finger1, gpVector_getSize(context->finger1) - 1)$r;
-		gp_MoveData.begx = previousPoint->x;
-		gp_MoveData.begy = previousPoint->y;
+		gpPoint* firstPoint = gpVector_at(context->finger1, 0)$r;
+		gp_MoveData.prev_x = previousPoint->x;
+		gp_MoveData.prev_y = previousPoint->y;
+		gp_MoveData.first_x= firstPoint   ->x;
+		gp_MoveData.first_y= firstPoint   ->y;
 	}
 
 	gpPoint current1;
@@ -82,6 +88,7 @@ gpVoid _gpHandleUp  (gpMotionEvent*event,gpRecognizeContext*context){
 	gpTryZoom(event,context)$r;
 	gpVector_clean(context->finger1)$r;
 	gpVector_clean(context->finger2)$r;
+	context->firstTime=GP_NOTATIME;
 }
 
 

@@ -1,25 +1,19 @@
 package com.example.mikro;
 
-import com.example.mikro.R;
-
 import gp.Delegator;
-import gp.Flick;
+import gp.IGesture;
 import gp.Move;
-import gp.Press;
-import gp.Rotation;
-import gp.Scroll;
-import gp.Tap;
-import gp.TwoFingerScroll;
-import gp.TwoFingerTap;
-import gp.Zoom;
-import android.os.Bundle;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
 import android.app.Activity;
-import android.util.Log;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
-import android.widget.Toast;
+import android.widget.TextView;
 
 public class MainActivity extends Activity implements OnTouchListener {
 
@@ -32,11 +26,13 @@ public class MainActivity extends Activity implements OnTouchListener {
 		}
 	}
 
+	private Queue<IGesture> gestures=new LinkedList<IGesture>();
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		((View)(findViewById( R.id.View))).setOnTouchListener(this);
+		((View)(findViewById( R.id.Screen))).setOnTouchListener(this);
 	}
 
 	@Override
@@ -45,30 +41,67 @@ public class MainActivity extends Activity implements OnTouchListener {
 		return true;
 	}
 	
+	private void update(String name, String data){
+		TextView name1,name2,name3;
+		TextView data1,data2,data3;
+		
+		name1=(TextView)(findViewById(R.id.Out1Name));
+		name2=(TextView)(findViewById(R.id.Out2Name));
+		name3=(TextView)(findViewById(R.id.Out3Name));
+		
+		data1=(TextView)(findViewById(R.id.Out1Data));
+		data2=(TextView)(findViewById(R.id.Out2Data));
+		data3=(TextView)(findViewById(R.id.Out3Data));
+		
+		name3.setText(name2.getText());
+		name2.setText(name1.getText());
+		
+		data3.setText(data2.getText());
+		data2.setText(data1.getText());
+		
+		name1.setText(name);
+		data1.setText(data);
+	}
+	
+	private void update(){
+		while(!gestures.isEmpty()){
+			IGesture gesture=gestures.poll();
+			if(gesture!=null)
+				update(gesture.getName(),gesture.getDescription());
+		}
+	}
+	
+	private void draw(MotionEvent m){
+		((View)(findViewById( R.id.View))).setOnTouchListener(this);
+	}
+	
 	@Override
 	public boolean onTouch(View arg0, MotionEvent m) {
+		
+		draw(m);
+		
 		
 		Delegator d=Delegator.getInstance();
 		d.recognize(m);
 		 
-		Flick flick=d.isFlick();
-		Tap tap=d.isTap();
-		Press press=d.isPress();
-		Scroll scroll=d.isScroll();
+		gestures.add(d.isFlick());
+		gestures.add(d.isPress());
+		gestures.add(d.isRotation());
+		gestures.add(d.isScroll());
+		gestures.add(d.isTap());
+		gestures.add(d.isTwoFingerScroll());
+		gestures.add(d.isTwoFingerTap());
+		gestures.add(d.isZoom());
+
+		//special handling for move
 		Move move=d.isMove();
-		Rotation rotation=d.isRotation();
-		TwoFingerTap twoFingerTap=d.isTwoFingerTap();
-		Zoom zoom = d.isZoom();
-		TwoFingerScroll twoFingerScroll=d.isTwoFingerScroll();
-		if(tap!=null)Toast.makeText(getApplicationContext(), "Tap: "+tap.x+","+tap.y,Toast.LENGTH_SHORT).show();
-		if(press!=null)Toast.makeText(getApplicationContext(), "Press: "+press.x+","+press.y,Toast.LENGTH_SHORT).show();
-		if(scroll!=null)Toast.makeText(getApplicationContext(), "Scroll: "+scroll.direction,Toast.LENGTH_SHORT).show();
-		if(flick!=null)Toast.makeText(getApplicationContext(), "Flick: "+flick.direction, Toast.LENGTH_SHORT).show();
-		if(twoFingerScroll!=null)Toast.makeText(getApplicationContext(), "TwoFingerScroll: "+twoFingerScroll.direction, Toast.LENGTH_SHORT).show();
-		//if(move!=null)Toast.makeText(getApplicationContext(), "Move: "+move.begx+ " " + move.begy + " " + move.x + " " + move.y, Toast.LENGTH_SHORT).show();
-		if(zoom!=null)Toast.makeText(getApplicationContext(), "Zoom: "+zoom.direction+","+zoom.maginfication,Toast.LENGTH_SHORT).show(); 
-		if(rotation!=null)Toast.makeText(getApplicationContext(), "Rotation: "+rotation.direction+", "+rotation.angle, Toast.LENGTH_SHORT).show();
-		if(twoFingerTap!=null)Toast.makeText(getApplicationContext(), "TwoFingerTap: "+twoFingerTap.x+", "+twoFingerTap.y, Toast.LENGTH_SHORT).show();
+		if(move!=null){
+			((TextView)(findViewById( R.id.MoveData))).setText(move.getDescription());
+		}else{
+			((TextView)(findViewById( R.id.MoveData))).setText("");
+		}
+		
+		update();
 	   
 		return true;
 	}

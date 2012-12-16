@@ -5,9 +5,10 @@ gpBool _gp_rotation_checkDistance(gpPoint point, gpVector* points)
 {
 	gpInt size = points->size;
 	gpFloat baseDistance = gpPoint_distance(&point, gpVector_at(points, 0));
+	gpFloat maxDistortion= gpMul(GP_ROTATION_DIST_PARAM,baseDistance);
 	for(gpInt i = 1; i < size; i++)
 	{
-		if(gpMath_Abs(gpSub(gpPoint_distance(&point, gpVector_at(points, i)), baseDistance)) > GP_ROTATION_MAX_MOVE)
+		if(gpMath_Abs(gpSub(gpPoint_distance(&point, gpVector_at(points, i)), baseDistance)) > maxDistortion)
 		{
 			return false;
 		}
@@ -95,6 +96,8 @@ gpBool gpTryRotation(gpMotionEvent*event,gpRecognizeContext*context){
 
 		angle = _gp_rotation_calculateAngle(context->finger1, first2);
 	}
+
+	if(angle<gpMkFloat("9")) return false;
 
 	gp_isRotation = true;
 	gp_RotationData.angle = angle;

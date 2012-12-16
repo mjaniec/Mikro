@@ -34,8 +34,10 @@ typedef struct {
 typedef struct {
 	gpFloat x;
 	gpFloat y;
-	gpFloat begx;
-	gpFloat begy;
+	gpFloat prev_x;
+	gpFloat prev_y;
+	gpFloat first_x;
+	gpFloat first_y;
 } gpOutputGesture_move;
 
 typedef struct {
