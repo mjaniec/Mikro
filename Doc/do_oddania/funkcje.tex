@@ -1,6 +1,6 @@
 \section{Udostępniana funkcjonalność}
 \subsection{gp_Main.h}
-Udostępnia podstawowe funkcje realizowane przez bibliotekę.
+Udostępnia podstawowe funkcje realizowane przez bibliotekę
 \subsubsection{Gesture definitions} Zmienne zawierają szczegółowe informacje o wykonanym ruchu
 
 \begin{itemize}
@@ -186,7 +186,7 @@ Definiuje abstrakcję na typy zależne od platformy
 \subsection{gp_vector.h}
 Opisuje abstrakcyjną kolekcję i operacje na niej
 \subsubsection{Data structures}
-\textsf{gpVector}	\\ \indent kolekcja
+\textsf{gpVector}	\\ \indent Kolekcja
 	\begin{itemize}
 		\item \textit{gpVoid** data}\quad wskaźnik na pierwszy element kolekcji
 		\item \textit{gpInt capacity}\quad aktualna pojemność kolekcji
@@ -225,7 +225,7 @@ Opisuje abstrakcyjną kolekcję i operacje na niej
 	\end{itemize}
 
  \ \\
-\mbox{\textsf{gpVoid gpVector_pushBack(gpVector* self, gpVoid* what, gpInt size)}} Dokłada element na koniec kolekcji
+\mbox{\textsf{gpVoid gpVector_pushBack(gpVector* self, gpVoid* what, gpInt size)}} \\ \indent Dokłada element na koniec kolekcji
 	\begin{itemize}
 		\item \textit{gpVector* self}\quad wskaźnik na kolekcję
 		\item \textit{gpVoid* what}\quad wskaźnik na element do dołożenia
@@ -233,7 +233,7 @@ Opisuje abstrakcyjną kolekcję i operacje na niej
 	\end{itemize}
 
  \ \\
-\mbox{\textsf{gpVoid gpVector_popBack(gpVector* self, gpVoid* where, gpInt size)}}
+\mbox{\textsf{gpVoid gpVector_popBack(gpVector* self, gpVoid* where, gpInt size)}} \\ \indent Usuwa ostatni element z kolekcji
 	\begin{itemize}
 		\item \textit{gpVector* self}\quad wskaźnik na kolekcję
 		\item \textit{gpVoid* where}\quad wskaźnik na miejsce w pamięci, w które ma być przeniesiony ostatni element kolekcji
