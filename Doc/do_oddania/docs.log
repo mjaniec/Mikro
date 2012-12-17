@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.12.15)  16 DEC 2012 16:40
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.12.15)  17 DEC 2012 14:42
 entering extended mode
 **docs.tex
 (D:\Common\projects\mikro\Mikro\Doc\do_oddania\docs.tex
@@ -378,6 +378,64 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \tymax=\dimen114
 \TY@tablewidth=\dimen115
 )
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsmath.sty"
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip45
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks18
+\ex@=\dimen116
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen117
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count90
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count91
+\leftroot@=\count92
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count93
+\DOTSCASE@=\count94
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen118
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count95
+\c@MaxMatrixCols=\count96
+\dotsspace@=\muskip10
+\c@parentequation=\count97
+\dspbrk@lvl=\count98
+\tag@help=\toks19
+\row@=\count99
+\column@=\count100
+\maxfields@=\count101
+\andhelp@=\toks20
+\eqnshift@=\dimen119
+\alignsep@=\dimen120
+\tagshift@=\dimen121
+\tagwidth@=\dimen122
+\totwidth@=\dimen123
+\lineht@=\dimen124
+\@envbody=\toks21
+\multlinegap=\skip46
+\multlinetaggap=\skip47
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
@@ -435,16 +493,16 @@ Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
-\@linkdim=\dimen116
-\Hy@linkcounter=\count90
-\Hy@pagecounter=\count91
+\@linkdim=\dimen125
+\Hy@linkcounter=\count102
+\Hy@pagecounter=\count103
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count92
+\Hy@SavedSpaceFactor=\count104
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -456,17 +514,17 @@ Package hyperref Info: Plain pages OFF on input line 4458.
 Package hyperref Info: Backreferencing OFF on input line 4463.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
-\c@Hy@tempcnt=\count93
+\c@Hy@tempcnt=\count105
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\ltxmisc\url.sty"
-\Urlmuskip=\muskip10
+\Urlmuskip=\muskip11
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5041.
-\XeTeXLinkMargin=\dimen117
-\Fld@menulength=\count94
-\Field@Width=\dimen118
-\Fld@charsize=\dimen119
+\XeTeXLinkMargin=\dimen126
+\Fld@menulength=\count106
+\Field@Width=\dimen127
+\Fld@charsize=\dimen128
 Package hyperref Info: Hyper figures OFF on input line 6295.
 Package hyperref Info: Link nesting OFF on input line 6300.
 Package hyperref Info: Hyper index ON on input line 6303.
@@ -476,104 +534,104 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6320.
 Package hyperref Info: PDF/A mode OFF on input line 6325.
 LaTeX Info: Redefining \ref on input line 6365.
 LaTeX Info: Redefining \pageref on input line 6369.
-\Hy@abspage=\count95
-\c@Item=\count96
-\c@Hfootnote=\count97
+\Hy@abspage=\count107
+\c@Item=\count108
+\c@Hfootnote=\count109
 )
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
-\Fld@listcount=\count98
-\c@bookmark@seq@number=\count99
+\Fld@listcount=\count110
+\c@bookmark@seq@number=\count111
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
-\Hy@SectionHShift=\skip45
+\Hy@SectionHShift=\skip48
 )
 (D:\Common\projects\mikro\Mikro\Doc\do_oddania\docs.aux
 (D:\Common\projects\mikro\Mikro\Doc\do_oddania\funkcje.aux))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
 
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count100
-\scratchdimen=\dimen120
-\scratchbox=\box26
-\nofMPsegments=\count101
-\nofMParguments=\count102
-\everyMPshowfont=\toks18
-\MPscratchCnt=\count103
-\MPscratchDim=\dimen121
-\MPnumerator=\count104
-\makeMPintoPDFobject=\count105
-\everyMPtoPDFconversion=\toks19
+\scratchcounter=\count112
+\scratchdimen=\dimen129
+\scratchbox=\box28
+\nofMPsegments=\count113
+\nofMParguments=\count114
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count115
+\MPscratchDim=\dimen130
+\MPnumerator=\count116
+\makeMPintoPDFobject=\count117
+\everyMPtoPDFconversion=\toks24
 )
-\AtBeginShipoutBox=\box27
-Package hyperref Info: Link coloring OFF on input line 16.
+\AtBeginShipoutBox=\box29
+Package hyperref Info: Link coloring OFF on input line 17.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count106
+\c@section@level=\count118
 )
-LaTeX Info: Redefining \ref on input line 16.
-LaTeX Info: Redefining \pageref on input line 16.
-LaTeX Info: Redefining \nameref on input line 16.
+LaTeX Info: Redefining \ref on input line 17.
+LaTeX Info: Redefining \pageref on input line 17.
+LaTeX Info: Redefining \nameref on input line 17.
 
 (D:\Common\projects\mikro\Mikro\Doc\do_oddania\docs.out)
 (D:\Common\projects\mikro\Mikro\Doc\do_oddania\docs.out)
 \@outlinefile=\write3
 
-<../data/logo.jpg, id=151, 196.50673pt x 381.41158pt>
+<../data/logo.jpg, id=167, 196.50673pt x 381.41158pt>
 File: ../data/logo.jpg Graphic file (type jpg)
  <use ../data/logo.jpg>
-Package pdftex.def Info: ../data/logo.jpg used on input line 20.
+Package pdftex.def Info: ../data/logo.jpg used on input line 21.
 (pdftex.def)             Requested size: 155.99762pt x 302.79008pt.
-LaTeX Font Info:    Try loading font information for OML+plm on input line 32.
+LaTeX Font Info:    Try loading font information for OML+plm on input line 33.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\polski\omlplm.fd"
 File: omlplm.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
-LaTeX Font Info:    Try loading font information for OMS+plsy on input line 32.
+LaTeX Font Info:    Try loading font information for OMS+plsy on input line 33.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\polski\omsplsy.fd"
 File: omsplsy.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
-LaTeX Font Info:    Try loading font information for OMX+plex on input line 32.
+LaTeX Font Info:    Try loading font information for OMX+plex on input line 33.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\polski\omxplex.fd"
 File: omxplex.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <12> on input line 32.
+(Font)              <12> on input line 33.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <8> on input line 32.
+(Font)              <8> on input line 33.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <6> on input line 32.
+(Font)              <6> on input line 33.
  [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <D:/Common/projects/mikro/
@@ -582,126 +640,132 @@ ocpdfTeX warning (ext4): destination with the same identifier (name{page.1}) ha
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.38 ...tion}{\numberline {6}Pliki}{20}{section.6}
+l.37 ...line {7.13}gp_Math.h}{18}{subsection.7.13}
                                                    [1])
 \tf@toc=\write4
 
-Underfull \hbox (badness 10000) in paragraph at lines 49--51
+Underfull \hbox (badness 10000) in paragraph at lines 50--52
 
  []
 
-<../data/Tap.png, id=202, 92.59593pt x 173.14688pt>
+[2] <../data/Tap.png, id=226, 92.59593pt x 173.14688pt>
 File: ../data/Tap.png Graphic file (type png)
  <use ../data/Tap.png>
-Package pdftex.def Info: ../data/Tap.png used on input line 74.
+Package pdftex.def Info: ../data/Tap.png used on input line 71.
 (pdftex.def)             Requested size: 27.77898pt x 51.94446pt.
 
-<../data/DoubleTap.png, id=204, 97.11281pt x 179.16937pt>
-File: ../data/DoubleTap.png Graphic file (type png)
+<../data/TwoFingerTap.png, id=228, 200.6697pt x 200.6697pt>
+File: ../data/TwoFingerTap.png Graphic file (type png)
 
-<use ../data/DoubleTap.png>
-Package pdftex.def Info: ../data/DoubleTap.png used on input line 74.
-(pdftex.def)             Requested size: 29.13406pt x 53.75122pt.
+<use ../data/TwoFingerTap.png>
+Package pdftex.def Info: ../data/TwoFingerTap.png used on input line 71.
+(pdftex.def)             Requested size: 60.20135pt x 60.20135pt.
 
-<../data/Press.png, id=205, 89.58469pt x 182.93344pt>
+<../data/Press.png, id=229, 89.58469pt x 182.93344pt>
 File: ../data/Press.png Graphic file (type png)
  <use ../data/Press.png>
-Package pdftex.def Info: ../data/Press.png used on input line 74.
+Package pdftex.def Info: ../data/Press.png used on input line 71.
 (pdftex.def)             Requested size: 26.87561pt x 54.88045pt.
 
-<../data/Move.png, id=206, 85.82062pt x 168.63pt>
+<../data/Move.png, id=230, 85.82062pt x 168.63pt>
 File: ../data/Move.png Graphic file (type png)
  <use ../data/Move.png>
-Package pdftex.def Info: ../data/Move.png used on input line 74.
+Package pdftex.def Info: ../data/Move.png used on input line 71.
 (pdftex.def)             Requested size: 25.74637pt x 50.58939pt.
-
-<../data/Rotate.png, id=207, 140.77594pt x 168.63pt>
-File: ../data/Rotate.png Graphic file (type png)
- <use ../data/Rotate.png>
-Package pdftex.def Info: ../data/Rotate.png used on input line 74.
-(pdftex.def)             Requested size: 42.2331pt x 50.58939pt.
-
-<../data/Flick.png, id=208, 115.18031pt x 159.59625pt>
-File: ../data/Flick.png Graphic file (type png)
- <use ../data/Flick.png>
-Package pdftex.def Info: ../data/Flick.png used on input line 74.
-(pdftex.def)             Requested size: 34.55435pt x 47.87923pt.
 File: ../data/Tap.png Graphic file (type png)
 
 <use ../data/Tap.png>
-Package pdftex.def Info: ../data/Tap.png used on input line 74.
+Package pdftex.def Info: ../data/Tap.png used on input line 71.
 (pdftex.def)             Requested size: 27.77898pt x 51.94446pt.
-File: ../data/DoubleTap.png Graphic file (type png)
- <use ../data/DoubleTap.png>
-Package pdftex.def Info: ../data/DoubleTap.png used on input line 74.
-(pdftex.def)             Requested size: 29.13406pt x 53.75122pt.
+File: ../data/TwoFingerTap.png Graphic file (type png)
+ <use ../data/TwoFingerTap.png>
+Package pdftex.def Info: ../data/TwoFingerTap.png used on input line 71.
+(pdftex.def)             Requested size: 60.20135pt x 60.20135pt.
 File: ../data/Press.png Graphic file (type png)
  <use ../data/Press.png>
-Package pdftex.def Info: ../data/Press.png used on input line 74.
+Package pdftex.def Info: ../data/Press.png used on input line 71.
 (pdftex.def)             Requested size: 26.87561pt x 54.88045pt.
 File: ../data/Move.png Graphic file (type png)
 
 <use ../data/Move.png>
-Package pdftex.def Info: ../data/Move.png used on input line 74.
+Package pdftex.def Info: ../data/Move.png used on input line 71.
 (pdftex.def)             Requested size: 25.74637pt x 50.58939pt.
-File: ../data/Rotate.png Graphic file (type png)
- <use ../data/Rotate.png>
-Package pdftex.def Info: ../data/Rotate.png used on input line 74.
-(pdftex.def)             Requested size: 42.2331pt x 50.58939pt.
-File: ../data/Flick.png Graphic file (type png)
- <use ../data/Flick.png>
-Package pdftex.def Info: ../data/Flick.png used on input line 74.
-(pdftex.def)             Requested size: 34.55435pt x 47.87923pt.
 
-Overfull \hbox (17.22067pt too wide) in paragraph at lines 74--75
+Overfull \hbox (17.22348pt too wide) in paragraph at lines 71--72
 [][] 
  []
 
-<../data/Scroll.png, id=209, 97.86563pt x 169.38281pt>
+<../data/Rotate.png, id=231, 140.77594pt x 168.63pt>
+File: ../data/Rotate.png Graphic file (type png)
+ <use ../data/Rotate.png>
+Package pdftex.def Info: ../data/Rotate.png used on input line 90.
+(pdftex.def)             Requested size: 42.2331pt x 50.58939pt.
+
+<../data/Flick.png, id=232, 115.18031pt x 159.59625pt>
+File: ../data/Flick.png Graphic file (type png)
+ <use ../data/Flick.png>
+Package pdftex.def Info: ../data/Flick.png used on input line 90.
+(pdftex.def)             Requested size: 34.55435pt x 47.87923pt.
+
+<../data/Scroll.png, id=233, 97.86563pt x 169.38281pt>
 File: ../data/Scroll.png Graphic file (type png)
 
 <use ../data/Scroll.png>
-Package pdftex.def Info: ../data/Scroll.png used on input line 89.
+Package pdftex.def Info: ../data/Scroll.png used on input line 90.
 (pdftex.def)             Requested size: 29.35991pt x 50.81523pt.
- <../data/Zoom.png, id=210, 130.23656pt x 160.34906pt>
+ <../data/Zoom.png, id=234, 130.23656pt x 160.34906pt>
 File: ../data/Zoom.png Graphic file (type png)
 
 <use ../data/Zoom.png>
-Package pdftex.def Info: ../data/Zoom.png used on input line 89.
+Package pdftex.def Info: ../data/Zoom.png used on input line 90.
 (pdftex.def)             Requested size: 39.07126pt x 48.10509pt.
 
-<../data/TwoFingerScroll.png, id=211, 92.59593pt x 167.87718pt>
+<../data/TwoFingerScroll.png, id=235, 92.59593pt x 167.87718pt>
 File: ../data/TwoFingerScroll.png Graphic file (type png)
 
 <use ../data/TwoFingerScroll.png>
-Package pdftex.def Info: ../data/TwoFingerScroll.png used on input line 89.
+Package pdftex.def Info: ../data/TwoFingerScroll.png used on input line 90.
 (pdftex.def)             Requested size: 27.77898pt x 50.36354pt.
- [2]
+File: ../data/Rotate.png Graphic file (type png)
+ <use ../data/Rotate.png>
+Package pdftex.def Info: ../data/Rotate.png used on input line 90.
+(pdftex.def)             Requested size: 42.2331pt x 50.58939pt.
+File: ../data/Flick.png Graphic file (type png)
+
+<use ../data/Flick.png>
+Package pdftex.def Info: ../data/Flick.png used on input line 90.
+(pdftex.def)             Requested size: 34.55435pt x 47.87923pt.
 File: ../data/Scroll.png Graphic file (type png)
  <use ../data/Scroll.png>
-Package pdftex.def Info: ../data/Scroll.png used on input line 89.
+Package pdftex.def Info: ../data/Scroll.png used on input line 90.
 (pdftex.def)             Requested size: 29.35991pt x 50.81523pt.
 File: ../data/Zoom.png Graphic file (type png)
-
-<use ../data/Zoom.png>
-Package pdftex.def Info: ../data/Zoom.png used on input line 89.
+ <use ../data/Zoom.png>
+Package pdftex.def Info: ../data/Zoom.png used on input line 90.
 (pdftex.def)             Requested size: 39.07126pt x 48.10509pt.
 File: ../data/TwoFingerScroll.png Graphic file (type png)
- <use ../data/TwoFingerScroll.png>
-Package pdftex.def Info: ../data/TwoFingerScroll.png used on input line 89.
+
+<use ../data/TwoFingerScroll.png>
+Package pdftex.def Info: ../data/TwoFingerScroll.png used on input line 90.
 (pdftex.def)             Requested size: 27.77898pt x 50.36354pt.
 
-Overfull \hbox (17.62634pt too wide) in paragraph at lines 89--90
+Overfull \hbox (17.62634pt too wide) in paragraph at lines 90--91
 [][] 
  []
 
 [3 <D:/Common/projects/mikro/Mikro/Doc/data/Tap.png> <D:/Common/projects/mikro/
-Mikro/Doc/data/DoubleTap.png> <D:/Common/projects/mikro/Mikro/Doc/data/Press.pn
-g> <D:/Common/projects/mikro/Mikro/Doc/data/Move.png> <D:/Common/projects/mikro
-/Mikro/Doc/data/Rotate.png> <D:/Common/projects/mikro/Mikro/Doc/data/Flick.png>
-] [4 <D:/Common/projects/mikro/Mikro/Doc/data/Scroll.png> <D:/Common/projects/m
-ikro/Mikro/Doc/data/Zoom.png> <D:/Common/projects/mikro/Mikro/Doc/data/TwoFinge
-rScroll.png>] (D:\Common\projects\mikro\Mikro\Doc\do_oddania\funkcje.tex
+Mikro/Doc/data/TwoFingerTap.png (PNG copy)> <D:/Common/projects/mikro/Mikro/Doc
+/data/Press.png> <D:/Common/projects/mikro/Mikro/Doc/data/Move.png>] [4 <D:/Com
+mon/projects/mikro/Mikro/Doc/data/Rotate.png> <D:/Common/projects/mikro/Mikro/D
+oc/data/Flick.png> <D:/Common/projects/mikro/Mikro/Doc/data/Scroll.png> <D:/Com
+mon/projects/mikro/Mikro/Doc/data/Zoom.png> <D:/Common/projects/mikro/Mikro/Doc
+/data/TwoFingerScroll.png>] [5]
+Overfull \hbox (6.56078pt too wide) in paragraph at lines 117--118
+[]\OT4/cmr/m/n/12 Implementacja alo-grytmu znaj-duje si¦ w pliku \OT4/cmr/m/it/
+12 gp[]-ro-ta-tion.c\OT4/cmr/m/n/12 . Pierw-
+ []
+
+[6] [7] (D:\Common\projects\mikro\Mikro\Doc\do_oddania\funkcje.tex
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 7.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
@@ -719,9 +783,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
  []
 
-[5
+[8
 
-] [6]
+] [9]
 Overfull \hbox (28.22418pt too wide) in paragraph at lines 74--76
 [] 
  []
@@ -742,12 +806,12 @@ Overfull \hbox (2.81404pt too wide) in paragraph at lines 96--97
 z-miar bu-fora pa-mi¦ci
  []
 
-[7]
+[10]
 Underfull \hbox (badness 10000) in paragraph at lines 118--119
 
  []
 
-[8]
+[11]
 Underfull \hbox (badness 10000) in paragraph at lines 138--139
 
  []
@@ -757,110 +821,136 @@ Underfull \hbox (badness 10000) in paragraph at lines 160--161
 
  []
 
-[9]
+[12]
 Underfull \hbox (badness 10000) in paragraph at lines 195--196
 
  []
 
-[10]
+[13]
 Underfull \hbox (badness 10000) in paragraph at lines 243--244
 
  []
 
-[11]
-Overfull \hbox (1.95277pt too wide) in paragraph at lines 251--252
-[]\OT4/cmr/m/it/12 GP[]-RO-TA-TION[]-MAX[]-MOVE gpMk-Float("40") \OT4/cmr/m/n/1
+[14]
+Overfull \hbox (1.04897pt too wide) in paragraph at lines 251--252
+[]\OT4/cmr/m/it/12 GP[]-RO-TA-TION[]-DIST[]-PA-RAM gpMk-Float("0.35") \OT4/cmr/
+m/n/12 mak-sy-malna
+ []
+
+
+Overfull \hbox (6.76796pt too wide) in paragraph at lines 252--253
+[]\OT4/cmr/m/it/12 GP[]-RO-TA-TION[]-MIN[]-AN-GLE gpMk-Float("9") \OT4/cmr/m/n/
+12 mi-ni-malny k¡t ob-
+ []
+
+
+Overfull \hbox (1.95277pt too wide) in paragraph at lines 253--254
+[]\OT4/cmr/m/it/12 GP[]-RO-TA-TION[]-MAX[]-MOVE gpMk-Float("35") \OT4/cmr/m/n/1
 2 mak-sy-malne od-
  []
 
 
-Overfull \hbox (1.67299pt too wide) in paragraph at lines 252--253
+Overfull \hbox (1.67299pt too wide) in paragraph at lines 254--255
 []\OT4/cmr/m/it/12 GP[]-TAP[]-PRESS[]-MOVE gpMk-Float("10") \OT4/cmr/m/n/12 mak
 -sy-mal-nie od-chy-le-
  []
 
 
-Overfull \hbox (8.84578pt too wide) in paragraph at lines 253--254
+Overfull \hbox (8.84578pt too wide) in paragraph at lines 255--256
 []\OT4/cmr/m/it/12 GP[]-SCROLL[]-MIN[]-LEN gpMk-Float("20") \OT4/cmr/m/n/12 mi-
 ni-malna od-le-gªo±¢ dla
  []
 
 
-Overfull \hbox (21.0531pt too wide) in paragraph at lines 255--256
+Overfull \hbox (21.0531pt too wide) in paragraph at lines 257--258
 []\OT4/cmr/m/it/12 GP[]-TWO[]-FIN-GER[]-TAP[]-MAX[]-DIST gpMk-Float("60") \OT4/
 cmr/m/n/12 mak-sy-malna
  []
 
 
-Overfull \hbox (6.87119pt too wide) in paragraph at lines 256--257
+Overfull \hbox (6.87119pt too wide) in paragraph at lines 259--260
 []\OT4/cmr/m/it/12 GP[]-ZOOM[]-MIN[]-CHANGE gpMk-Float("10") \OT4/cmr/m/n/12 mi
 -ni-malna od-le-gªo±¢
  []
 
-[12]
-Overfull \hbox (3.21161pt too wide) in paragraph at lines 277--278
+[15]
+Overfull \hbox (3.21161pt too wide) in paragraph at lines 280--281
 []\OT4/cmr/m/it/12 GP[]-ME[]-AC-TION[]-PO-IN-TER[]-1[]-DOWN 5 \OT4/cmr/m/n/12 o
 pusz-cze-nie pierw-szego
  []
 
 
-Overfull \hbox (16.42076pt too wide) in paragraph at lines 278--279
+Overfull \hbox (14.52773pt too wide) in paragraph at lines 281--282
 []\OT4/cmr/m/it/12 GP[]-ME[]-AC-TION[]-PO-IN-TER[]-1[]-UP 6 \OT4/cmr/m/n/12 pod
--nie-nie-nie pierw-szego palca 
+-nie-sie-nie pierw-szego palca 
  []
 
 
-Overfull \hbox (4.04932pt too wide) in paragraph at lines 279--280
+Overfull \hbox (4.04932pt too wide) in paragraph at lines 282--283
 []\OT4/cmr/m/it/12 GP[]-ME[]-AC-TION[]-PO-IN-TER[]-2[]-DOWN 261 \OT4/cmr/m/n/12
  opusz-cze-nie dru-giego
  []
 
 
-Overfull \hbox (15.36543pt too wide) in paragraph at lines 280--281
+Overfull \hbox (15.36543pt too wide) in paragraph at lines 283--284
 []\OT4/cmr/m/it/12 GP[]-ME[]-AC-TION[]-PO-IN-TER[]-2[]-UP 262 \OT4/cmr/m/n/12 p
 od-nie-sie-nie dru-giego palca 
  []
 
-[13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 345--346
+[16] [17]
+Underfull \hbox (badness 10000) in paragraph at lines 348--349
 
  []
 
-[15] [16] [17] [18] [19]
-Underfull \hbox (badness 10000) in paragraph at lines 532--533
+[18] [19] [20] [21] [22]
+Underfull \hbox (badness 10000) in paragraph at lines 535--536
 
  []
 
-[20]) [21]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 92.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 92.
- (D:\Common\projects\mikro\Mikro\Doc\do_oddania\docs.aux
+[23]) [24]
+LaTeX Font Info:    Try loading font information for OT4+cmtt on input line 127
+.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\polski\ot4cmtt.fd"
+File: ot4cmtt.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 133.
+ [25
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 133.
+
+(D:\Common\projects\mikro\Mikro\Doc\do_oddania\docs.aux
 (D:\Common\projects\mikro\Mikro\Doc\do_oddania\funkcje.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 92.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 92.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 133.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 133.
 Package rerunfilecheck Info: File `docs.out' has not changed.
-(rerunfilecheck)             Checksum: 73023CDAE4C328D82AB458D7A2A517D5;2460.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 92.
+(rerunfilecheck)             Checksum: E687C2E0876B9F87051EFBD906D8F60A;2663.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 133.
  ) 
 Here is how much of TeX's memory you used:
- 6082 strings out of 493921
- 88179 string characters out of 3147278
- 173194 words of memory out of 3000000
- 9218 multiletter control sequences out of 15000+200000
- 14486 words of font info for 39 fonts, out of 3000000 for 9000
+ 6694 strings out of 493921
+ 95224 string characters out of 3147278
+ 181695 words of memory out of 3000000
+ 9802 multiletter control sequences out of 15000+200000
+ 14783 words of font info for 40 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 29i,12n,30p,660b,396s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.enc}{C:/Program Files/Mi
-KTeX 2.9/fonts/enc/dvips/pl/plit.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvi
-ps/pl/plsc.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy
-10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plbx12.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/pl/plcsc10.pfb><C:/Program Files/MiKTeX 2
-.9/fonts/type1/public/pl/plr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/pl/plss12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plti12.pfb
->
-Output written on docs.pdf (22 pages, 334561 bytes).
+ 29i,12n,30p,1547b,417s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/pl/pltt.enc}{C:/Program Files/Mi
+KTeX 2.9/fonts/enc/dvips/pl/plrm.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvi
+ps/pl/plmi.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/pl/plms.enc}{C:/Pro
+gram Files/MiKTeX 2.9/fonts/enc/dvips/pl/plit.enc}{C:/Program Files/MiKTeX 2.9/
+fonts/enc/dvips/pl/plsc.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plbx12.p
+fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plcsc10.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/pl/plmi12.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/public/pl/plr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+pl/plr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plss12.pfb><C:/P
+rogram Files/MiKTeX 2.9/fonts/type1/public/pl/plsy10.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/pl/plti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/pl/pltt12.pfb>
+Output written on docs.pdf (26 pages, 381248 bytes).
 PDF statistics:
- 344 PDF objects out of 1000 (max. 8388607)
- 60 named destinations out of 1000 (max. 500000)
- 347 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 409 PDF objects out of 1000 (max. 8388607)
+ 68 named destinations out of 1000 (max. 500000)
+ 379 words of extra memory for PDF output out of 10000 (max. 10000000)
 

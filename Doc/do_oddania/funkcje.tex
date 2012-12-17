@@ -1,4 +1,4 @@
-\section{Udostępniana funkcjonalność}
+\section{Implementacja}
 \subsection{gp_Main.h}
 Udostępnia podstawowe funkcje realizowane przez bibliotekę
 \subsubsection{Gesture definitions} Zmienne zawierają szczegółowe informacje o wykonanym ruchu
@@ -278,7 +278,7 @@ Określa znacznie kodu akcji w evencie
 \item \textit{GP_ME_ACTION_DOWN\quad 0}\qquad początek ruchu
 \item \textit{GP_ME_ACTION_MOVE\quad 2}\qquad ruch po ekranie
 \item \textit{GP_ME_ACTION_POINTER_1_DOWN\quad 5}\qquad opuszczenie pierwszego palca na ekran
-\item \textit{GP_ME_ACTION_POINTER_1_UP\quad 6}\qquad podnienienie pierwszego palca
+\item \textit{GP_ME_ACTION_POINTER_1_UP\quad 6}\qquad podniesienie pierwszego palca
 \item \textit{GP_ME_ACTION_POINTER_2_DOWN\quad 261}\qquad opuszczenie drugiego palca
 \item \textit{GP_ME_ACTION_POINTER_2_UP\quad 262}\qquad podniesienie drugiego palca
 \item \textit{GP_ME_ACTION_UP\quad 1}\qquad koniec ruchu
@@ -289,7 +289,7 @@ Zawiera struktury reprezentujące dodatkowe informacje o ruchu
 \subsubsection{Data structures}
 \textsf{gpOutputGesture_two_finger_scroll} \\ \indent Reprezentuje two finger scroll
 	\begin{itemize}
-		\item \textit{gpFloat x}\quad przenunięcie poziome
+		\item \textit{gpFloat x}\quad przesunięcie poziome
 		\item \textit{gpFloat y}\quad przesunięcie pionowe
 		\item \textit{gpBool direction}\quad kierunek przewinięcia
 	\end{itemize}
@@ -302,7 +302,7 @@ Zawiera struktury reprezentujące dodatkowe informacje o ruchu
 \ \\
 \textsf{gpOutputGesture_scroll} \\ \indent Reprezentuje scroll
 	\begin{itemize}
-		\item \textit{gpFloat x}\quad przenunięcie poziome
+		\item \textit{gpFloat x}\quad przesunięcie poziome
 		\item \textit{gpFloat y}\quad przesunięcie pionowe
 		\item \textit{gpBool direction}\quad kierunek przewinięcia
 	\end{itemize}
@@ -462,7 +462,7 @@ Zawiera deklarację zaimplementowanych funkcji oraz stałych
 	\end{itemize}
 
  \ \\
-\mbox{\textsf{gpFloat gpMath_ATan2(gpFloat x, gpFloat y)}} \\ \indent Oblicza wartość bliższego kąta pomiędzy punkem, a osią x
+\mbox{\textsf{gpFloat gpMath_ATan2(gpFloat x, gpFloat y)}} \\ \indent Oblicza wartość bliższego kąta pomiędzy punktem, a osią x
 	\begin{itemize}
 		\item \textit{gpFloat x}\quad współrzędna x
 		\item \textit{gpFloat y}\quad współrzędna y

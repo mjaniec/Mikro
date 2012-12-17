@@ -5,6 +5,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{tabulary}
+\usepackage{amsmath}
 \usepackage[hidelinks]{hyperref}
 \usepackage{array}
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
@@ -39,14 +40,14 @@
 \indent Stworzenie niskopoziomowej biblioteki do przetwarzania gestów, dedykowanej dla mikroprocesorów jedno-układowych.
 
 \section{Cel} \ \\[0.1cm]
-\indent Celem projektu jest przede wszystkim stworzenie ww. biblioteki pozwalającej na wygodne korzystanie z technologi multi-touch na różnorodnych urządzeniach. Ponadto utworzona zostanie aplikacja na platformę Android służąca zaprezentowaniu działania biblioteki. Jej zadaniem będzie odczytywanie gestów wykonanych przez użytkownika i wyświetlanie ich nazw.
+\indent Celem projektu było przede wszystkim stworzenie ww. biblioteki pozwalającej na wygodne korzystanie z technologi multi-touch na różnorodnych urządzeniach. Ponadto utworzona została aplikacja na platformę Android służąca zaprezentowaniu działania biblioteki. Jej zadaniem jest odczytywanie gestów wykonanych przez użytkownika i wyświetlanie ich nazw.
 
 \section{Opis zagadnienia} \ \\[0.1cm]
-\indent Zadaniem biblioteki będzie odczytywanie gestów z urządzenia dotykowego. Biblioteka będzie periodycznie odczytywać stan urządzenia (wejście biblioteki). Na tej podstawie będzie rozpoznawać ruchy, które będzie dopasowywać do listy gestów. Po rozpoznaniu gest informacja o wykonanym geście zostanie umieszczona w kolejce gestów (wyjście biblioteki). Użytkownik biblioteki powinien periodycznie sprawdzać czy coś pojawiło się w kolejce i samodzielnie przetwarzać jej zawartość. Gesty będą dodawane do biblioteki w czasie kompilacji. Biblioteka zostanie napisana w języku C bez użycia zewnętrznych bibliotek.
+\indent Zadaniem biblioteki jest rozpoznawanie gestów. Biblioteka periodycznie dostawać będzie informacje o czasie oraz współrzędnych dotknięcia ekranu. Na tej podstawie porównuje ruch z rozpoznawanymi gestami i ustala odpowiednie zmienne informujące o tym, który ruch został wykonany. Użytkownik biblioteki powinien periodycznie sprawdzać czy jakiś ruch został rozpoznany i samodzielnie przetwarzać zawartość zmiennych przechowujących o nim dodatkowe informacje. Biblioteka została napisana w języku C bez użycia zewnętrznych bibliotek.
 
 
 
-\section{Lista gestów} \ \\[0.1cm]
+\section{Lista wspieranych gestów} \ \\[0.1cm]
 \indent W celu uniknięcia niejednoznaczności proponujemy anglojęzyczne nazwy gestów.\\
 
 \begin{tabulary}{\linewidth}{|>{\bf}c|c|C|C|}
@@ -56,8 +57,8 @@
 	\fbox{\includegraphics[scale=\tscale]{../data/Tap}} & 
 		Pojedyncze stuknięcie w multi-touch. & 	Pozycja (x,y)  \\ \hline
 	 
-	 Double Tap & \fbox{\includegraphics[scale=\tscale]{../data/DoubleTap}} & 
-	 	Szybkie podwójne stuknięcie w multi-touch. & Pozycja (x,y)  \\ \hline
+	 Two Finger Tap & \fbox{\includegraphics[scale=\tscale]{../data/TwoFingerTap}} & 
+	 	Stuknięcie w multi-touch dwoma palcami. & Pozycja (x,y)  \\ \hline
 	 	
 	 Press & \framebox[7em]{\includegraphics[scale=\tscale]{../data/Press}} &
 	 	Stuknięcie i przytrzymanie palca przez dłuższy czas. & 	Pozycja(x,y) \\ \hline
@@ -65,17 +66,17 @@
 	 Move & \fbox{\includegraphics[scale=\tscale]{../data/Move}} &
 	 	Przesunięcie palca w dowolnym kierunku. & Pozycja(x,y) Pozycja(x,y) \\ \hline
 	 	
-	 Rotate & \fbox{\includegraphics[scale=\tscale]{../data/Rotate}} &
-	 	Obrót w lewo lub w prawo. & Left/Right Obrót, (kąt) \\ \hline
-	 
-	 Flick & \fbox{\includegraphics[scale=\tscale]{../data/Flick}} &
-	 	Przesunięcie palca w lewo lub prawo i puszczenie. &	Left/Right, Pozycja(x,y) \\ \hline
+
 	 	
 \end{tabulary}
 
 \begin{tabulary}{\linewidth}{|>{\bf}C|c|C|C|}
 \hline	\textbf{Nazwa}&\textbf{Rysunek}&\textbf{Opis}&\textbf{Parametry}\\ \hline 
-
+	 Rotate & \fbox{\includegraphics[scale=\tscale]{../data/Rotate}} &
+	 	Obrót w lewo lub w prawo. & Left/Right Obrót, (kąt) \\ \hline
+	 
+	 Flick & \fbox{\includegraphics[scale=\tscale]{../data/Flick}} &
+	 	Przesunięcie palca w lewo lub prawo i puszczenie. &	Left/Right, Pozycja(x,y) \\ \hline
 	 Scroll & 
 \fbox{\includegraphics[scale=\tscale]{../data/Scroll}} &
 	 	Przesunięcie palca w górę lub w dół i puszczenie. &	Up/Down, Pozycja(x,y) \\ \hline
@@ -88,5 +89,45 @@
 		
 \end{tabulary}
 
+\section{Instrukcja użytkownika}
+Aby korzystać z biblioteki należy dla każdego otrzymanego z ekranu zdarzenia utworzyć strukturę \textbf{gpMotionEvent} i wypełnić jej odpowiednie pola - kod akcji, współrzędne, czas oraz ilość palców. Kolejnym krokiem jest wywołanie funkcji \textbf{gpRecognize} z utworzoną przed chwilą strukturą. Biblioteka ustawia wartość zmiennych \textbf{gp_is*} żyjących w \textit{gp_Main.h}. Jeśli interesują nas dodatkowe informacje o wykonanych ruchu, to można je znaleźć w zmiennych \textbf{gp_*Data}, również z \textit{gp_Main.h}.
+
+\section{Realizacja}
+Ze względu, iż biblioteka nie wykorzystuje nic ponad możliwości czystego języka c, należało stworzyć sobie niezbędne środowisko umożliwiające komfortową pracę. 
+
+Pierwszym krokiem było przyjęcie kilku założeń - ze względu na różny rozmiar typów dostępnych na maszynie zdefiniowano własne typy danych na podstawie tych, które zapewniał język. Wiadomym jest, że rozmiar typu ma znaczenie np. przy rozpoznawaniu współrzędnych, więc stworzenie abstrakcyjnych typów danych pozwala na pewną niezależność od środowiska wykorzystania naszego produktu. Typy są deklarowane w \textit{gp_types.h}, można je zmieniać w razie potrzeby. 
+
+Potrzebowaliśmy również przechowywać dane o trwającym ruchu. Ponieważ nie wiadomo, czy dany system pozwala na alokację pamięci, wydzieliliśmy fragment - \textit{gp_Alloc}, który odpowiada za zapewnianie nam niezbędnej przestrzeni. Jeśli maszyna wspiera dynamiczną alokację, to można podmienić implementację funkcji \textit{gpAlloc_alloc} oraz \textit{gpAlloc_free} na delegację do odpowiednich rozwiązań systemowych. 
+
+Ze względów estetycznych i efektywnościowych zdecydowaliśmy stworzyć sobie strukturę danych przechowującą elementy oraz posiadającą funkcje potrafiące nią zarządzać. Nazwaliśmy ją vector i powołaliśmy do życia w plikach \textit{gp_vector}. 
+
+Podczas tworzenia testów napotkaliśmy problem z nakładaniem się aliasów na wartości logiczne, dlatego zostały one wydzielone do pliku \textit{gp_bool.h}. 
+
+Ważnych założeniem podczas projektowania było umożliwienie wykorzystania biblioteki przy jak najmniejszej ingerencji w utworzony przez klienta kod, co było powodem utworzenia \textit{gp_MotionEvent} - definiującego dane otrzymywane od klienta(reprezentacja zdarzenia) oraz \textit{gp_OutputGestures} - precyzyjnie definiującego otrzymywane informacje od biblioteki o formacie rozpoznanych gestów, nie wspominając już o próbie zachowywania pseudo przestrzeni nazw w tworzonych rozwiązaniach. Ponieważ w gestach pojawiają się informacje dotyczące np. kierunku ruchu utworzono odpowiednie stałe w \textit{ge_gesture_results.h}. Na potrzeby wewnętrzne zadeklarowano również strukturę ułatwiającą reprezentacje punktu - \textit{gp_point}. 
+
+Uznaliśmy też za istotne danie klientowi możliwości dostosowania zaproponowanych algorytmów do własnych potrzeb - można decydować o takich parametrach jak czas pomiędzy tap'em, a pressem, czy maksymalne odchylenie odległości przy wykonywaniu rotacji. Wszystko w \textit{gp_gestures_parameters.h}. 
+
+Ostatnim elementem, który był po prostu niezbędny i bez którego nie udałoby się zrelizować założonej funkcjonalności był fragment odpowiedzialny za matematykę. Pozwolę sobie przypomnieć, iż w założeniach był brak wykorzystania koprocesora (w celu zwiększenia kręgu możliwych odbiorców) konieczne było stworzenie jakiegoś zamiennika. Zamiennik ten pozwala na wykonywanie podstawowych operacji arytmetycznych poprzez odpowiednie funkcje z \textit{gp_Math}. Sam moduł matematyki pozwala np. na liczenie siunusa, tangensa, potęgowanie, pierwiastkowanie(drugiego stopnia), arkusa-tangensa, a nawet obliczanie kąta pomiędzy dwoma punktami w przestrzeni $\Re^2$. 
+
+Warto jeszcze wspomnieć o algorytmach wykorzystywanych do decydowania o tym, czy coś jest odpowiednim gestem, czy też nim nie jest.
+
+\begin{description}
+	\item[Zoom] Implementacja alogrytmu znajduje się w pliku \textit{gp_zoom.c}. Na początku obliczany jest dystans pomiędzy pierwszym i ostatnim odczytanym punktem, jeśli jest on mniejszy niż minimalne odchylenie dla gestu zoom - \textit{GP_ZOOM_MIN_CHANGE}, to kończymy działanie i stwierdzamy, że nie jest to to, czego oczekiwaliśmy - gest zoom'em na pewno nie jest. Obliczamy kierunek na podstawie różnicy odległości punktów początkowych i końcowych - zbliżenie oznacza, że punkty końcowe są bliżej niż początkowe. Dalej sprawdzamy, czy ktoś przypadkiem nie wykonał dwoma palcami ruchu w jednym kierunku - jeśli to miało miejsce, to nie uznajemy tego za zoom. Warto zauważyć, iż prawie zawsze wykonujemy ruch dwoma palcami, stąd za ruch uznajemy coś, co pokonało dystans co najmniej \textit{GP_TAP_MAX_MOVE}. Jedyne co nam jeszcze zostało to sprawdzenie, czy kąt pomiędzy punktami ruchu oraz punktem początkowym jest mniejszy niż $\pi/4$ oraz czy przypadkiem ktoś podczas ruchu nie zmienił kierunku. Każde nie spełnienie warunku jest zliczane i jeśli suma takich wypadków jest większa niż $1/3$ wszystkich punktów to uznajemy, to za błędny ruch. Jeśli ruch po tych wszystkich sprawdzeniach dalej nie jest dorzucony, to uzupełniamy kierunek - zbliżenie/oddalenie, wartość zoom'u oraz ustawiamy flagę sugerującą, iż gest został poprawie rozpoznany.
+	
+	\item[Rotation] Implementacja alogrytmu znajduje się w pliku \textit{gp_rotation.c}. Pierwszym elementem sprawdzanym podczas rotacji ilość palców biorących udział w ruchu. Później obliczamy dystans pomiędzy pierwszym punktem ruchu dla pierwszego palca oraz ostatnim, i w drugim obliczeniu pomiędzy pierwszym punktem ruchu dla drugiego palca i ostatnim. Jeśli okaże się, iż oba dystanse są większe niż \textit{GP_ROTATION_MAX_MOVE}, wtedy informujemy iż nie jest to gest rotacji. Następnie ustalamy, który palec nie wykonywał ruchu. Sprawdzamy, czy dystans pomiędzy tym palcem, a każdym punktem ruchu drugiego palca jest w normie, a jest nią iloczyn \textit{GP_ROTATION_DIST_PARAM} oraz odległości pomiędzy pierwszym punktem nieruchomego palca, a pierwszym punktem ruchomego palca. Każde niespełnienie warunku powoduje odrzucenie ruchu jako rotation. Teraz pozostaje nam jedynie obliczenie wykonanego kąta obrotu. W tym celu sumujemy różnice kątów pomiędzy kątami dla kolejnych punktów, a punktem bazowym (jest nim pierwszy punkt nieruchomego palca). Ponieważ dostajemy zawsze kąt dodatni, to uznajemy, iż kąt powyżej $ \pi $ jest ujemny. Na koniec moduł takiej sumy porównujemy z \textit{GP_ROTATION_MIN_ANGLE} - minimalnym kątem obrotu. Jest to zarazem ostatni test ruchu. Jeśli jest pomyślny, to uzupełniamy dane o kącie: rozpoznanie gestu - \textit{gp_isRotation}, na podstawie znaku sumy - kierunek kąta oraz jako kąt uznajemy moduł otrzymanej poprzednio sumy.
+\end{description}
+
 \include{funkcje}
+
+\section{Podsumowanie}
+Biblioteka realizuje założoną funkcjonalność. Podczas weryfikacji na aplikacji testowej zaskoczyła nawet samych twórców swoją dokładnością i precyzją. Nie posiada dużych wymagań sprzętowych i pamięciowych oraz jest bardzo elastyczna, jeśli chodzi o kontrolę czułości wykrywania gestów.
+
+\section{Bibliografia}
+\begin{itemize}
+\item Notatki z wykładów dotyczących Metod Obliczeniowych w Nauce i Technice - \url{http://www.icsr.agh.edu.pl/~mownit/mownit.html}
+\item Wikipedia - \url{http://en.wikipedia.org/}
+\item Tutorial tworzenia aplikacji w ndk - \url{http://mobile.tutsplus.com/tutorials/android/ndk-tutorial/}
+\item Opis algorytmów podstawowych funkcji matematycznych - \url{http://mathonweb.com/help_ebook/html/algorithms.htm}
+\item Ściągawka z typami z jni - \url{http://dev.kanngard.net/Permalinks/ID_20050509144235.html} 
+\end{itemize}
 \end{document}

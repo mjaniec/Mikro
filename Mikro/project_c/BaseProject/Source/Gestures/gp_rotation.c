@@ -98,7 +98,7 @@ gpBool gpTryRotation(gpMotionEvent*event,gpRecognizeContext*context){
 	}
 
 
-	if(gpMath_Abs(angle)<gpMkFloat("9")) return false;
+	if(gpMath_Abs(angle)<GP_ROTATION_MIN_ANGLE) return false;
 
 	gp_isRotation = true;
 	gp_RotationData.angle = gpMath_Abs(angle);
