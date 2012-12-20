@@ -6,6 +6,7 @@
 \usepackage{graphicx}
 \usepackage{tabulary}
 \usepackage{amsmath}
+\usepackage{wrapfig}
 \usepackage[hidelinks]{hyperref}
 \usepackage{array}
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
@@ -90,32 +91,122 @@
 \end{tabulary}
 
 \section{Instrukcja użytkownika}
-Aby korzystać z biblioteki należy dla każdego otrzymanego z ekranu zdarzenia utworzyć strukturę \textbf{gpMotionEvent} i wypełnić jej odpowiednie pola - kod akcji, współrzędne, czas oraz ilość palców. Kolejnym krokiem jest wywołanie funkcji \textbf{gpRecognize} z utworzoną przed chwilą strukturą. Biblioteka ustawia wartość zmiennych \textbf{gp_is*} żyjących w \textit{gp_Main.h}. Jeśli interesują nas dodatkowe informacje o wykonanych ruchu, to można je znaleźć w zmiennych \textbf{gp_*Data}, również z \textit{gp_Main.h}.
+Aby korzystać z biblioteki należy dla każdego otrzymanego z ekranu zdarzenia utworzyć strukturę \textbf{gpMotionEvent} i wypełnić jej odpowiednie pola - kod akcji, współrzędne, czas oraz ilość palców. Kolejnym krokiem jest wywołanie funkcji \textbf{gpRecognize} z utworzoną przed chwilą strukturą. Biblioteka ustawia wartość zmiennych \textbf{gp_is*} żyjących w \textit{gp_Main.h}. Jeśli interesują nas dodatkowe informacje o wykonanych ruchu, to można je znaleźć w zmiennych \textbf{gp_*Data}, również z \textit{gp_Main.h}. Triggerem do rozpoznawania gestów jest puszczenie obu palców (nie dotyczy gestu \textbf{Move} przetwarzanego w czasie rzeczywistym). Można to jednak zmienić wywołując funkcję rozpoznającą konkretny gest \textbf{gpTry*} w innej sytuacji. (Wewnątrz funkcji \textit{gpRecognize}).
 
 \section{Realizacja}
-Ze względu, iż biblioteka nie wykorzystuje nic ponad możliwości czystego języka c, należało stworzyć sobie niezbędne środowisko umożliwiające komfortową pracę. 
+Ze względu, iż biblioteka nie wykorzystuje nic ponad możliwości czystego języka C, należało stworzyć sobie niezbędne środowisko umożliwiające komfortową pracę. Pierwszym krokiem było przyjęcie kilku założeń.
 
-Pierwszym krokiem było przyjęcie kilku założeń - ze względu na różny rozmiar typów dostępnych na maszynie zdefiniowano własne typy danych na podstawie tych, które zapewniał język. Wiadomym jest, że rozmiar typu ma znaczenie np. przy rozpoznawaniu współrzędnych, więc stworzenie abstrakcyjnych typów danych pozwala na pewną niezależność od środowiska wykorzystania naszego produktu. Typy są deklarowane w \textit{gp_types.h}, można je zmieniać w razie potrzeby. 
+\subsection{gp_types - Typy danych} Ze względu na różny rozmiar typów dostępnych na maszynie zdefiniowano własne typy danych na podstawie tych, które zapewniał język. Wiadomym jest, że rozmiar typu ma znaczenie np. przy rozpoznawaniu współrzędnych, więc stworzenie abstrakcyjnych typów danych pozwala na pewną niezależność od środowiska wykorzystania naszego produktu. Typy są deklarowane w \textit{gp_types.h}, można je zmieniać w razie potrzeby. 
 
-Potrzebowaliśmy również przechowywać dane o trwającym ruchu. Ponieważ nie wiadomo, czy dany system pozwala na alokację pamięci, wydzieliliśmy fragment - \textit{gp_Alloc}, który odpowiada za zapewnianie nam niezbędnej przestrzeni. Jeśli maszyna wspiera dynamiczną alokację, to można podmienić implementację funkcji \textit{gpAlloc_alloc} oraz \textit{gpAlloc_free} na delegację do odpowiednich rozwiązań systemowych. 
+\subsection{gp_Alloc - Dynamiczna alokacja pamięci} Potrzebowaliśmy również przechowywać dane o trwającym ruchu. Ponieważ nie wiadomo, czy dany system pozwala na alokację pamięci, wydzieliliśmy fragment - \textit{gp_Alloc}, który odpowiada za zapewnianie nam niezbędnej przestrzeni. Jeśli maszyna wspiera dynamiczną alokację, to można podmienić implementację funkcji \textit{gpAlloc_alloc} oraz \textit{gpAlloc_free} na delegację do odpowiednich rozwiązań systemowych. 
 
-Ze względów estetycznych i efektywnościowych zdecydowaliśmy stworzyć sobie strukturę danych przechowującą elementy oraz posiadającą funkcje potrafiące nią zarządzać. Nazwaliśmy ją vector i powołaliśmy do życia w plikach \textit{gp_vector}. 
+\subsection{gp_Vector - Kontener danych}Ze względów estetycznych i efektywnościowych zdecydowaliśmy stworzyć sobie strukturę danych przechowującą elementy oraz posiadającą funkcje potrafiące nią zarządzać. Nazwaliśmy ją vector i powołaliśmy do życia w plikach \textit{gp_vector}. 
 
-Podczas tworzenia testów napotkaliśmy problem z nakładaniem się aliasów na wartości logiczne, dlatego zostały one wydzielone do pliku \textit{gp_bool.h}. 
+\subsection{gp_Bool - Typy logiczny} Podczas tworzenia testów napotkaliśmy problem z nakładaniem się aliasów na wartości logiczne, dlatego zostały one wydzielone do pliku \textit{gp_bool.h}. 
 
-Ważnych założeniem podczas projektowania było umożliwienie wykorzystania biblioteki przy jak najmniejszej ingerencji w utworzony przez klienta kod, co było powodem utworzenia \textit{gp_MotionEvent} - definiującego dane otrzymywane od klienta(reprezentacja zdarzenia) oraz \textit{gp_OutputGestures} - precyzyjnie definiującego otrzymywane informacje od biblioteki o formacie rozpoznanych gestów, nie wspominając już o próbie zachowywania pseudo przestrzeni nazw w tworzonych rozwiązaniach. Ponieważ w gestach pojawiają się informacje dotyczące np. kierunku ruchu utworzono odpowiednie stałe w \textit{ge_gesture_results.h}. Na potrzeby wewnętrzne zadeklarowano również strukturę ułatwiającą reprezentacje punktu - \textit{gp_point}. 
+\subsection{Wejście, wyjście} Ważnych założeniem podczas projektowania było umożliwienie wykorzystania biblioteki przy jak najmniejszej ingerencji w utworzony przez klienta kod, co było powodem utworzenia \textit{gp_MotionEvent} - definiującego dane otrzymywane od klienta(reprezentacja zdarzenia) oraz \textit{gp_OutputGestures} - precyzyjnie definiującego otrzymywane informacje od biblioteki o formacie rozpoznanych gestów, nie wspominając już o próbie zachowywania pseudo przestrzeni nazw w tworzonych rozwiązaniach. Ponieważ w gestach pojawiają się informacje dotyczące np. kierunku ruchu utworzono odpowiednie stałe w \textit{ge_gesture_results.h}. Na potrzeby wewnętrzne zadeklarowano również strukturę ułatwiającą reprezentacje punktu - \textit{gp_point}. 
 
-Uznaliśmy też za istotne danie klientowi możliwości dostosowania zaproponowanych algorytmów do własnych potrzeb - można decydować o takich parametrach jak czas pomiędzy tap'em, a pressem, czy maksymalne odchylenie odległości przy wykonywaniu rotacji. Wszystko w \textit{gp_gestures_parameters.h}. 
+\subsection{Parametryzacja Algorytmów} Uznaliśmy też za istotne danie klientowi możliwości dostosowania zaproponowanych algorytmów do własnych potrzeb - można decydować o takich parametrach jak czas pomiędzy tap'em, a pressem, czy maksymalne odchylenie odległości przy wykonywaniu rotacji. Wszystko w \textit{gp_gestures_parameters.h}. 
 
-Ostatnim elementem, który był po prostu niezbędny i bez którego nie udałoby się zrelizować założonej funkcjonalności był fragment odpowiedzialny za matematykę. Pozwolę sobie przypomnieć, iż w założeniach był brak wykorzystania koprocesora (w celu zwiększenia kręgu możliwych odbiorców) konieczne było stworzenie jakiegoś zamiennika. Zamiennik ten pozwala na wykonywanie podstawowych operacji arytmetycznych poprzez odpowiednie funkcje z \textit{gp_Math}. Sam moduł matematyki pozwala np. na liczenie siunusa, tangensa, potęgowanie, pierwiastkowanie(drugiego stopnia), arkusa-tangensa, a nawet obliczanie kąta pomiędzy dwoma punktami w przestrzeni $\Re^2$. 
+\subsection{gp_Math - matematyka}Ostatnim elementem, który był po prostu niezbędny i bez którego nie udałoby się zrealizować założonej funkcjonalności był fragment odpowiedzialny za matematykę. Pozwolę sobie przypomnieć, iż w założeniach był brak wykorzystania koprocesora (w celu zwiększenia kręgu możliwych odbiorców) konieczne było stworzenie jakiegoś zamiennika. Zamiennik ten pozwala na wykonywanie podstawowych operacji arytmetycznych poprzez odpowiednie funkcje z \textit{gp_Math}. Sam moduł matematyki pozwala np. na liczenie siunusa, tangensa, potęgowanie, pierwiastkowanie(drugiego stopnia), arkusa-tangensa, a nawet obliczanie kąta pomiędzy dwoma punktami w przestrzeni $\Re^2$. Potencjalny brak koprocesora indukował brak typów zmiennoprzecinkowych. Dlatego wprowadziliśmy własny typ (\textit{gpFloat} z \textit{gp_Types}) realizujący arytmetykę stałoprzecinkową.
 
-Warto jeszcze wspomnieć o algorytmach wykorzystywanych do decydowania o tym, czy coś jest odpowiednim gestem, czy też nim nie jest.
-
-\begin{description}
-	\item[Zoom] Implementacja alogrytmu znajduje się w pliku \textit{gp_zoom.c}. Na początku obliczany jest dystans pomiędzy pierwszym i ostatnim odczytanym punktem, jeśli jest on mniejszy niż minimalne odchylenie dla gestu zoom - \textit{GP_ZOOM_MIN_CHANGE}, to kończymy działanie i stwierdzamy, że nie jest to to, czego oczekiwaliśmy - gest zoom'em na pewno nie jest. Obliczamy kierunek na podstawie różnicy odległości punktów początkowych i końcowych - zbliżenie oznacza, że punkty końcowe są bliżej niż początkowe. Dalej sprawdzamy, czy ktoś przypadkiem nie wykonał dwoma palcami ruchu w jednym kierunku - jeśli to miało miejsce, to nie uznajemy tego za zoom. Warto zauważyć, iż prawie zawsze wykonujemy ruch dwoma palcami, stąd za ruch uznajemy coś, co pokonało dystans co najmniej \textit{GP_TAP_MAX_MOVE}. Jedyne co nam jeszcze zostało to sprawdzenie, czy kąt pomiędzy punktami ruchu oraz punktem początkowym jest mniejszy niż $\pi/4$ oraz czy przypadkiem ktoś podczas ruchu nie zmienił kierunku. Każde nie spełnienie warunku jest zliczane i jeśli suma takich wypadków jest większa niż $1/3$ wszystkich punktów to uznajemy, to za błędny ruch. Jeśli ruch po tych wszystkich sprawdzeniach dalej nie jest dorzucony, to uzupełniamy kierunek - zbliżenie/oddalenie, wartość zoom'u oraz ustawiamy flagę sugerującą, iż gest został poprawie rozpoznany.
+\section{Algorytmy rozpoznające gesty}
+	Algorytmy sprowadzają się do sprawdzenia serii założeń dotyczących konkretnych gestów. Jeśli wszystkie założenia są spełnione uznajemy że gest został wykonany.
 	
-	\item[Rotation] Implementacja alogrytmu znajduje się w pliku \textit{gp_rotation.c}. Pierwszym elementem sprawdzanym podczas rotacji ilość palców biorących udział w ruchu. Później obliczamy dystans pomiędzy pierwszym punktem ruchu dla pierwszego palca oraz ostatnim, i w drugim obliczeniu pomiędzy pierwszym punktem ruchu dla drugiego palca i ostatnim. Jeśli okaże się, iż oba dystanse są większe niż \textit{GP_ROTATION_MAX_MOVE}, wtedy informujemy iż nie jest to gest rotacji. Następnie ustalamy, który palec nie wykonywał ruchu. Sprawdzamy, czy dystans pomiędzy tym palcem, a każdym punktem ruchu drugiego palca jest w normie, a jest nią iloczyn \textit{GP_ROTATION_DIST_PARAM} oraz odległości pomiędzy pierwszym punktem nieruchomego palca, a pierwszym punktem ruchomego palca. Każde niespełnienie warunku powoduje odrzucenie ruchu jako rotation. Teraz pozostaje nam jedynie obliczenie wykonanego kąta obrotu. W tym celu sumujemy różnice kątów pomiędzy kątami dla kolejnych punktów, a punktem bazowym (jest nim pierwszy punkt nieruchomego palca). Ponieważ dostajemy zawsze kąt dodatni, to uznajemy, iż kąt powyżej $ \pi $ jest ujemny. Na koniec moduł takiej sumy porównujemy z \textit{GP_ROTATION_MIN_ANGLE} - minimalnym kątem obrotu. Jest to zarazem ostatni test ruchu. Jeśli jest pomyślny, to uzupełniamy dane o kącie: rozpoznanie gestu - \textit{gp_isRotation}, na podstawie znaku sumy - kierunek kąta oraz jako kąt uznajemy moduł otrzymanej poprzednio sumy.
-\end{description}
+
+	\subsection{Move}
+		Implementacja znajduje się w pliku \textit{gp_Main.c}.
+		Gest nieco różni się od pozostałych: jest przetwarzany w czasie rzeczywistym.
+		\begin{itemize}
+			\item Warunkiem jego rozpoznania jest wykonanie dowolnego ruchu \textbf{jednym} palcem.
+			\item Po rozpoznaniu zmienna \textbf{gp_isMove} ustawiana jest na true, struktura \textbf{gp_MoveData} wypełniana jest początkową, poprzednią i bieżącą pozycją palca.
+		\end{itemize}				
+		
+		
+	\subsection{Tap}
+
+	 Implementacja znajduje się w pliku \textit{gp_tap.c}. Najprostszy gest, algorytm: 
+	\begin{itemize}
+		\item Różnica miedzy czasem rozpoczęcia gestu a jego zakończeniem musi być mniejsza niż \textit{GP_TAP_MAX_TIME}.
+		\item Podczas całego gest palec nie może się oddalić o więcej niż \textit{r = GP_TAP_MAX_MOVE} od swojego początkowego położenia.
+		\item Po rozpoznaniu flaga \textbf{gp_isTap} ustawiana jest na true, struktura \textbf{gp_TapData} wypełniana jest współrzędnym. tap'a.
+	
+	\end{itemize}
+	\includegraphics[width=0.3\textwidth]{../data/ImplTap}
+	
+	
+	\subsection{Press}
+	Implementacja w pliku \textit{gp_press.c}. \\
+	Algorytm niemal identyczny jak \textbf{Tap}.
+	\begin{itemize} 
+		\item Czas wykonania gestu musi być nie krótszy niż \textit{GP_TAP_MAX_TIME},
+		\item Odsunięcie od środka nie większe niż \textit{GP_PRESS_MAX_MOVE}.
+		\item Po rozpoznaniu flaga \textbf{gp_isPress} ustawiana jest na true, struktura \textbf{gp_PressData} wypełniana jest współrzędnym press'a.
+	\end{itemize}
+	
+	\subsection{Two Finger Tap}
+	Implementacja w pliku \textit{gp_tap.c}. Algorytm zbliżony do \textbf{tap}. 
+	\begin{itemize}
+		\item Czas trwania gestu (licząc od położenia pierwszego palca do zdjęcia obu), musi być mniejszy niż \textit{GP_TAP_MAX_TIME},
+		\item Każdy z palców z osobna musi spełnić warunek nie wyjścia z poza okręgu o promieniu \textit{GP_TAP_MAX_MOVE}
+		\item Po rozpoznaniu flaga \textbf{gp_isTwoFingerTap} ustawiana jest na true, struktura \textbf{gp_TwoFingerTapData} wypełniana jest współrzędnym tap'a (środek po między palcami).
+	\end{itemize}	
+	
+	\subsection{Scroll}
+		Implementacja znajduje się w pliku \textit{gp_scroll.c}.
+		Do rozpoznania następujące warunki muszą być zachowane:
+		\begin{itemize}
+			\item Pierwszy i ostatni punkt ruchu muszą różnić się wzdłuż osi \textit{y} o co najmniej \textit{GP_SCROLL_MIN_LEN}
+			\item ostatni punkt ruchu może wychylić się w poziomie o maksymalnie 1/3 całego ruch w pionie.
+			\item styczna do ruch w każdym punkcie musi tworzyć z osią y kąt mniejszy  niż $\arctan(\frac{3}{2}) $ 
+			\item ponieważ przy opuszczaniu/podnoszeniu palca mogą powstać "zanieczyszczenia" w ruchu, z powyższego warunku zwolnione są  pierwsze i ostatnie dwa punkty gestu.
+			\item Po rozpoznaniu flaga \textbf{gp_isScroll} ustawiana jest na true, struktura \textbf{gp_ScrollData} wypełniana jest kierunkiem (up/down) I współrzędnymi palca w chwili zakończenia ruchu.
+		\end{itemize}
+	\includegraphics[width=0.3\textwidth]{../data/ImplScroll}
+	
+	\subsection{Two Finger Scroll}
+	Implementacja znajduje się w pliku \textit{gp_scroll.c}.
+	\begin{itemize}
+		\item Sprawdzeniu podlegają warunki jak dla \textbf{Scroll}, dla każdego palca z osobna. Jeśli ruchy obu palców zostaną rozpoznane jako Scroll, i będą to ruchy w tym samym kierunku, to biblioteka rozpozna \textbf{Two Finger Scroll} w tym właśnie kierunku.
+		\item Po rozpoznaniu flaga \textbf{gp_isTwoFingerScroll} ustawiana jest na true, struktura \textbf{gp_TwoFingerScrollData} wypełniana jest kierunkiem (up/down) I współrzędnymi palców w chwili zakończenia ruchu (środek).
+	\end{itemize}
+	 
+		
+	\subsection{Flick}
+	Implementacja znajduje się w pliku \textit{gp_flick.c}. 
+	\begin{itemize}
+		\item Implementacja identyczna jak dla Scroll'a jedynie osie X, Y są ze sobą zamienione. 
+		\item Wykorzystane jest stała GP_FLICK_MIN_LEN.
+		\item Po rozpoznaniu flaga \textbf{gp_isFlick} ustawiana jest na true, struktura \textbf{gp_FlickData} wypełniana jest kierunkiem (left/right) I współrzędnymi palca w chwili zakończenia ruchu.
+	\end{itemize}
+		
+	\subsection{Zoom}
+	Implementacja algorytmu znajduje się w pliku \textit{gp_zoom.c}. \\ \\
+	\includegraphics[width=1.0\textwidth]{../data/ImplZoom}
+	
+	\begin{itemize}
+		\item Obliczane są dwie wartości: początkowa odległość palców, końcowa odległość palców. Jeśli różnią się od siebie o mniej niż GP_ZOOM_MIN_CHANGE to gest jest odrzucany.
+		\item Obliczamy kierunek (in/out) na podstawie obliczonych wcześniej wartości - zbliżenie oznacza, że punkty końcowe są bliżej niż początkowe.
+		\item Dalej sprawdzamy, czy ktoś przypadkiem nie wykonał dwoma palcami ruchu w jednym kierunku - jeśli to miało miejsce, to odrzucamy.
+		\item Aby ruch został zaliczony jako zoom sprawdzamy czy co najmniej jeden palec pokonał dystans nie mniejszy niż \textit{GP_TAP_MAX_MOVE}
+		\item Na podstawie punktów krańcowych - tych bardziej odległych, wyznaczana jest oś gestu.
+		\item Aby sprawdzić czy ktoś przypadkiem nie zmienił kierunku sprawdzamy czy kąt między styczną a osią jest mniejszy niż $\pi/4$. Każde nie spełnienie warunku jest zliczane i jeśli suma takich wypadków jest większa niż $1/3$ wszystkich punktów to uznajemy, to za błędny ruch
+		\item Jeśli ruch po tych wszystkich sprawdzeniach dalej nie jest dorzucony, to uzupełniamy kierunek - zbliżenie/oddalenie, wartość zoom'u oraz ustawiamy flagę sugerującą, iż gest został poprawie rozpozny.
+	\end{itemize}		
+
+	
+	\subsection{Rotation} \includegraphics[width=0.5\textwidth]{../data/ImplRotate} Implementacja alogrytmu znajduje się w pliku \textit{gp_rotation.c}. 
+		
+		\begin{itemize}
+			\item Pierwszym elementem sprawdzanym podczas rotacji ilość palców biorących udział w ruchu.
+			\item Później obliczamy dystans pomiędzy pierwszym oraz ostatnim punktem ruchu dla pierwszego jak i drugiego palca. Jeśli okaże się, iż oba dystanse są większe niż \textit{GP_ROTATION_MAX_MOVE}, wtedy informujemy iż nie jest to gest rotacji (brak osi obrotu).
+			\item Następnie ustalamy, który palec nie wykonywał ruchu (oś obrotu). 
+			\item Sprawdzamy, czy dystans pomiędzy "osią obrotu", a każdym punktem ruchu drugiego palca jest w normie: \\
+				Wyznaczamy odległość bazową: odległości pomiędzy pierwszym punktem palca uznanego za oś, a pierwszym punktem ruchomego palca uznanego za łuk. Obliczamy iloczyn \textit{GP_ROTATION_DIST_PARAM} oraz odległości bazowej, oznaczamy go jako \textit{maxDistortion}. Uznajemy że punkt jest w normie jeśli odległość tego punktu od osi obrotu różni się co najwyżej o \textit{maxDistortion} od odległości bazowej.  Każde niespełnienie warunku powoduje odrzucenie ruchu jako rotation. 
+			\item Pozostaje nam jedynie obliczenie wykonanego kąta obrotu. W tym celu sumujemy różnice kątów pomiędzy kątami dla kolejnych punktów, a punktem bazowym (jest nim pierwszy punkt osi obrotu). Ponieważ dostajemy zawsze kąt dodatni, to uznajemy, iż kąt powyżej $ \pi $ jest ujemny.
+			\item Moduł wyznaczonego kąta porównujemy z \textit{GP_ROTATION_MIN_ANGLE} - minimalnym kątem obrotu. Jeśli jest mniejszy to odrzucamy. 
+			\item Jeśli jest pomyślny, to uzupełniamy dane o kącie: rozpoznanie gestu - \textit{gp_isRotation}, na podstawie znaku sumy - kierunek kąta oraz jako kąt uznajemy moduł otrzymanej poprzednio sumy.
+		\end{itemize}
 
 \include{funkcje}
 
